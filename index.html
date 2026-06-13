@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Little AI App Planet is a growing collection of playful apps made with AI, one tiny experiment at a time."
+    />
+    <title>The Little AI App Planet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="The Little AI App Planet home">
+          <span class="brand-orbit" aria-hidden="true"><span></span></span>
+          <span>Little AI Planet</span>
+        </a>
+        <nav class="desktop-nav" aria-label="Primary">
+          <a href="#apps">Apps</a>
+        </nav>
+        <a class="nav-cta" href="#apps">Explore the planet <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <img
+            class="hero-art"
+            src="assets/arctic-fox-hero.png"
+            alt="A fluffy arctic fox building apps on a small purple planet"
+          />
+          <div class="hero-glow" aria-hidden="true"></div>
+          <div class="hero-content">
+            <div class="eyebrow"><span class="pulse-dot"></span> A new AI experiment every day</div>
+            <h1 id="hero-title">Tiny apps.<br /><em>Big curiosity.</em></h1>
+            <p class="hero-copy">
+              Welcome to my little corner of the universe, where I build playful apps with AI and
+              share what I discover along the way.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#apps">Browse the apps <span aria-hidden="true">↓</span></a>
+            </div>
+          </div>
+          <div class="orbit-note orbit-note-one" aria-hidden="true">01</div>
+          <div class="orbit-note orbit-note-two" aria-hidden="true">AI</div>
+          <div class="hero-scroll" aria-hidden="true"><span></span> Scroll to explore</div>
+        </section>
+
+        <section class="intro section-wrap" id="apps" aria-labelledby="apps-title">
+          <div class="section-heading reveal">
+            <div>
+              <p class="section-kicker">Fresh from the lab</p>
+              <h2 id="apps-title">Little apps in orbit</h2>
+            </div>
+            <p>
+              Each project starts with a small question: can AI help me turn this idea into
+              something real today?
+            </p>
+          </div>
+
+          <div class="filters reveal" role="group" aria-label="Filter projects">
+            <span class="loading-label">Loading apps…</span>
+          </div>
+
+          <div class="project-grid" aria-live="polite"></div>
+        </section>
+
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-brand">
+          <span class="brand-orbit small" aria-hidden="true"><span></span></span>
+          <strong>The Little AI App Planet</strong>
+        </div>
+        <p>New experiments landing regularly.</p>
+        <div class="footer-links">
+          <a href="#apps">Apps</a><a href="#top">Back to top ↑</a>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

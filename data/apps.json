@@ -1,0 +1,17 @@
+{
+  "apps": [
+    {
+      "date": "2026-06-14",
+      "title": "The Little AI App Planet",
+      "platform": "Website",
+      "description": "A playful daily showcase for apps made with AI.",
+      "url": "#top",
+      "AI": "Codex, GPT 5.5, high",
+      "prompt": [
+        "設計一個漂亮網站，名字是 ”The Little AI App Planet”，分享我每天用 AI 寫的 App，作品包含各種用 AI 完成的作品，比方手機 App、網頁、電腦 App，文字用英文，搭配用 imagegen skill 生成的可愛圖片，比方北極狐",
+        "每天做的 App 資料另外存在一個地方，網頁讀取資料再顯示出來",
+        "JSON 加入 AI 和 prompts 欄位"
+      ]
+    }
+  ]
+}
