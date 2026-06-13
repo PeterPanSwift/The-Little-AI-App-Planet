@@ -60,8 +60,8 @@ button { font: inherit; }
 .button:hover { transform: translateY(-3px); }
 .button-primary { color: var(--deep); background: #fffaf0; box-shadow: 0 10px 30px rgba(10,12,56,.24); }
 .text-link { font-size: 14px; font-weight: 700; display: inline-flex; gap: 11px; align-items: center; }
-.text-link span, .card-link span { transition: transform .2s ease; }
-.text-link:hover span, .card-link:hover span { transform: translateX(4px); }
+.text-link span { transition: transform .2s ease; }
+.text-link:hover span { transform: translateX(4px); }
 .orbit-note { position: absolute; z-index: 2; width: 39px; height: 39px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; font-size: 9px; font-weight: 700; }
 .orbit-note-one { top: 21%; left: 48%; }
 .orbit-note-two { right: 7%; bottom: 17%; }
@@ -102,9 +102,13 @@ button { font: inherit; }
 .visual-coral { background: #f3a797; }
 .card-body { padding: 25px 27px 28px; }
 .card-meta { display: flex; justify-content: space-between; color: #77748a; text-transform: uppercase; letter-spacing: .12em; font-size: 9px; font-weight: 800; }
+.app-identity { display: flex; align-items: center; gap: 10px; }
+.app-number { color: var(--purple); }
 .card-body h3 { font: 800 25px/1.1 "Manrope", sans-serif; letter-spacing: -.04em; margin: 16px 0 10px; }
 .card-body p { color: var(--muted); font-size: 14px; line-height: 1.65; margin: 0 0 22px; }
-.card-link { font-size: 12px; font-weight: 800; display: inline-flex; align-items: center; gap: 8px; }
+.github-link { width: 43px; height: 43px; display: grid; place-items: center; color: white; background: var(--ink); border-radius: 50%; transition: transform .25s ease, background .25s ease; }
+.github-link:hover { transform: translateY(-3px) rotate(-4deg); background: var(--purple); }
+.github-link svg { width: 21px; height: 21px; fill: currentColor; }
 .ai-row { display: flex; align-items: center; gap: 10px; margin: 24px 0; font-size: 13px; }
 .ai-label { padding: 6px 9px; border-radius: 7px; color: white; background: var(--purple); font-size: 9px; letter-spacing: .12em; font-weight: 800; }
 .prompt-section { margin: 0 0 27px; padding: 21px 22px; border-radius: 15px; background: var(--paper); }
