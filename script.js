@@ -21,6 +21,11 @@ function platformKey(platform) {
   return platform.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-");
 }
 
+function imagePath(imageName) {
+  const safeName = /^[a-z0-9_-]+$/i.test(imageName) ? imageName : "arctic-fox-hero";
+  return `assets/${safeName}.png`;
+}
+
 function createProjectCard(app) {
   const article = document.createElement("article");
   article.className = "project-card project-card-detail reveal";
@@ -29,7 +34,7 @@ function createProjectCard(app) {
   const visual = document.createElement("div");
   visual.className = "card-visual project-preview";
   const image = document.createElement("img");
-  image.src = "assets/arctic-fox-hero.png";
+  image.src = imagePath(app.image);
   image.alt = "An arctic fox building apps on The Little AI App Planet";
   visual.append(image, createTextElement("span", "visual-label", "LATEST BUILD"));
 
