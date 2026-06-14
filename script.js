@@ -55,6 +55,7 @@ function createProjectCard(app) {
   const article = document.createElement("article");
   article.className = "project-card project-card-detail reveal";
   article.dataset.platform = platformKey(app.platform);
+  article.dataset.title = app.title.toLocaleLowerCase();
 
   const visual = document.createElement("div");
   visual.className = "card-visual project-preview";
@@ -161,7 +162,28 @@ function createProjectCard(app) {
 
 function renderFilters(apps) {
   const platforms = ["all", ...new Set(apps.map((app) => app.platform))];
+  let activeFilter = "all";
   filters.replaceChildren();
+
+  const applyFilters = () => {
+    const query = filters.querySelector(".app-search-input").value.trim().toLocaleLowerCase();
+    let visibleCount = 0;
+
+    projectGrid.querySelectorAll(".project-card").forEach((card) => {
+      const matchesPlatform = activeFilter === "all" || card.dataset.platform === activeFilter;
+      const matchesTitle = !query || card.dataset.title.includes(query);
+      const visible = matchesPlatform && matchesTitle;
+      card.classList.toggle("hidden", !visible);
+      if (visible) visibleCount += 1;
+    });
+
+    projectGrid.querySelector(".search-empty")?.remove();
+    if (visibleCount === 0) {
+      projectGrid.append(
+        createTextElement("p", "data-error search-empty", `No apps found for “${query}”.`),
+      );
+    }
+  };
 
   platforms.forEach((platform) => {
     const filter = platform === "all" ? "all" : platformKey(platform);
@@ -181,12 +203,28 @@ function renderFilters(apps) {
     button.addEventListener("click", () => {
       filters.querySelectorAll(".filter-button").forEach((item) => item.classList.remove("active"));
       button.classList.add("active");
-      projectGrid.querySelectorAll(".project-card").forEach((card) => {
-        card.classList.toggle("hidden", filter !== "all" && card.dataset.platform !== filter);
-      });
+      activeFilter = filter;
+      applyFilters();
     });
     filters.append(button);
   });
+
+  const search = document.createElement("label");
+  search.className = "app-search";
+  search.innerHTML = `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="11" cy="11" r="6.5"/>
+      <path d="m16 16 4 4"/>
+    </svg>`;
+  const searchInput = document.createElement("input");
+  searchInput.className = "app-search-input";
+  searchInput.type = "search";
+  searchInput.placeholder = "Search apps";
+  searchInput.setAttribute("aria-label", "Search apps by name");
+  searchInput.addEventListener("input", applyFilters);
+  searchInput.addEventListener("search", applyFilters);
+  search.append(searchInput);
+  filters.append(search);
 }
 
 const observer = new IntersectionObserver(
@@ -216,8 +254,8 @@ async function loadApps() {
       app.number = index + 1;
     });
     const apps = chronologicalApps.reverse();
-    renderFilters(apps);
     projectGrid.replaceChildren(...apps.map(createProjectCard));
+    renderFilters(apps);
     observeReveals();
   } catch (error) {
     console.error(error);
