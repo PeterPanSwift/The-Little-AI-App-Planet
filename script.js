@@ -106,7 +106,7 @@ function createProjectCard(app) {
 
   const learnSection = document.createElement("div");
   learnSection.className = "learn-section";
-  learnSection.append(createTextElement("h4", "", "What I Learned"));
+  learnSection.append(createTextElement("h4", "", "Notes"));
   learnSection.append(createAnimalList(app.learn));
 
   const githubLink = document.createElement("a");
