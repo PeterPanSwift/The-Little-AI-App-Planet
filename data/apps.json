@@ -12,6 +12,13 @@
         "設計一個漂亮網站，名字是 ”The Little AI App Planet”，分享我每天用 AI 寫的 App，作品包含各種用 AI 完成的作品，比方手機 App、網頁、電腦 App，文字用英文，搭配用 imagegen skill 生成的可愛圖片，比方北極狐",
         "每天做的 App 資料另外存在一個地方，網頁讀取資料再顯示出來",
         "JSON 加入 AI、prompts、image 欄位"
+      ],
+      "learn": [
+        "Codex 使用 python3 -m http.server 4173 啟動網頁",
+        "用 imagegen skill 生成圖片",
+        "作品資料存在 JSON 檔",
+        "Codex 可用註解功能選取某個區塊修改網頁(In-app browser 的 comment)",
+        "使用 wrangler 部署到 Cloudflare Pages"
       ]
     }
   ]

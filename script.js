@@ -69,6 +69,15 @@ function createProjectCard(app) {
   });
   promptSection.append(promptList);
 
+  const learnSection = document.createElement("div");
+  learnSection.className = "learn-section";
+  learnSection.append(createTextElement("h4", "", "What I Learned"));
+  const learnList = document.createElement("ul");
+  app.learn.forEach((item) => {
+    learnList.append(createTextElement("li", "", item));
+  });
+  learnSection.append(learnList);
+
   const githubLink = document.createElement("a");
   githubLink.className = "github-link";
   githubLink.href = app.GitHub;
@@ -87,6 +96,7 @@ function createProjectCard(app) {
     createTextElement("p", "", app.description),
     aiRow,
     promptSection,
+    learnSection,
     githubLink,
   );
   article.append(visual, body);
