@@ -49,7 +49,7 @@ button { font: inherit; }
 .hero-art { position: absolute; width: 100%; height: 100%; inset: 0; object-fit: cover; object-position: center; transform: scale(1.015); animation: heroSettle 1.8s cubic-bezier(.2,.8,.2,1) both; }
 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23,24,74,.42) 0%, rgba(23,24,74,.1) 45%, transparent 72%); }
 .fox-typing { position: absolute; z-index: 2; left: 59.5%; top: 36%; width: 245px; height: 220px; pointer-events: none; }
-.code-popover { position: absolute; left: 0; top: 0; width: 142px; padding: 13px 14px 12px; display: grid; grid-template-columns: repeat(3, 5px) 1fr; gap: 5px; border: 1px solid rgba(255,255,255,.32); border-radius: 12px; background: rgba(29,31,91,.66); box-shadow: 0 14px 35px rgba(10,12,56,.22); backdrop-filter: blur(9px); animation: codeFloat 3.4s ease-in-out infinite; }
+.code-popover { position: absolute; left: 0; top: 88px; width: 142px; padding: 13px 14px 12px; display: grid; grid-template-columns: repeat(3, 5px) 1fr; gap: 5px; border: 1px solid rgba(255,255,255,.32); border-radius: 12px; background: rgba(29,31,91,.66); box-shadow: 0 14px 35px rgba(10,12,56,.22); backdrop-filter: blur(9px); animation: codeFloat 3.4s ease-in-out infinite; }
 .code-dot { width: 5px; height: 5px; border-radius: 50%; background: #ff9d86; }
 .code-dot:nth-child(2) { background: #ffd27a; }.code-dot:nth-child(3) { background: #8ee2c0; }
 .code-line { grid-column: 1 / -1; height: 4px; border-radius: 9px; background: rgba(255,255,255,.82); transform-origin: left; animation: codeType 2.4s steps(5, end) infinite; }
