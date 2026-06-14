@@ -104,10 +104,10 @@ function createProjectCard(app) {
   promptSection.append(createTextElement("h4", "", "Key Prompts"));
   promptSection.append(createAnimalList(app.prompt));
 
-  const learnSection = document.createElement("div");
-  learnSection.className = "learn-section";
-  learnSection.append(createTextElement("h4", "", "Notes"));
-  learnSection.append(createAnimalList(app.learn));
+  const notesSection = document.createElement("div");
+  notesSection.className = "notes-section";
+  notesSection.append(createTextElement("h4", "", "Notes"));
+  notesSection.append(createAnimalList(app.notes));
 
   const githubLink = document.createElement("a");
   githubLink.className = "github-link";
@@ -128,7 +128,7 @@ function createProjectCard(app) {
     createTextElement("p", "", app.description),
     aiRow,
     promptSection,
-    learnSection,
+    notesSection,
     githubLink,
   );
   article.append(visual, body);
@@ -183,7 +183,7 @@ function observeReveals() {
 
 async function loadApps() {
   try {
-    const response = await fetch("data/apps.json");
+    const response = await fetch("data/apps.json", { cache: "no-store" });
     if (!response.ok) throw new Error(`Could not load app data (${response.status})`);
 
     const data = await response.json();

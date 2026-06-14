@@ -16,7 +16,7 @@
         "狐狸打字的動畫效果",
         "push 到 GitHub & 部署到 Cloudflare Pages"
       ],
-      "learn": [
+      "notes": [
         "Codex 使用 python3 -m http.server 4173 啟動網頁",
         "用 imagegen skill 生成圖片",
         "作品資料存在 JSON 檔",
@@ -40,7 +40,7 @@
         "python 程式會將 csv 複製到剪貼簿",
         "將 python 程式上傳到 gist"
       ],
-      "learn": [
+      "notes": [
         "複製 csv 內容的指令: cat scores.csv | pbcopy",
         "subprocess.run(\"pbcopy\", input=f.read().encode(\"utf-8\"), check=True)",
         "gh gist create /Users/shih-yingpan/Documents/Claude/Projects/分數計算器/score_calculator.py --desc \"分數計算器：輸入逗號分隔的整數，生成 CSV 並複製到剪貼簿\" --public"

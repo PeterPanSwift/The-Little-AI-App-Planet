@@ -133,11 +133,11 @@ button { font: inherit; }
 .prompt-section ul { margin: 0; padding: 0; color: var(--muted); list-style: none; }
 .prompt-section li { display: grid; grid-template-columns: 25px 1fr; gap: 8px; align-items: start; font-size: 12px; line-height: 1.65; }
 .prompt-section li + li { margin-top: 10px; }
-.learn-section { margin: -12px 0 27px; padding: 21px 22px; border-radius: 15px; background: #eef8f3; }
-.learn-section h4 { margin: 0 0 13px; color: #38735d; font: 800 11px "Manrope", sans-serif; text-transform: uppercase; letter-spacing: .13em; }
-.learn-section ul { margin: 0; padding: 0; color: var(--muted); list-style: none; }
-.learn-section li { display: grid; grid-template-columns: 25px 1fr; gap: 8px; align-items: start; font-size: 12px; line-height: 1.65; }
-.learn-section li + li { margin-top: 8px; }
+.notes-section { margin: -12px 0 27px; padding: 21px 22px; border-radius: 15px; background: #eef8f3; }
+.notes-section h4 { margin: 0 0 13px; color: #38735d; font: 800 11px "Manrope", sans-serif; text-transform: uppercase; letter-spacing: .13em; }
+.notes-section ul { margin: 0; padding: 0; color: var(--muted); list-style: none; }
+.notes-section li { display: grid; grid-template-columns: 25px 1fr; gap: 8px; align-items: start; font-size: 12px; line-height: 1.65; }
+.notes-section li + li { margin-top: 8px; }
 .animal-marker { font-size: 16px; line-height: 1.25; text-align: center; }
 .mini-stars { position: absolute; right: 24px; top: 20px; color: #5c5bc4; font-size: 25px; }
 
