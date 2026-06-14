@@ -48,6 +48,16 @@ button { font: inherit; }
 .hero { min-height: 750px; height: min(880px, 94vh); position: relative; overflow: hidden; display: flex; align-items: center; color: white; background: #263276; }
 .hero-art { position: absolute; width: 100%; height: 100%; inset: 0; object-fit: cover; object-position: center; transform: scale(1.015); animation: heroSettle 1.8s cubic-bezier(.2,.8,.2,1) both; }
 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(23,24,74,.42) 0%, rgba(23,24,74,.1) 45%, transparent 72%); }
+.fox-typing { position: absolute; z-index: 2; left: 59.5%; top: 36%; width: 245px; height: 220px; pointer-events: none; }
+.code-popover { position: absolute; left: 0; top: 0; width: 142px; padding: 13px 14px 12px; display: grid; grid-template-columns: repeat(3, 5px) 1fr; gap: 5px; border: 1px solid rgba(255,255,255,.32); border-radius: 12px; background: rgba(29,31,91,.66); box-shadow: 0 14px 35px rgba(10,12,56,.22); backdrop-filter: blur(9px); animation: codeFloat 3.4s ease-in-out infinite; }
+.code-dot { width: 5px; height: 5px; border-radius: 50%; background: #ff9d86; }
+.code-dot:nth-child(2) { background: #ffd27a; }.code-dot:nth-child(3) { background: #8ee2c0; }
+.code-line { grid-column: 1 / -1; height: 4px; border-radius: 9px; background: rgba(255,255,255,.82); transform-origin: left; animation: codeType 2.4s steps(5, end) infinite; }
+.code-line-one { width: 82%; margin-top: 5px; }.code-line-two { width: 58%; animation-delay: .35s; }.code-line-three { width: 72%; animation-delay: .7s; }
+.paw-tap { position: absolute; top: 145px; width: 24px; height: 15px; border-radius: 50%; background: rgba(255,236,212,.38); box-shadow: 0 0 0 0 rgba(255,204,158,.5); filter: blur(.2px); animation: pawType .48s ease-in-out infinite alternate; }
+.paw-tap-left { left: 89px; transform: rotate(9deg); }.paw-tap-right { left: 133px; transform: rotate(-6deg); animation-delay: -.48s; }
+.key-spark { position: absolute; color: #ffe0a3; font: 800 12px "Manrope", sans-serif; text-shadow: 0 0 10px rgba(255,218,145,.8); opacity: 0; animation: keySpark 1.45s ease-out infinite; }
+.key-spark-one { left: 107px; top: 119px; }.key-spark-two { left: 157px; top: 135px; animation-delay: .45s; }.key-spark-three { left: 127px; top: 105px; color: #a9f0d4; font-size: 8px; animation-delay: .9s; }
 .hero-glow { position: absolute; width: 580px; height: 580px; left: -240px; bottom: -230px; background: rgba(190,152,255,.24); filter: blur(60px); border-radius: 50%; z-index: 1; }
 .hero-content { position: relative; z-index: 2; width: min(1160px, calc(100% - 48px)); margin-inline: auto; padding-top: 40px; }
 .eyebrow { display: inline-flex; align-items: center; gap: 9px; text-transform: uppercase; letter-spacing: .15em; font-size: 11px; font-weight: 700; margin-bottom: 27px; }
@@ -186,16 +196,20 @@ button { font: inherit; }
 @keyframes pulse { 50% { box-shadow: 0 0 0 9px rgba(156,231,197,0); } }
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes heroSettle { from { opacity: 0; transform: scale(1.07); } to { opacity: 1; transform: scale(1.015); } }
+@keyframes codeFloat { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-7px) rotate(1deg); } }
+@keyframes codeType { 0%, 12% { transform: scaleX(.08); opacity: .35; } 55%, 82% { transform: scaleX(1); opacity: .9; } 100% { transform: scaleX(.08); opacity: .35; } }
+@keyframes pawType { from { translate: 0 0; box-shadow: 0 0 0 0 rgba(255,204,158,.5); } to { translate: 0 5px; box-shadow: 0 0 0 7px rgba(255,204,158,0); } }
+@keyframes keySpark { 0% { transform: translateY(5px) scale(.6); opacity: 0; } 22% { opacity: 1; } 75%, 100% { transform: translateY(-18px) scale(1); opacity: 0; } }
 
 @media (max-width: 980px) {
   .site-header { grid-template-columns: 1fr 1fr; }.desktop-nav { display: none; }
-  .hero { height: 840px; align-items: flex-start; }.hero-art { object-position: 61% center; }.hero::after { background: linear-gradient(90deg, rgba(23,24,74,.72), rgba(23,24,74,.08)); }
+  .hero { height: 840px; align-items: flex-start; }.hero-art { object-position: 61% center; }.hero::after { background: linear-gradient(90deg, rgba(23,24,74,.72), rgba(23,24,74,.08)); }.fox-typing { left: 56%; top: 38%; transform: scale(.86); }
   .hero-content { padding-top: 190px; }.hero h1 { font-size: clamp(57px, 10vw, 88px); max-width: 560px; }.hero-copy { max-width: 430px; }
   .section-heading { grid-template-columns: 1fr 320px; }.project-grid { grid-template-columns: repeat(2, 1fr); }.card-featured { grid-column: span 2; }.project-card-detail { grid-template-columns: .85fr 1.15fr; }.project-card-detail .card-body { padding: 35px; }
 }
 @media (max-width: 700px) {
   .section-wrap { width: min(100% - 30px, 1160px); }.site-header { padding: 0 20px; height: 70px; }.brand { font-size: 13px; }.nav-cta { font-size: 0; }.nav-cta span { font-size: 18px; }
-  .hero { min-height: 760px; height: 100svh; align-items: flex-start; }.hero-art { object-position: 67% center; }.hero::after { background: linear-gradient(180deg, rgba(20,23,73,.27), rgba(20,23,73,.2) 30%, rgba(20,23,73,.92) 83%); }
+  .hero { min-height: 760px; height: 100svh; align-items: flex-start; }.hero-art { object-position: 67% center; }.hero::after { background: linear-gradient(180deg, rgba(20,23,73,.27), rgba(20,23,73,.2) 30%, rgba(20,23,73,.92) 83%); }.fox-typing { left: 45%; top: 32%; transform: scale(.68); transform-origin: top left; }
   .hero-content { width: calc(100% - 36px); padding-top: 122px; display: flex; flex-direction: column; min-height: calc(100% - 50px); justify-content: flex-end; padding-bottom: 84px; }.eyebrow { margin-bottom: 16px; }.hero h1 { font-size: clamp(52px, 15vw, 72px); margin-bottom: 20px; }.hero-copy { font-size: 15px; line-height: 1.55; margin-bottom: 25px; }.hero-actions { gap: 19px; }.button { min-height: 49px; padding: 0 18px; }.text-link { font-size: 12px; }
   .orbit-note, .hero-scroll { display: none; }.intro { padding: 83px 0; }.section-heading { display: block; padding-bottom: 29px; }.section-heading h2 { font-size: 44px; }.section-heading > p { margin-top: 20px; }
   .filters { overflow-x: auto; flex-wrap: nowrap; margin-right: -15px; padding-right: 15px; }.filter-button { flex: 0 0 auto; }
