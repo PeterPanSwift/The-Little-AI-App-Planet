@@ -6,6 +6,7 @@
       "platform": "Website",
       "description": "A playful daily showcase for apps made with AI.",
       "image": "arctic-fox-hero",
+      "website": "https://the-little-ai-app-planet.pages.dev",
       "GitHub": "https://github.com/PeterPanSwift/The-Little-AI-App-Planet",
       "AI": "Codex, GPT 5.5, high",
       "prompt": [
@@ -44,6 +45,24 @@
         "複製 csv 內容的指令: cat scores.csv | pbcopy",
         "subprocess.run(\"pbcopy\", input=f.read().encode(\"utf-8\"), check=True)",
         "gh gist create /Users/shih-yingpan/Documents/Claude/Projects/分數計算器/score_calculator.py --desc \"分數計算器：輸入逗號分隔的整數，生成 CSV 並複製到剪貼簿\" --public"
+      ]
+    },
+    {
+      "date": "2026-06-16",
+      "title": "iPlayground API 的 Redoc 文件",
+      "platform": "Website",
+      "description": "將 iplayground 的 JSON API 整理成 OpenAPI 規格的 openapi.yaml ，並產出可直接瀏覽的 Redoc 文件",
+      "image": "iPlayground API",
+      "website": "https://peterpanswift.github.io/iplayground-api-docs",
+      "AI": "Claude Code，Opus 4.8，Medium",
+      "prompt": [
+        "將 iplayground 的 JSON API 做成 Redoc 文件，https://github.com/iplayground/SessionData",
+        "文件設計漂亮一點，小王子風格",
+        "部署到 GitHub Pages"
+      ],
+      "notes": [
+        "Claude Preview 使用 python3 -m http.server 8099 啟動網頁",
+        "呼叫 GitHub API 開啟 GitHub repository 的 Pages 功能: gh api -X POST repos/PeterPanSwift/iplayground-api-docs/pages -f \"source[branch]=main\" -f \"source[path]=/\""
       ]
     }
   ]
