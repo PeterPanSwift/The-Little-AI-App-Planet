@@ -73,7 +73,6 @@ button { font: inherit; }
 .text-link span { transition: transform .2s ease; }
 .text-link:hover span { transform: translateX(4px); }
 .orbit-note { position: absolute; z-index: 2; width: 39px; height: 39px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; font-size: 9px; font-weight: 700; }
-.orbit-note-one { top: 21%; left: 48%; }
 .orbit-note-two { right: 7%; bottom: 17%; }
 .hero-scroll { position: absolute; z-index: 2; bottom: 31px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; align-items: center; text-transform: uppercase; letter-spacing: .13em; font-size: 9px; opacity: .64; }
 .hero-scroll span { width: 1px; height: 25px; background: white; opacity: .7; }
