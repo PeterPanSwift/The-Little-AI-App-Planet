@@ -9,12 +9,8 @@ function createTextElement(tag, className, text) {
 }
 
 function formatDate(date) {
-  return new Intl.DateTimeFormat("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-    timeZone: "UTC",
-  }).format(new Date(`${date}T00:00:00Z`));
+  const [year, month, day] = date.split("-");
+  return `${year}/${month}/${day}`;
 }
 
 function platformKey(platform) {
