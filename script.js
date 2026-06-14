@@ -60,7 +60,7 @@ function createProjectCard(app) {
   const image = document.createElement("img");
   image.src = imagePath(app.image);
   image.alt = `${app.title} preview`;
-  visual.append(image, createTextElement("span", "visual-label", "LATEST BUILD"));
+  visual.append(image);
 
   const body = document.createElement("div");
   body.className = "card-body";
