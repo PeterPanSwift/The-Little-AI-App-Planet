@@ -44,8 +44,10 @@ function createAnimalList(items) {
 }
 
 function imagePath(imageName) {
-  const safeName = /^[a-z0-9_-]+$/i.test(imageName) ? imageName : "arctic-fox-hero";
-  return `assets/${safeName}.png`;
+  const safeName = typeof imageName === "string" && /^[\p{L}\p{N}_-]+$/u.test(imageName)
+    ? imageName
+    : "arctic-fox-hero";
+  return `assets/${encodeURIComponent(safeName)}.png`;
 }
 
 function createProjectCard(app) {
@@ -57,7 +59,7 @@ function createProjectCard(app) {
   visual.className = "card-visual project-preview";
   const image = document.createElement("img");
   image.src = imagePath(app.image);
-  image.alt = "An arctic fox building apps on The Little AI App Planet";
+  image.alt = `${app.title} preview`;
   visual.append(image, createTextElement("span", "visual-label", "LATEST BUILD"));
 
   const body = document.createElement("div");
