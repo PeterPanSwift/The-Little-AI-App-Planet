@@ -32,16 +32,18 @@
       "platform": "Python",
       "description": "輸入學生分數，生成 csv 檔並計算總分",
       "image": "分數計算器",
-      "GitHub": "https://github.com/PeterPanSwift/The-Little-AI-App-Planet",
+      "GitHub": "https://gist.github.com/PeterPanSwift/6f1e04045c1233dd932f2aa416fd24d8",
       "AI": "Claude Code，Sonnet 4.6，Medium",
       "prompt": [
         "寫一個 python 程式，使用者可輸入逗號分隔的數字，生成顯示題目編號和分數的 csv 檔，編號從 1 開始，然後再印出總分",
         "輸入的數字只會是整數，不會有小數點",
-        "python 程式會將 csv 複製到剪貼簿"
+        "python 程式會將 csv 複製到剪貼簿",
+        "將 python 程式上傳到 gist"
       ],
       "learn": [
         "複製 csv 內容的指令: cat scores.csv | pbcopy",
-        "subprocess.run(\"pbcopy\", input=f.read().encode(\"utf-8\"), check=True)"
+        "subprocess.run(\"pbcopy\", input=f.read().encode(\"utf-8\"), check=True)",
+        "gh gist create /Users/shih-yingpan/Documents/Claude/Projects/分數計算器/score_calculator.py --desc \"分數計算器：輸入逗號分隔的整數，生成 CSV 並複製到剪貼簿\" --public"
       ]
     }
   ]
