@@ -19,7 +19,8 @@
         "用 imagegen skill 生成圖片",
         "作品資料存在 JSON 檔",
         "Codex 可用註解功能選取某個區塊修改網頁(In-app browser 的 comment)",
-        "使用 wrangler 部署到 Cloudflare Pages"
+        "使用 wrangler 部署到 Cloudflare Pages",
+        "Cloudflare Pages 專案綁定 GitHub，每次 push 都會自動部署"
       ]
     }
   ]
