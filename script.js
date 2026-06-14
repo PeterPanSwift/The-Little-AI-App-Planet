@@ -17,6 +17,32 @@ function platformKey(platform) {
   return platform.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-");
 }
 
+const animalEmojis = [
+  "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐨", "🐯",
+  "🦁", "🐮", "🐷", "🐸", "🐵", "🐧", "🦉", "🦄", "🐙", "🐳",
+];
+
+function randomAnimalEmojis(count) {
+  return [...animalEmojis]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, count);
+}
+
+function createAnimalList(items) {
+  const list = document.createElement("ul");
+  const emojis = randomAnimalEmojis(items.length);
+
+  items.forEach((item, index) => {
+    const listItem = document.createElement("li");
+    const emoji = createTextElement("span", "animal-marker", emojis[index]);
+    emoji.setAttribute("aria-hidden", "true");
+    listItem.append(emoji, createTextElement("span", "list-text", item));
+    list.append(listItem);
+  });
+
+  return list;
+}
+
 function imagePath(imageName) {
   const safeName = /^[a-z0-9_-]+$/i.test(imageName) ? imageName : "arctic-fox-hero";
   return `assets/${safeName}.png`;
@@ -74,20 +100,12 @@ function createProjectCard(app) {
   const promptSection = document.createElement("div");
   promptSection.className = "prompt-section";
   promptSection.append(createTextElement("h4", "", "Key Prompts"));
-  const promptList = document.createElement("ol");
-  app.prompt.forEach((prompt) => {
-    promptList.append(createTextElement("li", "", prompt));
-  });
-  promptSection.append(promptList);
+  promptSection.append(createAnimalList(app.prompt));
 
   const learnSection = document.createElement("div");
   learnSection.className = "learn-section";
   learnSection.append(createTextElement("h4", "", "What I Learned"));
-  const learnList = document.createElement("ul");
-  app.learn.forEach((item) => {
-    learnList.append(createTextElement("li", "", item));
-  });
-  learnSection.append(learnList);
+  learnSection.append(createAnimalList(app.learn));
 
   const githubLink = document.createElement("a");
   githubLink.className = "github-link";

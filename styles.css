@@ -120,14 +120,15 @@ button { font: inherit; }
 .ai-label { padding: 6px 9px; border-radius: 7px; color: white; background: var(--purple); font-size: 9px; letter-spacing: .12em; font-weight: 800; }
 .prompt-section { margin: 0 0 27px; padding: 21px 22px; border-radius: 15px; background: var(--paper); }
 .prompt-section h4 { margin: 0 0 13px; font: 800 11px "Manrope", sans-serif; text-transform: uppercase; letter-spacing: .13em; }
-.prompt-section ol { margin: 0; padding-left: 22px; color: var(--muted); }
-.prompt-section li { padding-left: 5px; font-size: 12px; line-height: 1.65; }
+.prompt-section ul { margin: 0; padding: 0; color: var(--muted); list-style: none; }
+.prompt-section li { display: grid; grid-template-columns: 25px 1fr; gap: 8px; align-items: start; font-size: 12px; line-height: 1.65; }
 .prompt-section li + li { margin-top: 10px; }
 .learn-section { margin: -12px 0 27px; padding: 21px 22px; border-radius: 15px; background: #eef8f3; }
 .learn-section h4 { margin: 0 0 13px; color: #38735d; font: 800 11px "Manrope", sans-serif; text-transform: uppercase; letter-spacing: .13em; }
-.learn-section ul { margin: 0; padding-left: 20px; color: var(--muted); }
-.learn-section li { padding-left: 5px; font-size: 12px; line-height: 1.65; }
+.learn-section ul { margin: 0; padding: 0; color: var(--muted); list-style: none; }
+.learn-section li { display: grid; grid-template-columns: 25px 1fr; gap: 8px; align-items: start; font-size: 12px; line-height: 1.65; }
 .learn-section li + li { margin-top: 8px; }
+.animal-marker { font-size: 16px; line-height: 1.25; text-align: center; }
 .visual-label { position: absolute; left: 17px; top: 17px; background: rgba(255,255,255,.72); border-radius: 999px; padding: 8px 11px; font-size: 8px; letter-spacing: .13em; font-weight: 800; }
 .mini-stars { position: absolute; right: 24px; top: 20px; color: #5c5bc4; font-size: 25px; }
 
