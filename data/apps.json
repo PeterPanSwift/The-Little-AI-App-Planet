@@ -15,6 +15,7 @@
         "JSON 加入 AI、prompts、image、learn 欄位",
         "條列項目的小圓點改成隨機的動物 emoji",
         "狐狸打字的動畫效果",
+        "加入 search 功能，search 會比對 app 的名字",
         "push 到 GitHub & 部署到 Cloudflare Pages"
       ],
       "notes": [
@@ -22,6 +23,7 @@
         "用 imagegen skill 生成圖片",
         "作品資料存在 JSON 檔",
         "程式碼逐行輸入動畫",
+        "圖片展示區改成「同圖模糊背景 + 前景完整圖片卡片」",
         "Codex 可用註解功能選取某個區塊修改網頁(In-app browser 的 comment)",
         "使用 wrangler 部署到 Cloudflare Pages",
         "Cloudflare Pages 專案綁定 GitHub，每次 push 都會自動部署"
