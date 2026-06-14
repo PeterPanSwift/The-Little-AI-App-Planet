@@ -61,6 +61,7 @@ function createProjectCard(app) {
   const image = document.createElement("img");
   image.src = imagePath(app.image);
   image.alt = `${app.title} preview`;
+  visual.style.setProperty("--preview-image", `url("${image.src}")`);
   visual.append(image);
 
   const body = document.createElement("div");
