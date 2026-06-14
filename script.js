@@ -43,15 +43,30 @@ function createProjectCard(app) {
 
   const meta = document.createElement("div");
   meta.className = "card-meta";
-  const identity = document.createElement("span");
-  identity.className = "app-identity";
-  identity.append(
-    createTextElement("span", "app-number", `App ${String(app.number).padStart(2, "0")}`),
-    createTextElement("span", "", app.platform),
+  const appNumber = document.createElement("div");
+  appNumber.className = "app-number";
+  appNumber.append(
+    createTextElement("span", "app-number-label", "App"),
+    createTextElement("strong", "", String(app.number).padStart(2, "0")),
+  );
+
+  const dateBlock = document.createElement("div");
+  dateBlock.className = "app-date";
+  dateBlock.innerHTML = `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 2v3M17 2v3M3.5 9h17M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/>
+    </svg>`;
+  const dateText = document.createElement("span");
+  dateText.append(
+    createTextElement("small", "", "Built on"),
   );
   const date = createTextElement("time", "", formatDate(app.date));
   date.dateTime = app.date;
-  meta.append(identity, date);
+  dateText.append(date);
+  dateBlock.append(dateText);
+  meta.append(appNumber, dateBlock);
+
+  const platform = createTextElement("p", "app-platform", app.platform);
 
   const aiRow = document.createElement("div");
   aiRow.className = "ai-row";
@@ -92,6 +107,7 @@ function createProjectCard(app) {
 
   body.append(
     meta,
+    platform,
     createTextElement("h3", "", app.title),
     createTextElement("p", "", app.description),
     aiRow,
