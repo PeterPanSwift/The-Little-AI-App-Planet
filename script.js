@@ -164,7 +164,10 @@ function renderFilters(apps) {
 
   platforms.forEach((platform) => {
     const filter = platform === "all" ? "all" : platformKey(platform);
-    const label = platform === "all" ? "All apps " : platform;
+    const label = platform === "all" ? "All apps " : `${platform} `;
+    const count = platform === "all"
+      ? apps.length
+      : apps.filter((app) => app.platform === platform).length;
     const button = createTextElement(
       "button",
       `filter-button${platform === "all" ? " active" : ""}`,
@@ -172,10 +175,7 @@ function renderFilters(apps) {
     );
     button.type = "button";
     button.dataset.filter = filter;
-
-    if (platform === "all") {
-      button.append(createTextElement("span", "", String(apps.length)));
-    }
+    button.append(createTextElement("span", "", String(count)));
 
     button.addEventListener("click", () => {
       filters.querySelectorAll(".filter-button").forEach((item) => item.classList.remove("active"));
