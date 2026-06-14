@@ -44,8 +44,9 @@ function createAnimalList(items) {
 }
 
 function imagePath(imageName) {
-  const safeName = typeof imageName === "string" && /^[\p{L}\p{N}_-]+$/u.test(imageName)
-    ? imageName
+  const trimmedName = typeof imageName === "string" ? imageName.trim() : "";
+  const safeName = /^[\p{L}\p{N} _-]+$/u.test(trimmedName)
+    ? trimmedName
     : "arctic-fox-hero";
   return `assets/${encodeURIComponent(safeName)}.png`;
 }
