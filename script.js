@@ -13,6 +13,13 @@ function formatDate(date) {
   return `${year}/${month}/${day}`;
 }
 
+function localDateString(date = new Date()) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
 function platformKey(platform) {
   return platform.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-");
 }
@@ -249,7 +256,10 @@ async function loadApps() {
     if (!response.ok) throw new Error(`Could not load app data (${response.status})`);
 
     const data = await response.json();
-    const chronologicalApps = [...data.apps].sort((a, b) => a.date.localeCompare(b.date));
+    const today = localDateString();
+    const chronologicalApps = data.apps
+      .filter((app) => app.date <= today)
+      .sort((a, b) => a.date.localeCompare(b.date));
     chronologicalApps.forEach((app, index) => {
       app.number = index + 1;
     });
