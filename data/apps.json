@@ -16,6 +16,7 @@
         "條列項目的小圓點改成隨機的動物 emoji",
         "狐狸打字的動畫效果",
         "加入 search 功能，search 會比對 app 的名字",
+        "網頁只顯示到當天的 App 作品，不要顯示未來的 App",
         "push 到 GitHub & 部署到 Cloudflare Pages"
       ],
       "notes": [
