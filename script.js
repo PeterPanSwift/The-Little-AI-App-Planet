@@ -1,5 +1,9 @@
 const filters = document.querySelector(".filters");
 const projectGrid = document.querySelector(".project-grid");
+let allChronologicalApps = [];
+let includeFutureApps = false;
+let activeFilter = "all";
+let searchQuery = "";
 
 function createTextElement(tag, className, text) {
   const element = document.createElement(tag);
@@ -167,13 +171,47 @@ function createProjectCard(app) {
   return article;
 }
 
+function currentChronologicalApps() {
+  const today = localDateString();
+  return includeFutureApps
+    ? allChronologicalApps
+    : allChronologicalApps.filter((app) => app.date <= today);
+}
+
+function renderCurrentApps() {
+  const visibleChronologicalApps = currentChronologicalApps();
+  const platformKeys = new Set(visibleChronologicalApps.map((app) => platformKey(app.platform)));
+
+  if (activeFilter !== "all" && !platformKeys.has(activeFilter)) {
+    activeFilter = "all";
+  }
+
+  const apps = [...visibleChronologicalApps].reverse();
+  projectGrid.replaceChildren(...apps.map(createProjectCard));
+  renderFilters(apps);
+  observeReveals();
+}
+
 function renderFilters(apps) {
-  const platforms = ["all", ...new Set(apps.map((app) => app.platform))];
-  let activeFilter = "all";
+  const availablePlatformKeys = new Set(apps.map((app) => platformKey(app.platform)));
+  const platforms = ["all"];
+  const seenPlatforms = new Set();
+
+  allChronologicalApps.forEach((app) => {
+    const key = platformKey(app.platform);
+
+    if (availablePlatformKeys.has(key) && !seenPlatforms.has(key)) {
+      platforms.push(app.platform);
+      seenPlatforms.add(key);
+    }
+  });
+
+  const futureCount = allChronologicalApps.filter((app) => app.date > localDateString()).length;
   filters.replaceChildren();
 
   const applyFilters = () => {
     const query = filters.querySelector(".app-search-input").value.trim().toLocaleLowerCase();
+    searchQuery = query;
     let visibleCount = 0;
 
     projectGrid.querySelectorAll(".project-card").forEach((card) => {
@@ -200,7 +238,7 @@ function renderFilters(apps) {
       : apps.filter((app) => app.platform === platform).length;
     const button = createTextElement(
       "button",
-      `filter-button${platform === "all" ? " active" : ""}`,
+      `filter-button${filter === activeFilter ? " active" : ""}`,
       label,
     );
     button.type = "button";
@@ -228,10 +266,27 @@ function renderFilters(apps) {
   searchInput.type = "search";
   searchInput.placeholder = "Search apps";
   searchInput.setAttribute("aria-label", "Search apps by name");
+  searchInput.value = searchQuery;
   searchInput.addEventListener("input", applyFilters);
   searchInput.addEventListener("search", applyFilters);
   search.append(searchInput);
   filters.append(search);
+
+  const futureToggle = document.createElement("label");
+  futureToggle.className = "future-toggle";
+  const futureCheckbox = document.createElement("input");
+  futureCheckbox.type = "checkbox";
+  futureCheckbox.checked = includeFutureApps;
+  futureCheckbox.addEventListener("change", () => {
+    includeFutureApps = futureCheckbox.checked;
+    renderCurrentApps();
+  });
+  futureToggle.append(
+    futureCheckbox,
+    createTextElement("span", "", futureCount > 0 ? `Show future apps ${futureCount}` : "Show future apps"),
+  );
+  filters.append(futureToggle);
+  applyFilters();
 }
 
 const observer = new IntersectionObserver(
@@ -256,17 +311,11 @@ async function loadApps() {
     if (!response.ok) throw new Error(`Could not load app data (${response.status})`);
 
     const data = await response.json();
-    const today = localDateString();
-    const chronologicalApps = data.apps
-      .filter((app) => app.date <= today)
-      .sort((a, b) => a.date.localeCompare(b.date));
-    chronologicalApps.forEach((app, index) => {
+    allChronologicalApps = [...data.apps].sort((a, b) => a.date.localeCompare(b.date));
+    allChronologicalApps.forEach((app, index) => {
       app.number = index + 1;
     });
-    const apps = chronologicalApps.reverse();
-    projectGrid.replaceChildren(...apps.map(createProjectCard));
-    renderFilters(apps);
-    observeReveals();
+    renderCurrentApps();
   } catch (error) {
     console.error(error);
     filters.replaceChildren();

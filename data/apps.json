@@ -16,7 +16,7 @@
         "條列項目的小圓點改成隨機的動物 emoji",
         "狐狸打字的動畫效果",
         "加入 search 功能，search 會比對 app 的名字",
-        "網頁只顯示到當天的 App 作品，不要顯示未來的 App",
+        "網頁預設只顯示到當天的 App 作品，可切換也顯示未來的 App",
         "push 到 GitHub & 部署到 Cloudflare Pages"
       ],
       "notes": [
@@ -79,7 +79,10 @@
         "寫一個 python 程式，依據 excel 檔整理未交作業的名單，印出結果並生成 csv，列出學號和未交的作業數量。當作業欄位的內容是\"未繳\"或\"未批改\"時表示未交作業。"
       ],
       "notes": [
-        "Project instrion: 讀取 excel，執行 check_homework.py"
+        "Project instrion: 讀取 excel，執行 check_homework.py",
+        "使用 git alias 自訂 git 指令",
+        "快速記錄修改並上傳: git config --global alias.update '!git add . && git commit -m \"update\" && git push'",
+        "git update"
       ]
     }
   ]
