@@ -63,13 +63,18 @@
           </label>
           <div class="admin-grid">
             <label>
-              Image name
-              <input name="image" type="text" placeholder="image file name without .png" required />
+              App image
+              <input name="imageFile" type="file" accept="image/png" required />
+              <span class="field-hint">Upload a PNG. The file name becomes the JSON image value.</span>
             </label>
             <label>
               AI
               <input name="AI" type="text" placeholder="Codex, GPT 5.5, high" required />
             </label>
+          </div>
+          <div class="image-preview" id="image-preview" hidden>
+            <img alt="Selected app preview" />
+            <span></span>
           </div>
           <div class="admin-grid">
             <label>

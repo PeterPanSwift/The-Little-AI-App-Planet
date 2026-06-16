@@ -3,8 +3,8 @@
 The admin page lives at `/admin.html`. It posts app data to the Cloudflare Pages
 Function at `/api/apps`.
 
-The function updates `data/apps.json` through the GitHub API and creates a commit
-on `main`.
+The function uploads the app PNG into `assets/`, updates `data/apps.json`
+through the GitHub API, and creates commits on `main`.
 
 ## Required Cloudflare Secrets
 
@@ -36,4 +36,5 @@ GITHUB_BRANCH=main
 
 - Do not put the GitHub token in frontend JavaScript.
 - `/admin.html` is intentionally not linked from the public home page.
-- The admin page only writes JSON. Image files still need to exist in `assets/`.
+- The admin page accepts PNG uploads. The uploaded file name, without `.png`,
+  becomes the app's `image` value in `data/apps.json`.

@@ -1,5 +1,9 @@
 const form = document.querySelector("#app-form");
 const statusMessage = document.querySelector("#admin-status");
+const imageInput = form.elements.imageFile;
+const imagePreview = document.querySelector("#image-preview");
+const imagePreviewImage = imagePreview.querySelector("img");
+const imagePreviewName = imagePreview.querySelector("span");
 
 function localDateString(date = new Date()) {
   const year = date.getFullYear();
@@ -20,6 +24,36 @@ function optionalUrl(value) {
   return trimmed ? trimmed : undefined;
 }
 
+function readFileAsDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => resolve(reader.result));
+    reader.addEventListener("error", () => reject(new Error("The image could not be read.")));
+    reader.readAsDataURL(file);
+  });
+}
+
+async function imageUploadFromForm(formData) {
+  const file = formData.get("imageFile");
+
+  if (!(file instanceof File) || file.size === 0) {
+    throw new Error("Upload a PNG image.");
+  }
+
+  if (file.type !== "image/png") {
+    throw new Error("The app image must be a PNG file.");
+  }
+
+  const dataUrl = await readFileAsDataUrl(file);
+  const [, contentBase64 = ""] = dataUrl.split(",");
+
+  return {
+    name: file.name,
+    mimeType: file.type,
+    contentBase64,
+  };
+}
+
 function setStatus(message, type = "") {
   statusMessage.textContent = message;
   statusMessage.className = `admin-status${type ? ` ${type}` : ""}`;
@@ -31,7 +65,6 @@ function appFromForm(formData) {
     title: formData.get("title").trim(),
     platform: formData.get("platform").trim(),
     description: formData.get("description").trim(),
-    image: formData.get("image").trim(),
     AI: formData.get("AI").trim(),
     prompt: linesFrom(formData.get("prompt")),
     notes: linesFrom(formData.get("notes")),
@@ -48,6 +81,21 @@ function appFromForm(formData) {
 const dateInput = form.elements.date;
 dateInput.value = localDateString();
 
+imageInput.addEventListener("change", () => {
+  const [file] = imageInput.files;
+
+  if (!file) {
+    imagePreview.hidden = true;
+    imagePreviewImage.removeAttribute("src");
+    imagePreviewName.textContent = "";
+    return;
+  }
+
+  imagePreviewImage.src = URL.createObjectURL(file);
+  imagePreviewName.textContent = file.name;
+  imagePreview.hidden = false;
+});
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -57,16 +105,19 @@ form.addEventListener("submit", async (event) => {
   const app = appFromForm(formData);
 
   submitButton.disabled = true;
-  setStatus("Submitting app...");
+  setStatus("Preparing image...");
 
   try {
+    const imageFile = await imageUploadFromForm(formData);
+    setStatus("Submitting app...");
+
     const response = await fetch("/api/apps", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "X-Admin-Secret": adminSecret,
       },
-      body: JSON.stringify({ app }),
+      body: JSON.stringify({ app, imageFile }),
     });
     const result = await response.json();
 
@@ -77,6 +128,9 @@ form.addEventListener("submit", async (event) => {
     setStatus(`Added "${result.app.title}". Commit: ${result.commit.sha.slice(0, 7)}`, "success");
     form.reset();
     dateInput.value = localDateString();
+    imagePreview.hidden = true;
+    imagePreviewImage.removeAttribute("src");
+    imagePreviewName.textContent = "";
   } catch (error) {
     setStatus(error.message, "error");
   } finally {

@@ -2,6 +2,8 @@ const DEFAULT_OWNER = "PeterPanSwift";
 const DEFAULT_REPO = "The-Little-AI-App-Planet";
 const DEFAULT_BRANCH = "main";
 const APPS_PATH = "data/apps.json";
+const ASSETS_DIR = "assets";
+const MAX_IMAGE_BASE64_LENGTH = 10 * 1024 * 1024;
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -50,13 +52,69 @@ function cleanStringArray(value) {
     : [];
 }
 
-function normalizeApp(input) {
+function githubContentsUrl(owner, repo, path) {
+  const encodedPath = path.split("/").map(encodeURIComponent).join("/");
+  return `https://api.github.com/repos/${owner}/${repo}/contents/${encodedPath}`;
+}
+
+function imageNameFromFileName(fileName) {
+  const baseName = cleanString(fileName).replace(/\.[^.]+$/, "");
+  return baseName
+    .replace(/[<>:"/\\|?*\u0000-\u001f]/g, "-")
+    .replace(/\s+/g, " ")
+    .replace(/-+/g, "-")
+    .trim();
+}
+
+function normalizeImageUpload(input) {
+  if (!input || typeof input !== "object") return null;
+
+  return {
+    name: imageNameFromFileName(input.name),
+    mimeType: cleanString(input.mimeType),
+    contentBase64: cleanString(input.contentBase64).replace(/\s/g, ""),
+  };
+}
+
+function validateImageUpload(upload) {
+  if (!upload) {
+    return "Upload a PNG image.";
+  }
+
+  if (!upload.name) {
+    return "The uploaded image needs a file name.";
+  }
+
+  if (upload.mimeType !== "image/png") {
+    return "The app image must be a PNG file.";
+  }
+
+  if (!upload.contentBase64) {
+    return "The uploaded image is empty.";
+  }
+
+  if (upload.contentBase64.length > MAX_IMAGE_BASE64_LENGTH) {
+    return "The PNG image is too large.";
+  }
+
+  if (!/^[A-Za-z0-9+/=]+$/.test(upload.contentBase64)) {
+    return "The uploaded image content is not valid base64.";
+  }
+
+  if (!upload.contentBase64.startsWith("iVBORw0KGgo")) {
+    return "The app image must be a valid PNG file.";
+  }
+
+  return "";
+}
+
+function normalizeApp(input, imageName = "") {
   const app = {
     date: cleanString(input.date),
     title: cleanString(input.title),
     platform: cleanString(input.platform),
     description: cleanString(input.description),
-    image: cleanString(input.image),
+    image: imageName || cleanString(input.image),
     AI: cleanString(input.AI),
     prompt: cleanStringArray(input.prompt),
     notes: cleanStringArray(input.notes),
@@ -92,7 +150,7 @@ function validateApp(app) {
   return "";
 }
 
-async function githubRequest(url, env, init = {}) {
+async function githubRequest(url, env, init = {}, options = {}) {
   const response = await fetch(url, {
     ...init,
     headers: {
@@ -106,6 +164,10 @@ async function githubRequest(url, env, init = {}) {
   });
 
   const data = await response.json().catch(() => ({}));
+  if (response.status === 404 && options.allowNotFound) {
+    return null;
+  }
+
   if (!response.ok) {
     throw new Error(data.message || `GitHub API failed with ${response.status}`);
   }
@@ -128,7 +190,13 @@ export async function onRequestPost({ request, env }) {
     return json({ error: "Request body must be JSON." }, 400);
   }
 
-  const app = normalizeApp(body.app || body);
+  const imageUpload = normalizeImageUpload(body.imageFile);
+  const imageValidationError = validateImageUpload(imageUpload);
+  if (imageValidationError) {
+    return json({ error: imageValidationError }, 400);
+  }
+
+  const app = normalizeApp(body.app || body, imageUpload.name);
   const validationError = validateApp(app);
   if (validationError) {
     return json({ error: validationError }, 400);
@@ -137,7 +205,9 @@ export async function onRequestPost({ request, env }) {
   const owner = env.GITHUB_OWNER || DEFAULT_OWNER;
   const repo = env.GITHUB_REPO || DEFAULT_REPO;
   const branch = env.GITHUB_BRANCH || DEFAULT_BRANCH;
-  const fileUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${APPS_PATH}`;
+  const fileUrl = githubContentsUrl(owner, repo, APPS_PATH);
+  const imagePath = `${ASSETS_DIR}/${imageUpload.name}.png`;
+  const imageUrl = githubContentsUrl(owner, repo, imagePath);
 
   try {
     const currentFile = await githubRequest(`${fileUrl}?ref=${branch}`, env);
@@ -152,6 +222,24 @@ export async function onRequestPost({ request, env }) {
     if (duplicate) {
       return json({ error: "An app with the same date and title already exists." }, 409);
     }
+
+    const currentImageFile = await githubRequest(`${imageUrl}?ref=${branch}`, env, {}, {
+      allowNotFound: true,
+    });
+    if (currentImageFile) {
+      return json({ error: `Image already exists: ${imagePath}` }, 409);
+    }
+
+    const imagePayload = {
+      branch,
+      content: imageUpload.contentBase64,
+      message: `Add image: ${imageUpload.name}.png`,
+    };
+
+    const updatedImageFile = await githubRequest(imageUrl, env, {
+      method: "PUT",
+      body: JSON.stringify(imagePayload),
+    });
 
     appsData.apps.push(app);
     appsData.apps.sort((a, b) => (
@@ -173,6 +261,13 @@ export async function onRequestPost({ request, env }) {
       commit: {
         sha: updatedFile.commit.sha,
         url: updatedFile.commit.html_url,
+      },
+      image: {
+        path: imagePath,
+        commit: {
+          sha: updatedImageFile.commit.sha,
+          url: updatedImageFile.commit.html_url,
+        },
       },
       totalApps: appsData.apps.length,
     }, 201);
