@@ -65,8 +65,8 @@ button { font: inherit; }
 .hero h1 { font-family: "Manrope", sans-serif; font-size: clamp(61px, 7vw, 106px); line-height: .92; letter-spacing: -.075em; margin: 0 0 29px; max-width: 720px; }
 .hero h1 em { font-style: normal; color: #ffc3b2; }
 .hero-copy { max-width: 500px; font-size: 18px; line-height: 1.65; color: rgba(255,255,255,.82); margin: 0 0 36px; }
-.hero-stats { margin: -7px 0 34px; padding: 22px 22px 20px 18px; display: inline-flex; align-items: center; gap: 16px; color: white; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.24); border-radius: 24px; box-shadow: 0 18px 40px rgba(10,12,56,.2); backdrop-filter: blur(12px); }
-.completed-count { display: block; font: 700 clamp(56px, 6.7vw, 92px)/1.08 "DM Sans", sans-serif; letter-spacing: -.06em; color: #ffc3b2; text-shadow: 0 14px 30px rgba(10,12,56,.32); }
+.hero-stats { margin: -7px 0 34px; padding: 22px 22px 20px 18px; display: inline-flex; align-items: center; gap: 16px; overflow: visible; color: white; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.24); border-radius: 24px; box-shadow: 0 18px 40px rgba(10,12,56,.2); backdrop-filter: blur(12px); }
+.completed-count { display: block; overflow: visible; font-family: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", "Avenir Next", "DM Sans", sans-serif; font-size: clamp(56px, 6.7vw, 92px); line-height: 1.15; font-weight: 800; letter-spacing: -.05em; color: #ffc3b2; text-shadow: 0 14px 30px rgba(10,12,56,.32); -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums; }
 .hero-stats span { max-width: 104px; color: rgba(255,255,255,.82); font-size: 10px; line-height: 1.35; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
 .hero-actions { display: flex; align-items: center; gap: 30px; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 53px; padding: 0 23px; border-radius: 13px; font-size: 14px; font-weight: 700; transition: transform .25s ease, box-shadow .25s ease; }
