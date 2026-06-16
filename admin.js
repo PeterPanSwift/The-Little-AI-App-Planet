@@ -4,6 +4,20 @@ const imageInput = form.elements.imageFile;
 const imagePreview = document.querySelector("#image-preview");
 const imagePreviewImage = imagePreview.querySelector("img");
 const imagePreviewName = imagePreview.querySelector("span");
+const arrayFieldConfigs = {
+  prompt: {
+    addButton: document.querySelector('[data-array-add="prompt"]'),
+    list: document.querySelector('[data-array-list="prompt"]'),
+    placeholder: "Write a key prompt",
+    removeLabel: "Remove prompt",
+  },
+  notes: {
+    addButton: document.querySelector('[data-array-add="notes"]'),
+    list: document.querySelector('[data-array-list="notes"]'),
+    placeholder: "Write a note",
+    removeLabel: "Remove note",
+  },
+};
 
 function localDateString(date = new Date()) {
   const year = date.getFullYear();
@@ -12,16 +26,52 @@ function localDateString(date = new Date()) {
   return `${year}-${month}-${day}`;
 }
 
-function linesFrom(value) {
-  return value
-    .split("\n")
-    .map((line) => line.trim())
-    .filter(Boolean);
-}
-
 function optionalUrl(value) {
   const trimmed = value.trim();
   return trimmed ? trimmed : undefined;
+}
+
+function arrayValues(name) {
+  return Array.from(document.querySelectorAll(`[data-array-input="${name}"]`))
+    .map((input) => input.value.trim())
+    .filter(Boolean);
+}
+
+function createArrayRow(name, value = "", shouldFocus = true) {
+  const config = arrayFieldConfigs[name];
+  const row = document.createElement("div");
+  const input = document.createElement("input");
+  const removeButton = document.createElement("button");
+
+  row.className = "array-row";
+  input.type = "text";
+  input.value = value;
+  input.placeholder = config.placeholder;
+  input.dataset.arrayInput = name;
+
+  removeButton.className = "array-remove";
+  removeButton.type = "button";
+  removeButton.textContent = "Remove";
+  removeButton.setAttribute("aria-label", config.removeLabel);
+  removeButton.addEventListener("click", () => {
+    row.remove();
+    if (config.list.children.length === 0) {
+      createArrayRow(name);
+    }
+  });
+
+  row.append(input, removeButton);
+  config.list.append(row);
+  if (shouldFocus) {
+    input.focus();
+  }
+}
+
+function resetArrayFields() {
+  Object.keys(arrayFieldConfigs).forEach((name) => {
+    arrayFieldConfigs[name].list.textContent = "";
+    createArrayRow(name, "", false);
+  });
 }
 
 function readFileAsDataUrl(file) {
@@ -60,14 +110,25 @@ function setStatus(message, type = "") {
 }
 
 function appFromForm(formData) {
+  const prompt = arrayValues("prompt");
+  const notes = arrayValues("notes");
+
+  if (prompt.length === 0) {
+    throw new Error("Add at least one key prompt.");
+  }
+
+  if (notes.length === 0) {
+    throw new Error("Add at least one note.");
+  }
+
   const app = {
     date: formData.get("date").trim(),
     title: formData.get("title").trim(),
     platform: formData.get("platform").trim(),
     description: formData.get("description").trim(),
     AI: formData.get("AI").trim(),
-    prompt: linesFrom(formData.get("prompt")),
-    notes: linesFrom(formData.get("notes")),
+    prompt,
+    notes,
   };
 
   const website = optionalUrl(formData.get("website"));
@@ -80,6 +141,11 @@ function appFromForm(formData) {
 
 const dateInput = form.elements.date;
 dateInput.value = localDateString();
+resetArrayFields();
+
+Object.entries(arrayFieldConfigs).forEach(([name, config]) => {
+  config.addButton.addEventListener("click", () => createArrayRow(name));
+});
 
 imageInput.addEventListener("change", () => {
   const [file] = imageInput.files;
@@ -102,12 +168,12 @@ form.addEventListener("submit", async (event) => {
   const submitButton = form.querySelector("button[type='submit']");
   const formData = new FormData(form);
   const adminSecret = formData.get("adminSecret").trim();
-  const app = appFromForm(formData);
 
   submitButton.disabled = true;
   setStatus("Preparing image...");
 
   try {
+    const app = appFromForm(formData);
     const imageFile = await imageUploadFromForm(formData);
     setStatus("Submitting app...");
 
@@ -128,6 +194,7 @@ form.addEventListener("submit", async (event) => {
     setStatus(`Added "${result.app.title}". Commit: ${result.commit.sha.slice(0, 7)}`, "success");
     form.reset();
     dateInput.value = localDateString();
+    resetArrayFields();
     imagePreview.hidden = true;
     imagePreviewImage.removeAttribute("src");
     imagePreviewName.textContent = "";

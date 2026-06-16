@@ -90,14 +90,26 @@
 
         <section class="admin-section">
           <h2>Prompts and notes</h2>
-          <label>
-            Key prompts
-            <textarea name="prompt" rows="6" placeholder="One prompt per line" required></textarea>
-          </label>
-          <label>
-            Notes
-            <textarea name="notes" rows="6" placeholder="One note per line" required></textarea>
-          </label>
+          <div class="array-field" data-array-field="prompt">
+            <div class="array-field-top">
+              <div>
+                <span class="array-label">Key prompts</span>
+                <span class="field-hint">Add one prompt per row.</span>
+              </div>
+              <button class="button array-add" type="button" data-array-add="prompt">Add prompt</button>
+            </div>
+            <div class="array-list" data-array-list="prompt"></div>
+          </div>
+          <div class="array-field" data-array-field="notes">
+            <div class="array-field-top">
+              <div>
+                <span class="array-label">Notes</span>
+                <span class="field-hint">Add one note per row.</span>
+              </div>
+              <button class="button array-add" type="button" data-array-add="notes">Add note</button>
+            </div>
+            <div class="array-list" data-array-list="notes"></div>
+          </div>
         </section>
 
         <div class="admin-actions">
