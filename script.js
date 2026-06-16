@@ -1,5 +1,6 @@
 const filters = document.querySelector(".filters");
 const projectGrid = document.querySelector(".project-grid");
+const completedCount = document.querySelector(".completed-count");
 let allChronologicalApps = [];
 let includeFutureApps = false;
 let activeFilter = "all";
@@ -178,6 +179,16 @@ function currentChronologicalApps() {
     : allChronologicalApps.filter((app) => app.date <= today);
 }
 
+function completedAppsCount() {
+  const today = localDateString();
+  return allChronologicalApps.filter((app) => app.date <= today).length;
+}
+
+function renderCompletedCount() {
+  if (!completedCount) return;
+  completedCount.textContent = String(completedAppsCount()).padStart(2, "0");
+}
+
 function renderCurrentApps() {
   const visibleChronologicalApps = currentChronologicalApps();
   const platformKeys = new Set(visibleChronologicalApps.map((app) => platformKey(app.platform)));
@@ -315,6 +326,7 @@ async function loadApps() {
     allChronologicalApps.forEach((app, index) => {
       app.number = index + 1;
     });
+    renderCompletedCount();
     renderCurrentApps();
   } catch (error) {
     console.error(error);
