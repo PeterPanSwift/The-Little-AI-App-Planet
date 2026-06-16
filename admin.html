@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Add App - The Little AI App Planet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="admin-page">
+    <main class="admin-shell">
+      <header class="admin-top">
+        <a class="brand admin-brand" href="index.html#top" aria-label="Back to The Little AI App Planet">
+          <span class="brand-orbit small" aria-hidden="true"><span></span></span>
+          <span>Little AI Planet</span>
+        </a>
+        <a class="admin-back" href="index.html#apps">Back to apps</a>
+      </header>
+
+      <section class="admin-hero" aria-labelledby="admin-title">
+        <p class="section-kicker">Mission control</p>
+        <h1 id="admin-title">Add a new app</h1>
+        <p>
+          Submit an app entry to the Cloudflare Pages Function. The function updates
+          <code>data/apps.json</code> in GitHub and creates a commit on <code>main</code>.
+        </p>
+      </section>
+
+      <form class="admin-panel admin-form" id="app-form">
+        <section class="admin-section">
+          <h2>Access</h2>
+          <label>
+            Admin secret
+            <input name="adminSecret" type="password" autocomplete="current-password" required />
+          </label>
+        </section>
+
+        <section class="admin-section">
+          <h2>App details</h2>
+          <div class="admin-grid">
+            <label>
+              Date
+              <input name="date" type="date" required />
+            </label>
+            <label>
+              Platform
+              <input name="platform" type="text" placeholder="Website, Python, iOS..." required />
+            </label>
+          </div>
+          <label>
+            Title
+            <input name="title" type="text" required />
+          </label>
+          <label>
+            Description
+            <textarea name="description" rows="3" required></textarea>
+          </label>
+          <div class="admin-grid">
+            <label>
+              Image name
+              <input name="image" type="text" placeholder="image file name without .png" required />
+            </label>
+            <label>
+              AI
+              <input name="AI" type="text" placeholder="Codex, GPT 5.5, high" required />
+            </label>
+          </div>
+          <div class="admin-grid">
+            <label>
+              Website URL
+              <input name="website" type="url" placeholder="https://example.com" />
+            </label>
+            <label>
+              GitHub URL
+              <input name="GitHub" type="url" placeholder="https://github.com/..." />
+            </label>
+          </div>
+        </section>
+
+        <section class="admin-section">
+          <h2>Prompts and notes</h2>
+          <label>
+            Key prompts
+            <textarea name="prompt" rows="6" placeholder="One prompt per line" required></textarea>
+          </label>
+          <label>
+            Notes
+            <textarea name="notes" rows="6" placeholder="One note per line" required></textarea>
+          </label>
+        </section>
+
+        <div class="admin-actions">
+          <button class="button button-primary" type="submit">Add app</button>
+          <p class="admin-status" id="admin-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </main>
+    <script src="admin.js"></script>
+  </body>
+</html>

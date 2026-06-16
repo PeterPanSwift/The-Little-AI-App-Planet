@@ -206,6 +206,32 @@ button { font: inherit; }
 .footer-brand { display: flex; align-items: center; gap: 12px; font: 800 13px "Manrope"; }
 .brand-orbit.small { border-color: #5e55c8; width: 27px; height: 27px; }.brand-orbit.small::after { border-color: #5e55c8; width: 34px; }.brand-orbit.small span { width: 7px; height: 7px; }
 .site-footer p { color: var(--muted); font-size: 12px; }.footer-links { display: flex; gap: 24px; font-size: 11px; font-weight: 700; }
+
+.admin-page { background: #ebe9e2; }
+.admin-shell { width: min(980px, calc(100% - 40px)); margin: 0 auto; padding: 40px 0 80px; }
+.admin-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 54px; }
+.admin-brand { color: var(--ink); }
+.admin-back { padding-bottom: 5px; color: var(--purple); border-bottom: 1px solid rgba(102,87,217,.35); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
+.admin-hero { margin-bottom: 28px; }
+.admin-hero h1 { margin: 0 0 15px; font: 800 clamp(44px, 8vw, 78px)/.95 "Manrope", sans-serif; letter-spacing: -.075em; }
+.admin-hero p { max-width: 650px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.admin-hero code { color: var(--ink); background: rgba(102,87,217,.1); border-radius: 6px; padding: 2px 5px; }
+.admin-panel { background: white; border: 1px solid var(--line); border-radius: 26px; box-shadow: var(--shadow); }
+.admin-form { padding: clamp(24px, 5vw, 44px); display: grid; gap: 30px; }
+.admin-section { display: grid; gap: 16px; }
+.admin-section + .admin-section { padding-top: 30px; border-top: 1px solid var(--line); }
+.admin-section h2 { margin: 0; font: 800 18px/1.2 "Manrope", sans-serif; letter-spacing: -.03em; }
+.admin-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.admin-form label { display: grid; gap: 8px; color: var(--ink); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .11em; }
+.admin-form input, .admin-form textarea { width: 100%; border: 1px solid var(--line); border-radius: 14px; background: #fffdf7; color: var(--ink); font: 600 15px/1.5 "DM Sans", sans-serif; outline: 0; transition: border-color .2s ease, box-shadow .2s ease; }
+.admin-form input { min-height: 48px; padding: 0 14px; }
+.admin-form textarea { resize: vertical; padding: 13px 14px; }
+.admin-form input:focus, .admin-form textarea:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(102,87,217,.12); }
+.admin-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; padding-top: 8px; }
+.admin-actions .button:disabled { opacity: .58; cursor: wait; transform: none; }
+.admin-status { margin: 0; color: var(--muted); font-size: 13px; font-weight: 700; }
+.admin-status.success { color: #2f7b5f; }
+.admin-status.error { color: #b14343; }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }.reveal.visible { opacity: 1; transform: translateY(0); }
 @keyframes pulse { 50% { box-shadow: 0 0 0 9px rgba(156,231,197,0); } }
 @keyframes spin { to { transform: rotate(360deg); } }
@@ -228,6 +254,7 @@ button { font: inherit; }
   .orbit-note, .hero-scroll { display: none; }.intro { padding: 83px 0; }.section-heading { display: block; padding-bottom: 29px; }.section-heading h2 { font-size: 44px; }.section-heading > p { margin-top: 20px; }
   .filters { margin-right: -15px; padding-right: 15px; }.filter-button, .future-toggle { flex: 0 0 auto; }.app-search { order: -1; width: calc(100% - 15px); min-width: 0; margin: 0 0 6px; }
   .project-grid { grid-template-columns: 1fr; }.card-featured { grid-column: auto; display: block; }.card-featured .card-visual { min-height: 300px; }.card-featured .card-body { padding: 26px; }.card-visual { min-height: 265px; }.project-card-detail { display: block; }.project-card-detail .card-visual { min-height: 330px; }.project-card-detail .card-body { padding: 27px 24px 30px; }.prompt-section { padding: 18px; }.card-meta { align-items: stretch; }.app-number { min-width: 96px; }.app-number strong { font-size: 27px; }.app-date { flex: 1; }
+  .admin-shell { width: min(100% - 30px, 980px); padding-top: 26px; }.admin-top { margin-bottom: 38px; }.admin-grid { grid-template-columns: 1fr; }.admin-form { padding: 22px; }
   .site-footer { padding: 40px 22px; display: block; }.site-footer p { margin: 20px 0; }.footer-links { justify-content: space-between; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
