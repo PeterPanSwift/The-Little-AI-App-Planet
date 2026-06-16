@@ -186,7 +186,7 @@ function completedAppsCount() {
 
 function renderCompletedCount() {
   if (!completedCount) return;
-  completedCount.textContent = String(completedAppsCount()).padStart(2, "0");
+  completedCount.textContent = String(completedAppsCount());
 }
 
 function renderCurrentApps() {
