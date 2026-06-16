@@ -67,6 +67,20 @@
         "Claude Preview 使用 python3 -m http.server 8099 啟動網頁",
         "呼叫 GitHub API 開啟 GitHub repository 的 Pages 功能: gh api -X POST repos/PeterPanSwift/iplayground-api-docs/pages -f \"source[branch]=main\" -f \"source[path]=/\""
       ]
+    },
+    {
+      "date": "2026-06-17",
+      "title": "大學課程的未交作業名單",
+      "platform": "Python",
+      "description": "讀取 excel 檔，列出未交作業名單",
+      "image": "未交作業名單",
+      "AI": "Claude, Cowork Project, Sonnet 4.6, Medium",
+      "prompt": [
+        "寫一個 python 程式，依據 excel 檔整理未交作業的名單，印出結果並生成 csv，列出學號和未交的作業數量。當作業欄位的內容是\"未繳\"或\"未批改\"時表示未交作業。"
+      ],
+      "notes": [
+        "Project instrion: 讀取 excel，執行 check_homework.py"
+      ]
     }
   ]
 }
