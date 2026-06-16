@@ -100,6 +100,24 @@
       ],
       "website": "https://the-little-ai-app-planet.pages.dev/",
       "GitHub": "https://github.com/PeterPanSwift/The-Little-AI-App-Planet"
+    },
+    {
+      "date": "2026-06-19",
+      "title": "加權總分計算器",
+      "platform": "Website",
+      "description": "輸入百分比和分數，計算總分",
+      "image": "加權總分計算器",
+      "AI": "Antigravity, Gemini 3.5 Flash, high",
+      "prompt": [
+        "設計一個網頁，輸入百分比和分數，計算總分",
+        "加上 banana 繪製的可愛北極狐插圖",
+        "部署到 GitHub Pages"
+      ],
+      "notes": [
+        "無"
+      ],
+      "website": "https://peterpanswift.github.io/weighted-score-calculator",
+      "GitHub": "https://github.com/PeterPanSwift/weighted-score-calculator"
     }
   ]
 }
