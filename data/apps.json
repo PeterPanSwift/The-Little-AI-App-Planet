@@ -84,6 +84,54 @@
         "快速記錄修改並上傳: git config --global alias.update '!git add . && git commit -m \"update\" && git push'",
         "git update"
       ]
+    },
+    {
+      "date": "2026-06-18",
+      "title": "The Little AI App Planet 的新增 App 頁面",
+      "platform": "Website",
+      "description": "方便從網頁新增 App，不用再手動修改 JSON 檔",
+      "image": "新增 App 頁面",
+      "AI": "Codex, GPT 5.5, high",
+      "prompt": [
+        "加一個管理頁，送資料到 Cloudflare Worker / Pages Function。後端用安全保存的 GitHub token 呼叫 GitHub API，更新 data/apps.json 並 commit"
+      ],
+      "notes": [
+        "透過 Cloudflare  Pages Function 更新  GitHub 專案的 JSON 資料"
+      ],
+      "website": "https://the-little-ai-app-planet.pages.dev/",
+      "GitHub": "https://github.com/PeterPanSwift/The-Little-AI-App-Planet"
+    },
+    {
+      "date": "2026-06-19",
+      "title": "加權總分計算器",
+      "platform": "Website",
+      "description": "輸入百分比和分數，計算總分",
+      "image": "加權總分計算器",
+      "AI": "Antigravity, Gemini 3.5 Flash, high",
+      "prompt": [
+        "設計一個網頁，輸入百分比和分數，計算總分",
+        "加上 banana 繪製的可愛北極狐插圖",
+        "部署到 GitHub Pages"
+      ],
+      "notes": [
+        "無"
+      ],
+      "website": "https://peterpanswift.github.io/weighted-score-calculator",
+      "GitHub": "https://github.com/PeterPanSwift/weighted-score-calculator"
+    },
+    {
+      "date": "2026-06-20",
+      "title": "串接 Notion 記錄 App ideas",
+      "platform": "Claude Project",
+      "description": "記錄每天 vibe coding 的 App idea",
+      "image": "串接 Notion 記錄 App ideas",
+      "AI": "Claude Project, Sonnet 4.6, Medium",
+      "prompt": [
+        "存取 notion 的 \"The Little AI Planet Ideas\" ， 用文字回覆我即可。 功能如下， 1. 顯示清單 2. 新增資料 3. 刪除資料  使用 notion 的  insert_content 新增資料，新增資料的 prompt 格式如下 新增資料 名字 分類"
+      ],
+      "notes": [
+        "透過 Claude 的 Notion connector 可存取修改 notion 筆記的資料"
+      ]
     }
   ]
 }
