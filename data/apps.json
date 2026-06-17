@@ -118,6 +118,20 @@
       ],
       "website": "https://peterpanswift.github.io/weighted-score-calculator",
       "GitHub": "https://github.com/PeterPanSwift/weighted-score-calculator"
+    },
+    {
+      "date": "2026-06-20",
+      "title": "串接 Notion 記錄 App ideas",
+      "platform": "Claude Project",
+      "description": "記錄每天 vibe coding 的 App idea",
+      "image": "串接 Notion 記錄 App ideas",
+      "AI": "Claude Project, Sonnet 4.6, Medium",
+      "prompt": [
+        "存取 notion 的 \"The Little AI Planet Ideas\" ，\n用文字回覆我即可。\n功能如下，\n1. 顯示清單\n2. 新增資料\n3. 刪除資料\n\n使用 notion 的  insert_content 新增資料，新增資料的 prompt 格式如下\n新增資料\n名字\n分類"
+      ],
+      "notes": [
+        "透過 Claude 的 Notion connector 可存取修改 notion 筆記的資料"
+      ]
     }
   ]
 }
