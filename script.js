@@ -219,6 +219,11 @@ function renderFilters(apps) {
 
   const futureCount = allChronologicalApps.filter((app) => app.date > localDateString()).length;
   filters.replaceChildren();
+  const categoryRow = document.createElement("div");
+  categoryRow.className = "filter-categories";
+  const toolsRow = document.createElement("div");
+  toolsRow.className = "filter-tools";
+  filters.append(categoryRow, toolsRow);
 
   const applyFilters = () => {
     const query = filters.querySelector(".app-search-input").value.trim().toLocaleLowerCase();
@@ -262,7 +267,7 @@ function renderFilters(apps) {
       activeFilter = filter;
       applyFilters();
     });
-    filters.append(button);
+    categoryRow.append(button);
   });
 
   const search = document.createElement("label");
@@ -281,7 +286,7 @@ function renderFilters(apps) {
   searchInput.addEventListener("input", applyFilters);
   searchInput.addEventListener("search", applyFilters);
   search.append(searchInput);
-  filters.append(search);
+  toolsRow.append(search);
 
   const futureToggle = document.createElement("label");
   futureToggle.className = "future-toggle";
@@ -296,7 +301,7 @@ function renderFilters(apps) {
     futureCheckbox,
     createTextElement("span", "", futureCount > 0 ? `Show future apps ${futureCount}` : "Show future apps"),
   );
-  filters.append(futureToggle);
+  toolsRow.append(futureToggle);
   applyFilters();
 }
 

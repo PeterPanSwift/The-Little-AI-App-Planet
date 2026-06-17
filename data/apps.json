@@ -93,10 +93,11 @@
       "image": "新增 App 頁面",
       "AI": "Codex, GPT 5.5, high",
       "prompt": [
-        "加一個管理頁，送資料到 Cloudflare Worker / Pages Function。後端用安全保存的 GitHub token 呼叫 GitHub API，更新 data/apps.json 並 commit"
+        "加一個管理頁，送資料到 Cloudflare Worker / Pages Function。後端用安全保存的 GitHub token 呼叫 GitHub API，更新 data/apps.json 並 commit",
+        "prompt 可輸入多行文字"
       ],
       "notes": [
-        "透過 Cloudflare  Pages Function 更新  GitHub 專案的 JSON 資料"
+        "透過 Cloudflare Pages Function 串接 GitHub API，更新  GitHub 專案的 JSON 資料"
       ],
       "website": "https://the-little-ai-app-planet.pages.dev/",
       "GitHub": "https://github.com/PeterPanSwift/The-Little-AI-App-Planet"
