@@ -10,6 +10,7 @@ const arrayFieldConfigs = {
     list: document.querySelector('[data-array-list="prompt"]'),
     placeholder: "Write a key prompt",
     removeLabel: "Remove prompt",
+    multiline: true,
   },
   notes: {
     addButton: document.querySelector('[data-array-add="notes"]'),
@@ -40,11 +41,15 @@ function arrayValues(name) {
 function createArrayRow(name, value = "", shouldFocus = true) {
   const config = arrayFieldConfigs[name];
   const row = document.createElement("div");
-  const input = document.createElement("input");
+  const input = document.createElement(config.multiline ? "textarea" : "input");
   const removeButton = document.createElement("button");
 
   row.className = "array-row";
-  input.type = "text";
+  if (input instanceof HTMLInputElement) {
+    input.type = "text";
+  } else {
+    input.rows = 3;
+  }
   input.value = value;
   input.placeholder = config.placeholder;
   input.dataset.arrayInput = name;
