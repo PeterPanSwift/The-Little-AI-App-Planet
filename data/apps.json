@@ -148,6 +148,20 @@
       "notes": [
         "無"
       ]
+    },
+    {
+      "date": "2026-06-22",
+      "title": "翻譯小幫手",
+      "platform": "AI",
+      "description": "翻譯 prompt 的文字或圖片，翻成中文和英文",
+      "image": "翻譯小幫手",
+      "AI": "Claude Project, Sonnet 4.6, Medium",
+      "prompt": [
+        "Claude Chat Project instructions: \n翻譯 prompt 的文字或圖片，\n回覆只要包含兩種語言的翻譯，\n不要提到其它東西。 \n1. 台灣中文\n2. 小學生也能看懂的英文"
+      ],
+      "notes": [
+        "無"
+      ]
     }
   ]
 }
