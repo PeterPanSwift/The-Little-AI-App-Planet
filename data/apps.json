@@ -133,6 +133,20 @@
       "notes": [
         "透過 Claude 的 Notion connector 可存取修改 notion 筆記的資料"
       ]
+    },
+    {
+      "date": "2026-06-21",
+      "title": "顯示圖片的文字",
+      "platform": "AI",
+      "description": "請 AI 告訴我圖片的文字內容",
+      "image": "顯示圖片的文字",
+      "AI": "Claude Project, Sonnet 4.6, Medium",
+      "prompt": [
+        "Claude Chat Project instructions: 告訴我圖片的文字內容"
+      ],
+      "notes": [
+        "無"
+      ]
     }
   ]
 }
