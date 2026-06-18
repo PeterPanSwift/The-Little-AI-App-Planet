@@ -87,14 +87,15 @@
     },
     {
       "date": "2026-06-18",
-      "title": "The Little AI App Planet 的新增 App 頁面",
+      "title": "The Little AI App Planet 的管理頁面",
       "platform": "Website",
-      "description": "方便從網頁新增 App，不用再手動修改 JSON 檔",
+      "description": "方便從網頁新增 App 和修改 JSON 檔",
       "image": "新增 App 頁面",
       "AI": "Codex, GPT 5.5, high",
       "prompt": [
         "加一個管理頁，送資料到 Cloudflare Worker / Pages Function。後端用安全保存的 GitHub token 呼叫 GitHub API，更新 data/apps.json 並 commit",
-        "prompt 可輸入多行文字"
+        "prompt 可輸入多行文字",
+        "管理頁加入修改 JSON 檔的功能"
       ],
       "notes": [
         "透過 Cloudflare Pages Function 串接 GitHub API，更新  GitHub 專案的 JSON 資料"
