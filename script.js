@@ -40,15 +40,38 @@ function randomAnimalEmojis(count) {
     .slice(0, count);
 }
 
-function createAnimalList(items) {
+function createLinkedNoteText(text) {
+  const container = document.createElement("span");
+  container.className = "list-text";
+  const match = text.match(/\(link:\s*(https?:\/\/[^\s)]+)\)/i);
+
+  if (!match) {
+    container.textContent = text;
+    return container;
+  }
+
+  const link = document.createElement("a");
+  link.className = "note-link";
+  link.href = match[1];
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.textContent = text.replace(match[0], "").trim() || "Open link";
+  container.append(link);
+  return container;
+}
+
+function createAnimalList(items, options = {}) {
   const list = document.createElement("ul");
   const emojis = randomAnimalEmojis(items.length);
 
   items.forEach((item, index) => {
     const listItem = document.createElement("li");
     const emoji = createTextElement("span", "animal-marker", emojis[index]);
+    const content = options.linkNotes
+      ? createLinkedNoteText(item)
+      : createTextElement("span", "list-text", item);
     emoji.setAttribute("aria-hidden", "true");
-    listItem.append(emoji, createTextElement("span", "list-text", item));
+    listItem.append(emoji, content);
     list.append(listItem);
   });
 
@@ -122,7 +145,7 @@ function createProjectCard(app) {
   const notesSection = document.createElement("div");
   notesSection.className = "notes-section";
   notesSection.append(createTextElement("h4", "", "Notes"));
-  notesSection.append(createAnimalList(app.notes));
+  notesSection.append(createAnimalList(app.notes, { linkNotes: true }));
 
   const appLinks = document.createElement("div");
   appLinks.className = "app-links";

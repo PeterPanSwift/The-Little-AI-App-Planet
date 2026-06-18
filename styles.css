@@ -157,6 +157,8 @@ button { font: inherit; }
 .notes-section li + li { margin-top: 8px; }
 .animal-marker { font-size: 16px; line-height: 1.25; text-align: center; }
 .list-text { white-space: pre-line; }
+.note-link { color: #4f46b8; font-weight: 700; text-decoration: underline; text-decoration-color: rgba(79,70,184,.35); text-underline-offset: 3px; overflow-wrap: anywhere; }
+.note-link:hover { color: #2f287f; text-decoration-color: currentColor; }
 .mini-stars { position: absolute; right: 24px; top: 20px; color: #5c5bc4; font-size: 25px; }
 
 .phone-mockup { width: 142px; height: 256px; border: 6px solid #292444; background: #fffdf7; border-radius: 26px; position: relative; box-shadow: 0 18px 33px rgba(32,28,68,.2); display: flex; flex-direction: column; align-items: center; }
