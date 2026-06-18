@@ -86,6 +86,27 @@
       ]
     },
     {
+      "date": "2026-06-18",
+      "title": "SwiftUI View Hierarchy",
+      "platform": "Webpage",
+      "description": "將 SwiftUI 程式變成 View Hierarchy 階層圖",
+      "image": "SwiftUI View Hierarchy",
+      "AI": "Codex, GPT 5.5, high",
+      "prompt": [
+        "製作一個呈現 SwiftUI View Hierarchy 的網頁，使用者可貼上程式,生成階層圖，階層圖必須可點選展開收起\n以下是範例的程式和圖片。",
+        "加上一個開關，可設定是否只顯示名字，比方只顯示 VStack，不顯示 spacing",
+        "加上可設定顏色的功能",
+        "線條改成像圖片這樣的箭頭",
+        "右邊顯示 image skill 生成的可愛北極狐搭配 swift logo 的插圖，",
+        "加上網頁切換英文和中文版的功能，階層圖展開收起時有箭頭長出的動畫"
+      ],
+      "notes": [
+        "無"
+      ],
+      "website": "https://codex-swiftui-view-hierarchy.pages.dev/",
+      "GitHub": "https://github.com/PeterPanSwift/codex-swiftui-view-hierarchy"
+    },
+    {
       "date": "2026-06-19",
       "title": "The Little AI App Planet 的管理頁面",
       "platform": "Website",
