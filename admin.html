@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
-    <title>Add App - The Little AI App Planet</title>
+    <title>Manage Apps - The Little AI App Planet</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260617-2" />
+    <link rel="stylesheet" href="styles.css?v=20260618" />
   </head>
   <body class="admin-page">
     <main class="admin-shell">
@@ -25,7 +25,7 @@
 
       <section class="admin-hero" aria-labelledby="admin-title">
         <p class="section-kicker">Mission control</p>
-        <h1 id="admin-title">Add a new app</h1>
+        <h1 id="admin-title">Manage apps</h1>
         <p>
           Submit an app entry to the Cloudflare Pages Function. The function updates
           <code>data/apps.json</code> in GitHub and creates a commit on <code>main</code>.
@@ -117,7 +117,41 @@
           <p class="admin-status" id="admin-status" role="status" aria-live="polite"></p>
         </div>
       </form>
+
+      <section class="admin-panel json-panel" aria-labelledby="json-editor-title">
+        <div class="json-panel-heading">
+          <div>
+            <p class="section-kicker">Advanced editing</p>
+            <h2 id="json-editor-title">Edit JSON file</h2>
+            <p>
+              Load the current <code>data/apps.json</code> from GitHub, edit it directly,
+              then validate and commit the complete file.
+            </p>
+          </div>
+          <button class="button json-load" id="json-load" type="button">Load JSON</button>
+        </div>
+
+        <label class="json-editor-label" for="json-editor">data/apps.json</label>
+        <textarea
+          class="json-editor"
+          id="json-editor"
+          aria-describedby="json-editor-hint"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+          disabled
+        ></textarea>
+        <p class="field-hint" id="json-editor-hint">
+          Saving replaces the complete JSON file. The file must contain an <code>apps</code> array.
+        </p>
+
+        <div class="admin-actions json-actions">
+          <button class="button json-format" id="json-format" type="button" disabled>Format JSON</button>
+          <button class="button button-primary json-save" id="json-save" type="button" disabled>Save JSON</button>
+          <p class="admin-status" id="json-status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
     </main>
-    <script src="admin.js?v=20260617-2"></script>
+    <script src="admin.js?v=20260618"></script>
   </body>
 </html>

@@ -250,6 +250,18 @@ button { font: inherit; }
 .admin-status { margin: 0; color: var(--muted); font-size: 13px; font-weight: 700; }
 .admin-status.success { color: #2f7b5f; }
 .admin-status.error { color: #b14343; }
+.json-panel { margin-top: 28px; padding: clamp(24px, 5vw, 44px); }
+.json-panel-heading { display: flex; align-items: start; justify-content: space-between; gap: 28px; margin-bottom: 24px; }
+.json-panel-heading h2 { margin: 4px 0 8px; font: 800 26px/1.2 "Manrope", sans-serif; }
+.json-panel-heading p:not(.section-kicker) { max-width: 650px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.json-panel code { color: var(--ink); background: rgba(102,87,217,.1); border-radius: 5px; padding: 1px 4px; }
+.json-load, .json-format { flex: 0 0 auto; min-height: 44px; border: 1px solid rgba(102,87,217,.28); background: #fffdf7; color: var(--purple); box-shadow: none; }
+.json-editor-label { display: block; margin-bottom: 8px; color: var(--ink); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .11em; }
+.json-editor { width: 100%; min-height: 560px; padding: 18px; resize: vertical; border: 1px solid var(--line); border-radius: 14px; background: #17182f; color: #f7f4eb; font: 500 13px/1.65 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; tab-size: 2; outline: 0; }
+.json-editor:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(102,87,217,.12); }
+.json-editor:disabled { cursor: not-allowed; opacity: .62; }
+.json-panel > .field-hint { display: block; margin-top: 8px; }
+.json-actions { margin-top: 20px; }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }.reveal.visible { opacity: 1; transform: translateY(0); }
 @keyframes pulse { 50% { box-shadow: 0 0 0 9px rgba(156,231,197,0); } }
 @keyframes spin { to { transform: rotate(360deg); } }
@@ -272,7 +284,7 @@ button { font: inherit; }
   .orbit-note, .hero-scroll { display: none; }.intro { padding: 83px 0; }.section-heading { display: block; padding-bottom: 29px; }.section-heading h2 { font-size: 44px; }.section-heading > p { margin-top: 20px; }
   .filters { margin-right: -15px; padding-right: 15px; }.filter-categories, .filter-tools { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; }.filter-tools { justify-content: flex-start; }.filter-button, .future-toggle { flex: 0 0 auto; }.app-search { width: min(100% - 15px, 280px); flex: 0 0 min(100% - 15px, 280px); }
   .project-grid { grid-template-columns: 1fr; }.card-featured { grid-column: auto; display: block; }.card-featured .card-visual { min-height: 300px; }.card-featured .card-body { padding: 26px; }.card-visual { min-height: 265px; }.project-card-detail { display: block; }.project-card-detail .card-visual { min-height: 330px; }.project-card-detail .card-body { padding: 27px 24px 30px; }.prompt-section { padding: 18px; }.card-meta { align-items: stretch; }.app-number { min-width: 96px; }.app-number strong { font-size: 27px; }.app-date { flex: 1; }
-  .admin-shell { width: min(100% - 30px, 980px); padding-top: 26px; }.admin-top { margin-bottom: 38px; }.admin-grid { grid-template-columns: 1fr; }.admin-form { padding: 22px; }.array-field-top { display: grid; align-items: start; }.array-row { grid-template-columns: 1fr; }.array-remove { justify-self: start; }
+  .admin-shell { width: min(100% - 30px, 980px); padding-top: 26px; }.admin-top { margin-bottom: 38px; }.admin-grid { grid-template-columns: 1fr; }.admin-form, .json-panel { padding: 22px; }.array-field-top, .json-panel-heading { display: grid; align-items: start; }.array-row { grid-template-columns: 1fr; }.array-remove { justify-self: start; }.json-load { justify-self: start; }.json-editor { min-height: 440px; }
   .site-footer { padding: 40px 22px; display: block; }.site-footer p { margin: 20px 0; }.footer-links { justify-content: space-between; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }

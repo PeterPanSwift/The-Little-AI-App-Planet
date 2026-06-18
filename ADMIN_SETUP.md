@@ -6,6 +6,10 @@ Function at `/api/apps`.
 The function uploads the app PNG into `assets/`, updates `data/apps.json`
 through the GitHub API, and creates commits on `main`.
 
+The JSON editor on the same page can also load, validate, and replace the full
+`data/apps.json` file. It rejects stale saves when the GitHub file changed after
+the editor loaded it.
+
 ## Required Cloudflare Secrets
 
 Set these in Cloudflare Pages before using the admin page:

@@ -150,6 +150,59 @@ function validateApp(app) {
   return "";
 }
 
+function validateAppsData(data) {
+  if (!data || typeof data !== "object" || Array.isArray(data)) {
+    return "The JSON root must be an object.";
+  }
+  if (!Array.isArray(data.apps)) {
+    return "data/apps.json must contain an apps array.";
+  }
+
+  const seenApps = new Set();
+  for (let index = 0; index < data.apps.length; index += 1) {
+    const input = data.apps[index];
+    if (!input || typeof input !== "object" || Array.isArray(input)) {
+      return `App ${index + 1} must be an object.`;
+    }
+
+    const app = normalizeApp(input);
+    const validationError = validateApp(app);
+    if (validationError) {
+      return `App ${index + 1}: ${validationError}`;
+    }
+
+    const key = `${app.date}\u0000${app.title}`;
+    if (seenApps.has(key)) {
+      return `Duplicate app at item ${index + 1}: ${app.date} / ${app.title}`;
+    }
+    seenApps.add(key);
+  }
+
+  return "";
+}
+
+function repositoryConfig(env) {
+  const owner = env.GITHUB_OWNER || DEFAULT_OWNER;
+  const repo = env.GITHUB_REPO || DEFAULT_REPO;
+  const branch = env.GITHUB_BRANCH || DEFAULT_BRANCH;
+  return {
+    branch,
+    fileUrl: githubContentsUrl(owner, repo, APPS_PATH),
+    owner,
+    repo,
+  };
+}
+
+function authorize(request, env) {
+  if (!env.ADMIN_SECRET || request.headers.get("X-Admin-Secret") !== env.ADMIN_SECRET) {
+    return json({ error: "Unauthorized." }, 401);
+  }
+  if (!env.GITHUB_TOKEN) {
+    return json({ error: "Missing GITHUB_TOKEN secret." }, 500);
+  }
+  return null;
+}
+
 async function githubRequest(url, env, init = {}, options = {}) {
   const response = await fetch(url, {
     ...init,
@@ -175,13 +228,8 @@ async function githubRequest(url, env, init = {}, options = {}) {
 }
 
 export async function onRequestPost({ request, env }) {
-  if (!env.ADMIN_SECRET || request.headers.get("X-Admin-Secret") !== env.ADMIN_SECRET) {
-    return json({ error: "Unauthorized." }, 401);
-  }
-
-  if (!env.GITHUB_TOKEN) {
-    return json({ error: "Missing GITHUB_TOKEN secret." }, 500);
-  }
+  const authorizationError = authorize(request, env);
+  if (authorizationError) return authorizationError;
 
   let body;
   try {
@@ -190,22 +238,19 @@ export async function onRequestPost({ request, env }) {
     return json({ error: "Request body must be JSON." }, 400);
   }
 
-  const imageUpload = normalizeImageUpload(body.imageFile);
+  const imageUpload = normalizeImageUpload(body?.imageFile);
   const imageValidationError = validateImageUpload(imageUpload);
   if (imageValidationError) {
     return json({ error: imageValidationError }, 400);
   }
 
-  const app = normalizeApp(body.app || body, imageUpload.name);
+  const app = normalizeApp(body?.app || body || {}, imageUpload.name);
   const validationError = validateApp(app);
   if (validationError) {
     return json({ error: validationError }, 400);
   }
 
-  const owner = env.GITHUB_OWNER || DEFAULT_OWNER;
-  const repo = env.GITHUB_REPO || DEFAULT_REPO;
-  const branch = env.GITHUB_BRANCH || DEFAULT_BRANCH;
-  const fileUrl = githubContentsUrl(owner, repo, APPS_PATH);
+  const { branch, fileUrl, owner, repo } = repositoryConfig(env);
   const imagePath = `${ASSETS_DIR}/${imageUpload.name}.png`;
   const imageUrl = githubContentsUrl(owner, repo, imagePath);
 
@@ -271,6 +316,75 @@ export async function onRequestPost({ request, env }) {
       },
       totalApps: appsData.apps.length,
     }, 201);
+  } catch (error) {
+    return json({ error: error.message }, 500);
+  }
+}
+
+export async function onRequestGet({ request, env }) {
+  const authorizationError = authorize(request, env);
+  if (authorizationError) return authorizationError;
+
+  const { branch, fileUrl } = repositoryConfig(env);
+  try {
+    const currentFile = await githubRequest(`${fileUrl}?ref=${branch}`, env);
+    const data = decodeBase64Json(currentFile.content);
+    const validationError = validateAppsData(data);
+    if (validationError) {
+      return json({ error: validationError }, 500);
+    }
+    return json({ data, sha: currentFile.sha, branch, path: APPS_PATH });
+  } catch (error) {
+    return json({ error: error.message }, 500);
+  }
+}
+
+export async function onRequestPut({ request, env }) {
+  const authorizationError = authorize(request, env);
+  if (authorizationError) return authorizationError;
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: "Request body must be JSON." }, 400);
+  }
+
+  const validationError = validateAppsData(body?.data);
+  if (validationError) {
+    return json({ error: validationError }, 400);
+  }
+
+  const submittedSha = cleanString(body?.sha);
+  if (!submittedSha) {
+    return json({ error: "Load the latest JSON before saving." }, 400);
+  }
+
+  const { branch, fileUrl } = repositoryConfig(env);
+  try {
+    const currentFile = await githubRequest(`${fileUrl}?ref=${branch}`, env);
+    if (currentFile.sha !== submittedSha) {
+      return json({ error: "The JSON file changed after it was loaded. Load it again before saving." }, 409);
+    }
+
+    const updatedFile = await githubRequest(fileUrl, env, {
+      method: "PUT",
+      body: JSON.stringify({
+        branch,
+        content: encodeBase64Json(body.data),
+        message: "Update app data",
+        sha: currentFile.sha,
+      }),
+    });
+
+    return json({
+      sha: updatedFile.content.sha,
+      commit: {
+        sha: updatedFile.commit.sha,
+        url: updatedFile.commit.html_url,
+      },
+      totalApps: body.data.apps.length,
+    });
   } catch (error) {
     return json({ error: error.message }, 500);
   }

@@ -4,6 +4,13 @@ const imageInput = form.elements.imageFile;
 const imagePreview = document.querySelector("#image-preview");
 const imagePreviewImage = imagePreview.querySelector("img");
 const imagePreviewName = imagePreview.querySelector("span");
+const adminSecretInput = form.elements.adminSecret;
+const jsonEditor = document.querySelector("#json-editor");
+const jsonLoadButton = document.querySelector("#json-load");
+const jsonFormatButton = document.querySelector("#json-format");
+const jsonSaveButton = document.querySelector("#json-save");
+const jsonStatus = document.querySelector("#json-status");
+let jsonFileSha = "";
 const arrayFieldConfigs = {
   prompt: {
     addButton: document.querySelector('[data-array-add="prompt"]'),
@@ -114,6 +121,37 @@ function setStatus(message, type = "") {
   statusMessage.className = `admin-status${type ? ` ${type}` : ""}`;
 }
 
+function setJsonStatus(message, type = "") {
+  jsonStatus.textContent = message;
+  jsonStatus.className = `admin-status${type ? ` ${type}` : ""}`;
+}
+
+function adminSecret() {
+  const secret = adminSecretInput.value.trim();
+  if (!secret) {
+    adminSecretInput.focus();
+    throw new Error("Enter the admin secret in the Access section first.");
+  }
+  return secret;
+}
+
+function parsedJsonEditor() {
+  let data;
+  try {
+    data = JSON.parse(jsonEditor.value);
+  } catch (error) {
+    throw new Error(`Invalid JSON: ${error.message}`);
+  }
+
+  if (!data || typeof data !== "object" || Array.isArray(data)) {
+    throw new Error("The JSON root must be an object.");
+  }
+  if (!Array.isArray(data.apps)) {
+    throw new Error("The JSON must contain an apps array.");
+  }
+  return data;
+}
+
 function appFromForm(formData) {
   const prompt = arrayValues("prompt");
   const notes = arrayValues("notes");
@@ -207,5 +245,70 @@ form.addEventListener("submit", async (event) => {
     setStatus(error.message, "error");
   } finally {
     submitButton.disabled = false;
+  }
+});
+
+jsonLoadButton.addEventListener("click", async () => {
+  jsonLoadButton.disabled = true;
+  setJsonStatus("Loading JSON...");
+
+  try {
+    const response = await fetch("/api/apps", {
+      headers: { "X-Admin-Secret": adminSecret() },
+    });
+    const result = await response.json();
+    if (!response.ok) {
+      throw new Error(result.error || "The JSON file could not be loaded.");
+    }
+
+    jsonEditor.value = `${JSON.stringify(result.data, null, 2)}\n`;
+    jsonFileSha = result.sha;
+    jsonEditor.disabled = false;
+    jsonFormatButton.disabled = false;
+    jsonSaveButton.disabled = false;
+    setJsonStatus(`Loaded ${result.data.apps.length} apps.`, "success");
+  } catch (error) {
+    setJsonStatus(error.message, "error");
+  } finally {
+    jsonLoadButton.disabled = false;
+  }
+});
+
+jsonFormatButton.addEventListener("click", () => {
+  try {
+    const data = parsedJsonEditor();
+    jsonEditor.value = `${JSON.stringify(data, null, 2)}\n`;
+    setJsonStatus(`JSON is valid. ${data.apps.length} apps found.`, "success");
+  } catch (error) {
+    setJsonStatus(error.message, "error");
+  }
+});
+
+jsonSaveButton.addEventListener("click", async () => {
+  jsonSaveButton.disabled = true;
+  setJsonStatus("Validating JSON...");
+
+  try {
+    const data = parsedJsonEditor();
+    const response = await fetch("/api/apps", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Admin-Secret": adminSecret(),
+      },
+      body: JSON.stringify({ data, sha: jsonFileSha }),
+    });
+    const result = await response.json();
+    if (!response.ok) {
+      throw new Error(result.error || "The JSON file could not be saved.");
+    }
+
+    jsonFileSha = result.sha;
+    jsonEditor.value = `${JSON.stringify(data, null, 2)}\n`;
+    setJsonStatus(`Saved ${result.totalApps} apps. Commit: ${result.commit.sha.slice(0, 7)}`, "success");
+  } catch (error) {
+    setJsonStatus(error.message, "error");
+  } finally {
+    jsonSaveButton.disabled = false;
   }
 });
