@@ -86,7 +86,7 @@
       ]
     },
     {
-      "date": "2026-06-18",
+      "date": "2026-06-19",
       "title": "The Little AI App Planet 的管理頁面",
       "platform": "Website",
       "description": "方便從網頁新增 App 和修改 JSON 檔",
@@ -104,7 +104,7 @@
       "GitHub": "https://github.com/PeterPanSwift/The-Little-AI-App-Planet"
     },
     {
-      "date": "2026-06-19",
+      "date": "2026-06-20",
       "title": "加權總分計算器",
       "platform": "Website",
       "description": "輸入百分比和分數，計算總分",
@@ -122,7 +122,7 @@
       "GitHub": "https://github.com/PeterPanSwift/weighted-score-calculator"
     },
     {
-      "date": "2026-06-20",
+      "date": "2026-06-21",
       "title": "串接 Notion 記錄 App ideas",
       "platform": "AI",
       "description": "記錄每天 vibe coding 的 App idea",
@@ -136,7 +136,7 @@
       ]
     },
     {
-      "date": "2026-06-21",
+      "date": "2026-06-22",
       "title": "顯示圖片的文字",
       "platform": "AI",
       "description": "請 AI 告訴我圖片的文字內容",
@@ -150,7 +150,7 @@
       ]
     },
     {
-      "date": "2026-06-22",
+      "date": "2026-06-23",
       "title": "翻譯小幫手",
       "platform": "AI",
       "description": "翻譯 prompt 的文字或圖片，翻成中文和英文",
