@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260618-2" />
+    <link rel="stylesheet" href="styles.css?v=20260620" />
   </head>
   <body class="admin-page">
     <main class="admin-shell">
@@ -118,6 +118,96 @@
         </div>
       </form>
 
+      <section class="admin-panel app-manager" aria-labelledby="app-manager-title">
+        <div class="json-panel-heading">
+          <div>
+            <p class="section-kicker">App library</p>
+            <h2 id="app-manager-title">Edit an app</h2>
+            <p>Load the app list, choose an entry, and update its details with a form.</p>
+          </div>
+          <button class="button app-list-load" id="app-list-load" type="button">Load apps</button>
+        </div>
+
+        <p class="admin-status" id="app-list-status" role="status" aria-live="polite"></p>
+        <div class="app-admin-list" id="app-admin-list" aria-live="polite"></div>
+
+        <form class="app-edit-form" id="app-edit-form" hidden>
+          <div class="app-edit-heading">
+            <div>
+              <p class="section-kicker">Selected app</p>
+              <h3 id="app-edit-title">Edit app</h3>
+            </div>
+            <button class="button app-edit-cancel" id="app-edit-cancel" type="button">Cancel</button>
+          </div>
+
+          <div class="admin-grid">
+            <label>
+              Date
+              <input name="date" type="date" required />
+            </label>
+            <label>
+              Platform
+              <input name="platform" type="text" required />
+            </label>
+          </div>
+          <label>
+            Title
+            <input name="title" type="text" required />
+          </label>
+          <label>
+            Description
+            <textarea name="description" rows="3" required></textarea>
+          </label>
+          <div class="admin-grid">
+            <label>
+              Image asset name
+              <input name="image" type="text" required />
+              <span class="field-hint">File name in <code>assets</code>, without <code>.png</code>.</span>
+            </label>
+            <label>
+              AI
+              <input name="AI" type="text" required />
+            </label>
+          </div>
+          <div class="admin-grid">
+            <label>
+              Website URL
+              <input name="website" type="url" placeholder="https://example.com" />
+            </label>
+            <label>
+              GitHub URL
+              <input name="GitHub" type="url" placeholder="https://github.com/..." />
+            </label>
+          </div>
+
+          <div class="array-field" data-edit-array-field="prompt">
+            <div class="array-field-top">
+              <div>
+                <span class="array-label">Key prompts</span>
+                <span class="field-hint">Add one prompt per field. Line breaks are kept.</span>
+              </div>
+              <button class="button array-add" type="button" data-edit-array-add="prompt">Add prompt</button>
+            </div>
+            <div class="array-list" data-edit-array-list="prompt"></div>
+          </div>
+          <div class="array-field" data-edit-array-field="notes">
+            <div class="array-field-top">
+              <div>
+                <span class="array-label">Notes</span>
+                <span class="field-hint">Add one note per row.</span>
+              </div>
+              <button class="button array-add" type="button" data-edit-array-add="notes">Add note</button>
+            </div>
+            <div class="array-list" data-edit-array-list="notes"></div>
+          </div>
+
+          <div class="admin-actions">
+            <button class="button button-primary" type="submit">Save app</button>
+            <p class="admin-status" id="app-edit-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+
       <section class="admin-panel json-panel" aria-labelledby="json-editor-title">
         <div class="json-panel-heading">
           <div>
@@ -152,6 +242,6 @@
         </div>
       </section>
     </main>
-    <script src="admin.js?v=20260618"></script>
+    <script src="admin.js?v=20260620"></script>
   </body>
 </html>

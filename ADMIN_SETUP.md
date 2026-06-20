@@ -10,6 +10,11 @@ The JSON editor on the same page can also load, validate, and replace the full
 `data/apps.json` file. It rejects stale saves when the GitHub file changed after
 the editor loaded it.
 
+The app library provides a safer form-based editing flow: load the current app
+list, select one app, edit its fields, and save it. It uses the same stale-file
+check as the JSON editor. Changing an image name requires the matching PNG to
+already exist in `assets/`.
+
 ## Required Cloudflare Secrets
 
 Set these in Cloudflare Pages before using the admin page:

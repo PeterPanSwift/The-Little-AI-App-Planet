@@ -10,7 +10,17 @@ const jsonLoadButton = document.querySelector("#json-load");
 const jsonFormatButton = document.querySelector("#json-format");
 const jsonSaveButton = document.querySelector("#json-save");
 const jsonStatus = document.querySelector("#json-status");
+const appListLoadButton = document.querySelector("#app-list-load");
+const appListStatus = document.querySelector("#app-list-status");
+const appAdminList = document.querySelector("#app-admin-list");
+const appEditForm = document.querySelector("#app-edit-form");
+const appEditTitle = document.querySelector("#app-edit-title");
+const appEditCancelButton = document.querySelector("#app-edit-cancel");
+const appEditStatus = document.querySelector("#app-edit-status");
 let jsonFileSha = "";
+let appListData = null;
+let appListSha = "";
+let editingAppIndex = -1;
 const arrayFieldConfigs = {
   prompt: {
     addButton: document.querySelector('[data-array-add="prompt"]'),
@@ -126,6 +136,16 @@ function setJsonStatus(message, type = "") {
   jsonStatus.className = `admin-status${type ? ` ${type}` : ""}`;
 }
 
+function setAppListStatus(message, type = "") {
+  appListStatus.textContent = message;
+  appListStatus.className = `admin-status${type ? ` ${type}` : ""}`;
+}
+
+function setAppEditStatus(message, type = "") {
+  appEditStatus.textContent = message;
+  appEditStatus.className = `admin-status${type ? ` ${type}` : ""}`;
+}
+
 function adminSecret() {
   const secret = adminSecretInput.value.trim();
   if (!secret) {
@@ -182,12 +202,198 @@ function appFromForm(formData) {
   return app;
 }
 
+function editArrayValues(name) {
+  return Array.from(appEditForm.querySelectorAll(`[data-edit-array-input="${name}"]`))
+    .map((input) => input.value.trim())
+    .filter(Boolean);
+}
+
+function createEditArrayRow(name, value = "", shouldFocus = false) {
+  const list = appEditForm.querySelector(`[data-edit-array-list="${name}"]`);
+  const row = document.createElement("div");
+  const input = document.createElement(name === "prompt" ? "textarea" : "input");
+  const removeButton = document.createElement("button");
+
+  row.className = "array-row";
+  if (input instanceof HTMLInputElement) input.type = "text";
+  else input.rows = 3;
+  input.value = value;
+  input.dataset.editArrayInput = name;
+  input.placeholder = name === "prompt" ? "Write a key prompt" : "Write a note";
+
+  removeButton.className = "array-remove";
+  removeButton.type = "button";
+  removeButton.textContent = "Remove";
+  removeButton.setAttribute("aria-label", `Remove ${name}`);
+  removeButton.addEventListener("click", () => {
+    row.remove();
+    if (list.children.length === 0) createEditArrayRow(name);
+  });
+
+  row.append(input, removeButton);
+  list.append(row);
+  if (shouldFocus) input.focus();
+}
+
+function fillEditArray(name, values) {
+  const list = appEditForm.querySelector(`[data-edit-array-list="${name}"]`);
+  list.textContent = "";
+  (values.length ? values : [""]).forEach((value) => createEditArrayRow(name, value));
+}
+
+function appFromEditForm(formData) {
+  const prompt = editArrayValues("prompt");
+  const notes = editArrayValues("notes");
+  if (prompt.length === 0) throw new Error("Add at least one key prompt.");
+  if (notes.length === 0) throw new Error("Add at least one note.");
+
+  const app = {
+    date: formData.get("date").trim(),
+    title: formData.get("title").trim(),
+    platform: formData.get("platform").trim(),
+    description: formData.get("description").trim(),
+    image: formData.get("image").trim(),
+    AI: formData.get("AI").trim(),
+    prompt,
+    notes,
+  };
+  const website = optionalUrl(formData.get("website"));
+  const GitHub = optionalUrl(formData.get("GitHub"));
+  if (website) app.website = website;
+  if (GitHub) app.GitHub = GitHub;
+  return app;
+}
+
+function openAppEditor(index) {
+  const app = appListData?.apps[index];
+  if (!app) return;
+
+  editingAppIndex = index;
+  ["date", "title", "platform", "description", "image", "AI", "website", "GitHub"]
+    .forEach((name) => {
+      appEditForm.elements[name].value = app[name] || "";
+    });
+  fillEditArray("prompt", app.prompt || []);
+  fillEditArray("notes", app.notes || []);
+  appEditTitle.textContent = `Edit: ${app.title}`;
+  setAppEditStatus("");
+  appEditForm.hidden = false;
+  appEditForm.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function closeAppEditor() {
+  editingAppIndex = -1;
+  appEditForm.hidden = true;
+  appEditForm.reset();
+  setAppEditStatus("");
+}
+
+function renderAppList() {
+  appAdminList.textContent = "";
+  appListData.apps.forEach((app, index) => {
+    const item = document.createElement("article");
+    const image = document.createElement("img");
+    const content = document.createElement("div");
+    const meta = document.createElement("p");
+    const title = document.createElement("h3");
+    const description = document.createElement("p");
+    const editButton = document.createElement("button");
+
+    item.className = "app-admin-item";
+    image.src = `assets/${encodeURIComponent(app.image)}.png`;
+    image.alt = "";
+    image.loading = "lazy";
+    content.className = "app-admin-content";
+    meta.className = "app-admin-meta";
+    meta.textContent = `${app.date} · ${app.platform}`;
+    title.textContent = app.title;
+    description.textContent = app.description;
+    editButton.className = "button app-item-edit";
+    editButton.type = "button";
+    editButton.textContent = "Edit";
+    editButton.setAttribute("aria-label", `Edit ${app.title}`);
+    editButton.addEventListener("click", () => openAppEditor(index));
+
+    content.append(meta, title, description);
+    item.append(image, content, editButton);
+    appAdminList.append(item);
+  });
+}
+
 const dateInput = form.elements.date;
 dateInput.value = localDateString();
 resetArrayFields();
 
 Object.entries(arrayFieldConfigs).forEach(([name, config]) => {
   config.addButton.addEventListener("click", () => createArrayRow(name));
+});
+
+appEditForm.querySelectorAll("[data-edit-array-add]").forEach((button) => {
+  button.addEventListener("click", () => createEditArrayRow(button.dataset.editArrayAdd, "", true));
+});
+
+appEditCancelButton.addEventListener("click", closeAppEditor);
+
+appListLoadButton.addEventListener("click", async () => {
+  appListLoadButton.disabled = true;
+  setAppListStatus("Loading apps...");
+
+  try {
+    const response = await fetch("/api/apps", {
+      headers: { "X-Admin-Secret": adminSecret() },
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || "The app list could not be loaded.");
+
+    appListData = result.data;
+    appListSha = result.sha;
+    closeAppEditor();
+    renderAppList();
+    setAppListStatus(`Loaded ${appListData.apps.length} apps.`, "success");
+  } catch (error) {
+    setAppListStatus(error.message, "error");
+  } finally {
+    appListLoadButton.disabled = false;
+  }
+});
+
+appEditForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const submitButton = appEditForm.querySelector("button[type='submit']");
+  submitButton.disabled = true;
+  setAppEditStatus("Saving app...");
+
+  try {
+    if (!appListData || editingAppIndex < 0) throw new Error("Load and select an app first.");
+    const updatedApp = appFromEditForm(new FormData(appEditForm));
+    const updatedData = {
+      ...appListData,
+      apps: appListData.apps.map((app, index) => index === editingAppIndex ? updatedApp : app),
+    };
+    updatedData.apps.sort((a, b) => (
+      a.date.localeCompare(b.date) || a.title.localeCompare(b.title)
+    ));
+    const response = await fetch("/api/apps", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Admin-Secret": adminSecret(),
+      },
+      body: JSON.stringify({ data: updatedData, sha: appListSha }),
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || "The app could not be saved.");
+
+    appListData = updatedData;
+    appListSha = result.sha;
+    renderAppList();
+    closeAppEditor();
+    setAppListStatus(`Updated "${updatedApp.title}". Commit: ${result.commit.sha.slice(0, 7)}`, "success");
+  } catch (error) {
+    setAppEditStatus(error.message, "error");
+  } finally {
+    submitButton.disabled = false;
+  }
 });
 
 imageInput.addEventListener("change", () => {
