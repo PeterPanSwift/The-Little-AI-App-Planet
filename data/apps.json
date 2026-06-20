@@ -116,7 +116,8 @@
       "prompt": [
         "加一個管理頁，送資料到 Cloudflare Worker / Pages Function。後端用安全保存的 GitHub token 呼叫 GitHub API，更新 data/apps.json 並 commit",
         "prompt 可輸入多行文字",
-        "管理頁加入修改 JSON 檔的功能"
+        "管理頁加入修改 JSON 檔的功能",
+        "列出 App 清單，使用者可針對某個 App 進行修改"
       ],
       "notes": [
         "透過 Cloudflare Pages Function 串接 GitHub API，更新  GitHub 專案的 JSON 資料"
