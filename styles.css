@@ -222,7 +222,14 @@ button { font: inherit; }
 .admin-hero p { max-width: 650px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
 .admin-hero code { color: var(--ink); background: rgba(102,87,217,.1); border-radius: 6px; padding: 2px 5px; }
 .admin-panel { background: white; border: 1px solid var(--line); border-radius: 26px; box-shadow: var(--shadow); }
+.access-panel { display: grid; gap: 14px; margin-bottom: 28px; padding: clamp(24px, 5vw, 44px); }
+.access-panel h2 { margin: 0; font: 800 18px/1.2 "Manrope", sans-serif; letter-spacing: -.03em; }
+.access-panel label { display: grid; gap: 8px; color: var(--ink); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .11em; }
+.access-panel input { width: 100%; min-height: 48px; padding: 0 14px; border: 1px solid var(--line); border-radius: 14px; background: #fffdf7; color: var(--ink); font: 600 15px/1.5 "DM Sans", sans-serif; outline: 0; transition: border-color .2s ease, box-shadow .2s ease; }
+.access-panel input:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(102,87,217,.12); }
+.access-panel > .field-hint { margin: -4px 0 0; }
 .admin-form { padding: clamp(24px, 5vw, 44px); display: grid; gap: 30px; }
+.admin-form-heading h2 { margin: 4px 0 0; font: 800 26px/1.2 "Manrope", sans-serif; }
 .admin-section { display: grid; gap: 16px; }
 .admin-section + .admin-section { padding-top: 30px; border-top: 1px solid var(--line); }
 .admin-section h2 { margin: 0; font: 800 18px/1.2 "Manrope", sans-serif; letter-spacing: -.03em; }
@@ -304,7 +311,7 @@ button { font: inherit; }
   .orbit-note, .hero-scroll { display: none; }.intro { padding: 83px 0; }.section-heading { display: block; padding-bottom: 29px; }.section-heading h2 { font-size: 44px; }.section-heading > p { margin-top: 20px; }
   .filters { margin-right: -15px; padding-right: 15px; }.filter-categories, .filter-tools { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; }.filter-tools { justify-content: flex-start; }.filter-button, .future-toggle { flex: 0 0 auto; }.app-search { width: min(100% - 15px, 280px); flex: 0 0 min(100% - 15px, 280px); }
   .project-grid { grid-template-columns: 1fr; }.card-featured { grid-column: auto; display: block; }.card-featured .card-visual { min-height: 300px; }.card-featured .card-body { padding: 26px; }.card-visual { min-height: 265px; }.project-card-detail { display: block; }.project-card-detail .card-visual { min-height: 330px; }.project-card-detail .card-body { padding: 27px 24px 30px; }.prompt-section { padding: 18px; }.card-meta { align-items: stretch; }.app-number { min-width: 96px; }.app-number strong { font-size: 27px; }.app-date { flex: 1; }
-  .admin-shell { width: min(100% - 30px, 980px); padding-top: 26px; }.admin-top { margin-bottom: 38px; }.admin-grid { grid-template-columns: 1fr; }.admin-form, .app-manager, .json-panel { padding: 22px; }.array-field-top, .json-panel-heading { display: grid; align-items: start; }.array-row { grid-template-columns: 1fr; }.array-remove { justify-self: start; }.json-load, .app-list-load { justify-self: start; }.app-admin-item { grid-template-columns: 64px minmax(0, 1fr); gap: 12px; }.app-admin-item img { width: 64px; height: 56px; }.app-item-edit { grid-column: 1 / -1; width: 100%; }.json-editor { min-height: 440px; }
+  .admin-shell { width: min(100% - 30px, 980px); padding-top: 26px; }.admin-top { margin-bottom: 38px; }.admin-grid { grid-template-columns: 1fr; }.access-panel, .admin-form, .app-manager, .json-panel { padding: 22px; }.array-field-top, .json-panel-heading { display: grid; align-items: start; }.array-row { grid-template-columns: 1fr; }.array-remove { justify-self: start; }.json-load, .app-list-load { justify-self: start; }.app-admin-item { grid-template-columns: 64px minmax(0, 1fr); gap: 12px; }.app-admin-item img { width: 64px; height: 56px; }.app-item-edit { grid-column: 1 / -1; width: 100%; }.json-editor { min-height: 440px; }
   .site-footer { padding: 40px 22px; display: block; }.site-footer p { margin: 20px 0; }.footer-links { justify-content: space-between; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }

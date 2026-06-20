@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260620" />
+    <link rel="stylesheet" href="styles.css?v=20260620-2" />
   </head>
   <body class="admin-page">
     <main class="admin-shell">
@@ -32,15 +32,20 @@
         </p>
       </section>
 
-      <form class="admin-panel admin-form" id="app-form">
-        <section class="admin-section">
-          <h2>Access</h2>
-          <label>
-            Admin secret
-            <input name="adminSecret" type="password" autocomplete="current-password" required />
-          </label>
-        </section>
+      <section class="admin-panel access-panel" aria-labelledby="access-title">
+        <h2 id="access-title">Access</h2>
+        <label for="admin-secret">
+          Admin secret
+          <input id="admin-secret" type="password" autocomplete="current-password" />
+        </label>
+        <p class="field-hint">Used by Add app, Edit an app, and Edit JSON file.</p>
+      </section>
 
+      <form class="admin-panel admin-form" id="app-form">
+        <div class="admin-form-heading">
+          <p class="section-kicker">New entry</p>
+          <h2>Add app</h2>
+        </div>
         <section class="admin-section">
           <h2>App details</h2>
           <div class="admin-grid">
@@ -242,6 +247,6 @@
         </div>
       </section>
     </main>
-    <script src="admin.js?v=20260620"></script>
+    <script src="admin.js?v=20260620-2"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@ const imageInput = form.elements.imageFile;
 const imagePreview = document.querySelector("#image-preview");
 const imagePreviewImage = imagePreview.querySelector("img");
 const imagePreviewName = imagePreview.querySelector("span");
-const adminSecretInput = form.elements.adminSecret;
+const adminSecretInput = document.querySelector("#admin-secret");
 const jsonEditor = document.querySelector("#json-editor");
 const jsonLoadButton = document.querySelector("#json-load");
 const jsonFormatButton = document.querySelector("#json-format");
@@ -416,12 +416,12 @@ form.addEventListener("submit", async (event) => {
 
   const submitButton = form.querySelector("button[type='submit']");
   const formData = new FormData(form);
-  const adminSecret = formData.get("adminSecret").trim();
 
   submitButton.disabled = true;
   setStatus("Preparing image...");
 
   try {
+    const secret = adminSecret();
     const app = appFromForm(formData);
     const imageFile = await imageUploadFromForm(formData);
     setStatus("Submitting app...");
@@ -430,7 +430,7 @@ form.addEventListener("submit", async (event) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "X-Admin-Secret": adminSecret,
+        "X-Admin-Secret": secret,
       },
       body: JSON.stringify({ app, imageFile }),
     });
