@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260620-2" />
+    <link rel="stylesheet" href="styles.css?v=20260620-3" />
   </head>
   <body class="admin-page">
     <main class="admin-shell">
@@ -170,20 +170,29 @@
               <span class="field-hint">File name in <code>assets</code>, without <code>.png</code>.</span>
             </label>
             <label>
+              New app image
+              <input name="imageFile" type="file" accept="image/png" />
+              <span class="field-hint">Optional. Upload a PNG to replace the current image.</span>
+            </label>
+          </div>
+          <div class="image-preview" id="edit-image-preview" hidden>
+            <img alt="New app image preview" />
+            <span></span>
+          </div>
+          <div class="admin-grid">
+            <label>
               AI
               <input name="AI" type="text" required />
             </label>
-          </div>
-          <div class="admin-grid">
             <label>
               Website URL
               <input name="website" type="url" placeholder="https://example.com" />
             </label>
-            <label>
-              GitHub URL
-              <input name="GitHub" type="url" placeholder="https://github.com/..." />
-            </label>
           </div>
+          <label>
+            GitHub URL
+            <input name="GitHub" type="url" placeholder="https://github.com/..." />
+          </label>
 
           <div class="array-field" data-edit-array-field="prompt">
             <div class="array-field-top">
@@ -247,6 +256,6 @@
         </div>
       </section>
     </main>
-    <script src="admin.js?v=20260620-2"></script>
+    <script src="admin.js?v=20260620-3"></script>
   </body>
 </html>

@@ -11,9 +11,10 @@ The JSON editor on the same page can also load, validate, and replace the full
 the editor loaded it.
 
 The app library provides a safer form-based editing flow: load the current app
-list, select one app, edit its fields, and save it. It uses the same stale-file
-check as the JSON editor. Changing an image name requires the matching PNG to
-already exist in `assets/`.
+list, select one app, edit its fields, optionally upload a replacement PNG, and
+save it. It uses the same stale-file check as the JSON editor. The replacement
+file name becomes the app's new `image` value; an existing asset with that name
+is overwritten.
 
 ## Required Cloudflare Secrets
 

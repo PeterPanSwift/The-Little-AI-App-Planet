@@ -276,6 +276,7 @@ button { font: inherit; }
 .app-edit-form label { display: grid; gap: 8px; color: var(--ink); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .11em; }
 .app-edit-form input, .app-edit-form textarea { width: 100%; border: 1px solid var(--line); border-radius: 14px; background: #fffdf7; color: var(--ink); font: 600 15px/1.5 "DM Sans", sans-serif; outline: 0; }
 .app-edit-form input { min-height: 48px; padding: 0 14px; }
+.app-edit-form input[type="file"] { padding: 11px 14px; cursor: pointer; }
 .app-edit-form textarea { resize: vertical; padding: 13px 14px; }
 .app-edit-form input:focus, .app-edit-form textarea:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(102,87,217,.12); }
 .json-panel-heading { display: flex; align-items: start; justify-content: space-between; gap: 28px; margin-bottom: 24px; }

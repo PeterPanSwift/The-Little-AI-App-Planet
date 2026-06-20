@@ -350,6 +350,21 @@ export async function onRequestPut({ request, env }) {
     return json({ error: "Request body must be JSON." }, 400);
   }
 
+  let imageUpload = null;
+  if (body?.imageFile != null) {
+    imageUpload = normalizeImageUpload(body.imageFile);
+    const imageValidationError = validateImageUpload(imageUpload);
+    if (imageValidationError) {
+      return json({ error: imageValidationError }, 400);
+    }
+    const imageIsReferenced = body?.data?.apps?.some(
+      (app) => cleanString(app?.image) === imageUpload.name,
+    );
+    if (!imageIsReferenced) {
+      return json({ error: "The uploaded image must be assigned to an app." }, 400);
+    }
+  }
+
   const validationError = validateAppsData(body?.data);
   if (validationError) {
     return json({ error: validationError }, 400);
@@ -360,11 +375,38 @@ export async function onRequestPut({ request, env }) {
     return json({ error: "Load the latest JSON before saving." }, 400);
   }
 
-  const { branch, fileUrl } = repositoryConfig(env);
+  const { branch, fileUrl, owner, repo } = repositoryConfig(env);
   try {
     const currentFile = await githubRequest(`${fileUrl}?ref=${branch}`, env);
     if (currentFile.sha !== submittedSha) {
       return json({ error: "The JSON file changed after it was loaded. Load it again before saving." }, 409);
+    }
+
+    let image = null;
+    if (imageUpload) {
+      const imagePath = `${ASSETS_DIR}/${imageUpload.name}.png`;
+      const imageUrl = githubContentsUrl(owner, repo, imagePath);
+      const currentImageFile = await githubRequest(`${imageUrl}?ref=${branch}`, env, {}, {
+        allowNotFound: true,
+      });
+      const imagePayload = {
+        branch,
+        content: imageUpload.contentBase64,
+        message: `${currentImageFile ? "Update" : "Add"} image: ${imageUpload.name}.png`,
+      };
+      if (currentImageFile) imagePayload.sha = currentImageFile.sha;
+
+      const updatedImageFile = await githubRequest(imageUrl, env, {
+        method: "PUT",
+        body: JSON.stringify(imagePayload),
+      });
+      image = {
+        path: imagePath,
+        commit: {
+          sha: updatedImageFile.commit.sha,
+          url: updatedImageFile.commit.html_url,
+        },
+      };
     }
 
     const updatedFile = await githubRequest(fileUrl, env, {
@@ -383,6 +425,7 @@ export async function onRequestPut({ request, env }) {
         sha: updatedFile.commit.sha,
         url: updatedFile.commit.html_url,
       },
+      image,
       totalApps: body.data.apps.length,
     });
   } catch (error) {

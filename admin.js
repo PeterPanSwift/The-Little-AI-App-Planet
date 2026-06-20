@@ -17,6 +17,10 @@ const appEditForm = document.querySelector("#app-edit-form");
 const appEditTitle = document.querySelector("#app-edit-title");
 const appEditCancelButton = document.querySelector("#app-edit-cancel");
 const appEditStatus = document.querySelector("#app-edit-status");
+const editImageInput = appEditForm.elements.imageFile;
+const editImagePreview = document.querySelector("#edit-image-preview");
+const editImagePreviewImage = editImagePreview.querySelector("img");
+const editImagePreviewName = editImagePreview.querySelector("span");
 let jsonFileSha = "";
 let appListData = null;
 let appListSha = "";
@@ -105,10 +109,11 @@ function readFileAsDataUrl(file) {
   });
 }
 
-async function imageUploadFromForm(formData) {
+async function imageUploadFromForm(formData, required = true) {
   const file = formData.get("imageFile");
 
   if (!(file instanceof File) || file.size === 0) {
+    if (!required) return null;
     throw new Error("Upload a PNG image.");
   }
 
@@ -124,6 +129,15 @@ async function imageUploadFromForm(formData) {
     mimeType: file.type,
     contentBase64,
   };
+}
+
+function imageNameFromFileName(fileName) {
+  return fileName
+    .replace(/\.[^.]+$/, "")
+    .replace(/[<>:"/\\|?*\u0000-\u001f]/g, "-")
+    .replace(/\s+/g, " ")
+    .replace(/-+/g, "-")
+    .trim();
 }
 
 function setStatus(message, type = "") {
@@ -275,6 +289,10 @@ function openAppEditor(index) {
     });
   fillEditArray("prompt", app.prompt || []);
   fillEditArray("notes", app.notes || []);
+  editImageInput.value = "";
+  editImagePreview.hidden = true;
+  editImagePreviewImage.removeAttribute("src");
+  editImagePreviewName.textContent = "";
   appEditTitle.textContent = `Edit: ${app.title}`;
   setAppEditStatus("");
   appEditForm.hidden = false;
@@ -334,6 +352,20 @@ appEditForm.querySelectorAll("[data-edit-array-add]").forEach((button) => {
 
 appEditCancelButton.addEventListener("click", closeAppEditor);
 
+editImageInput.addEventListener("change", () => {
+  const [file] = editImageInput.files;
+  if (!file) {
+    editImagePreview.hidden = true;
+    editImagePreviewImage.removeAttribute("src");
+    editImagePreviewName.textContent = "";
+    return;
+  }
+
+  editImagePreviewImage.src = URL.createObjectURL(file);
+  editImagePreviewName.textContent = file.name;
+  editImagePreview.hidden = false;
+});
+
 appListLoadButton.addEventListener("click", async () => {
   appListLoadButton.disabled = true;
   setAppListStatus("Loading apps...");
@@ -365,7 +397,10 @@ appEditForm.addEventListener("submit", async (event) => {
 
   try {
     if (!appListData || editingAppIndex < 0) throw new Error("Load and select an app first.");
-    const updatedApp = appFromEditForm(new FormData(appEditForm));
+    const editFormData = new FormData(appEditForm);
+    const updatedApp = appFromEditForm(editFormData);
+    const imageFile = await imageUploadFromForm(editFormData, false);
+    if (imageFile) updatedApp.image = imageNameFromFileName(imageFile.name);
     const updatedData = {
       ...appListData,
       apps: appListData.apps.map((app, index) => index === editingAppIndex ? updatedApp : app),
@@ -379,7 +414,7 @@ appEditForm.addEventListener("submit", async (event) => {
         "Content-Type": "application/json",
         "X-Admin-Secret": adminSecret(),
       },
-      body: JSON.stringify({ data: updatedData, sha: appListSha }),
+      body: JSON.stringify({ data: updatedData, sha: appListSha, imageFile }),
     });
     const result = await response.json();
     if (!response.ok) throw new Error(result.error || "The app could not be saved.");
