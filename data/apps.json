@@ -136,10 +136,11 @@
         "設計一個網頁，輸入百分比和分數，計算總分",
         "加上 banana 繪製的可愛北極狐插圖",
         "加上重設全部得分的功能",
-        "部署到 GitHub Pages"
+        "部署到 GitHub Pages",
+        "按 tab 跳到下一個得分欄位"
       ],
       "notes": [
-        "無"
+        "指定按下 tab 跳到的 textfield"
       ],
       "website": "https://peterpanswift.github.io/weighted-score-calculator",
       "GitHub": "https://github.com/PeterPanSwift/weighted-score-calculator"
