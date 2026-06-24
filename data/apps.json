@@ -186,6 +186,20 @@
       "notes": [
         "無"
       ]
+    },
+    {
+      "date": "2026-06-24",
+      "title": "課程投影片的 AI 問答知識庫",
+      "platform": "AI",
+      "description": "將課程投影片變成方便用 AI 詢問的知識庫",
+      "image": "課程投影片的 AI 問答知識庫",
+      "AI": "Claude Project, Sonnet 4.6, Medium",
+      "prompt": [
+        "Claude Chat Project instructions:\n請根據 PDF 內容回答問題，並在答案中標明資料出處，包括對應的投影片與頁碼，並在 preview 顯示對應的投影片。如果投影片找不到答案則回答查無資料。"
+      ],
+      "notes": [
+        "AI 可以用 Python 程式和 ORC 技術辨識投影片裡的圖片"
+      ]
     }
   ]
 }
