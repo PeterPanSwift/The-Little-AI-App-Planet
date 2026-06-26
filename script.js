@@ -62,9 +62,10 @@ function createLinkedNoteText(text) {
 
 function createAnimalList(items, options = {}) {
   const list = document.createElement("ul");
-  const emojis = randomAnimalEmojis(items.length);
+  const listItems = normalizedListItems(items, options);
+  const emojis = randomAnimalEmojis(listItems.length);
 
-  items.forEach((item, index) => {
+  listItems.forEach((item, index) => {
     const listItem = document.createElement("li");
     const emoji = createTextElement("span", "animal-marker", emojis[index]);
     const content = options.linkNotes
@@ -76,6 +77,17 @@ function createAnimalList(items, options = {}) {
   });
 
   return list;
+}
+
+function normalizedListItems(items, options = {}) {
+  if (!Array.isArray(items)) return [];
+  return items
+    .map((item) => (typeof item === "string" ? item.trim() : ""))
+    .filter((item) => item && (!options.omitNone || item !== "無"));
+}
+
+function hasListItems(items, options = {}) {
+  return normalizedListItems(items, options).length > 0;
 }
 
 function imagePath(imageName) {
@@ -142,10 +154,14 @@ function createProjectCard(app) {
   promptSection.append(createTextElement("h4", "", "Key Prompts"));
   promptSection.append(createAnimalList(app.prompt));
 
-  const notesSection = document.createElement("div");
-  notesSection.className = "notes-section";
-  notesSection.append(createTextElement("h4", "", "Notes"));
-  notesSection.append(createAnimalList(app.notes, { linkNotes: true }));
+  const notesSection = hasListItems(app.notes, { omitNone: true })
+    ? document.createElement("div")
+    : null;
+  if (notesSection) {
+    notesSection.className = "notes-section";
+    notesSection.append(createTextElement("h4", "", "Notes"));
+    notesSection.append(createAnimalList(app.notes, { linkNotes: true, omitNone: true }));
+  }
 
   const appLinks = document.createElement("div");
   appLinks.className = "app-links";
@@ -203,7 +219,7 @@ function createProjectCard(app) {
     createTextElement("p", "", app.description),
     aiRow,
     promptSection,
-    notesSection,
+    ...(notesSection ? [notesSection] : []),
     appLinks,
   );
   article.append(visual, body);

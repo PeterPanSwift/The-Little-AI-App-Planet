@@ -145,10 +145,6 @@ function validateApp(app) {
     return "Add at least one key prompt.";
   }
 
-  if (app.notes.length === 0) {
-    return "Add at least one note.";
-  }
-
   return "";
 }
 

@@ -194,10 +194,6 @@ function appFromForm(formData) {
     throw new Error("Add at least one key prompt.");
   }
 
-  if (notes.length === 0) {
-    throw new Error("Add at least one note.");
-  }
-
   const app = {
     date: formData.get("date").trim(),
     title: formData.get("title").trim(),
@@ -261,7 +257,6 @@ function appFromEditForm(formData) {
   const prompt = editArrayValues("prompt");
   const notes = editArrayValues("notes");
   if (prompt.length === 0) throw new Error("Add at least one key prompt.");
-  if (notes.length === 0) throw new Error("Add at least one note.");
 
   const app = {
     date: formData.get("date").trim(),
