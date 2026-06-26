@@ -181,6 +181,21 @@ function createProjectCard(app) {
     appLinks.append(githubLink);
   }
 
+  if (app.medium) {
+    const mediumLink = document.createElement("a");
+    mediumLink.className = "app-link medium-link";
+    mediumLink.href = app.medium;
+    mediumLink.target = "_blank";
+    mediumLink.rel = "noopener noreferrer";
+    mediumLink.setAttribute("aria-label", `Open ${app.title} on Medium`);
+    mediumLink.title = "Read on Medium";
+    mediumLink.innerHTML = `
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M13.54 12c0 3.53-2.84 6.39-6.35 6.39S.84 15.53.84 12s2.84-6.39 6.35-6.39 6.35 2.86 6.35 6.39Zm6.97 0c0 3.32-1.42 6.01-3.17 6.01s-3.17-2.69-3.17-6.01 1.42-6.01 3.17-6.01 3.17 2.69 3.17 6.01Zm2.65 0c0 2.98-.5 5.4-1.12 5.4s-1.12-2.42-1.12-5.4.5-5.4 1.12-5.4 1.12 2.42 1.12 5.4Z"/>
+      </svg>`;
+    appLinks.append(mediumLink);
+  }
+
   body.append(
     meta,
     platform,

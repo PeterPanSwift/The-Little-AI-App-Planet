@@ -210,8 +210,10 @@ function appFromForm(formData) {
 
   const website = optionalUrl(formData.get("website"));
   const GitHub = optionalUrl(formData.get("GitHub"));
+  const medium = optionalUrl(formData.get("medium"));
   if (website) app.website = website;
   if (GitHub) app.GitHub = GitHub;
+  if (medium) app.medium = medium;
 
   return app;
 }
@@ -273,8 +275,10 @@ function appFromEditForm(formData) {
   };
   const website = optionalUrl(formData.get("website"));
   const GitHub = optionalUrl(formData.get("GitHub"));
+  const medium = optionalUrl(formData.get("medium"));
   if (website) app.website = website;
   if (GitHub) app.GitHub = GitHub;
+  if (medium) app.medium = medium;
   return app;
 }
 
@@ -283,7 +287,7 @@ function openAppEditor(index) {
   if (!app) return;
 
   editingAppIndex = index;
-  ["date", "title", "platform", "description", "image", "AI", "website", "GitHub"]
+  ["date", "title", "platform", "description", "image", "AI", "website", "GitHub", "medium"]
     .forEach((name) => {
       appEditForm.elements[name].value = app[name] || "";
     });

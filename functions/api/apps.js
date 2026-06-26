@@ -122,8 +122,10 @@ function normalizeApp(input, imageName = "") {
 
   const website = cleanOptionalUrl(input.website);
   const GitHub = cleanOptionalUrl(input.GitHub);
+  const medium = cleanOptionalUrl(input.medium);
   if (website) app.website = website;
   if (GitHub) app.GitHub = GitHub;
+  if (medium) app.medium = medium;
 
   return app;
 }

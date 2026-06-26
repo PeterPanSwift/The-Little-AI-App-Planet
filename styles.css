@@ -140,6 +140,9 @@ button { font: inherit; }
 .app-link:hover { transform: translateY(-3px) rotate(-4deg); background: var(--purple); }
 .app-link svg { width: 21px; height: 21px; }
 .github-link svg { fill: currentColor; }
+.medium-link { background: #00ab6c; }
+.medium-link:hover { background: var(--ink); }
+.medium-link svg { width: 24px; height: 24px; fill: currentColor; }
 .website-link { background: var(--purple); }
 .website-link:hover { background: var(--coral); }
 .website-link svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
