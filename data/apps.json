@@ -202,6 +202,21 @@
       "notes": [
         "AI 可以用 Python 程式和 ORC 技術辨識投影片裡的圖片"
       ]
+    },
+    {
+      "date": "2026-06-25",
+      "title": "喜歡引用名言的 AI",
+      "platform": "AI",
+      "description": "在指令要求 AI 引用名言，將 Claude Project、我的 GPT、Gemini Gem 變身成喜歡引用名言的 AI。",
+      "image": "喜歡引用名言的 AI",
+      "AI": "Claude Project、我的 GPT、Gemini Gem",
+      "prompt": [
+        "instructions:\n每次回答時都引用動畫芙莉蓮的名言"
+      ],
+      "notes": [
+        "無"
+      ],
+      "medium": "https://medium.com/p/a43dd9f9abd8"
     }
   ]
 }
