@@ -101,7 +101,7 @@
         "加上網頁切換英文和中文版的功能，階層圖展開收起時有箭頭長出的動畫"
       ],
       "notes": [
-        "將 GitHub 的網頁程式部署到 Cloudflare(link:https://medium.com/p/5e83b61fd528)"
+        "將 GitHub 的網頁程式部署到 Cloudflare"
       ],
       "website": "https://codex-swiftui-view-hierarchy.pages.dev/",
       "GitHub": "https://github.com/PeterPanSwift/codex-swiftui-view-hierarchy",
