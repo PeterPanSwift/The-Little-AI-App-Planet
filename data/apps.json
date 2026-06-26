@@ -6,8 +6,6 @@
       "platform": "Website",
       "description": "A playful daily showcase for apps made with AI.",
       "image": "the little ai planet",
-      "website": "https://the-little-ai-app-planet.pages.dev",
-      "GitHub": "https://github.com/PeterPanSwift/The-Little-AI-App-Planet",
       "AI": "Codex, GPT 5.5, high",
       "prompt": [
         "設計一個漂亮網站，名字是 ”The Little AI App Planet”，分享我每天用 AI 寫的 App，作品包含各種用 AI 完成的作品，比方手機 App、網頁、電腦 App，文字用英文，搭配用 imagegen skill 生成的可愛圖片，比方北極狐",
@@ -27,8 +25,11 @@
         "圖片展示區改成「同圖模糊背景 + 前景完整圖片卡片」",
         "Codex 可用註解功能選取某個區塊修改網頁(In-app browser 的 comment)",
         "使用 wrangler 部署到 Cloudflare Pages",
-        "Cloudflare Pages 專案綁定 GitHub，每次 push 都會自動部署"
-      ]
+        "Cloudflare Pages 專案綁定 GitHub，每次 push 都會自動部署",
+        "GitHub、Website、Medium 的 icon 使用 inline SVG 繪製"
+      ],
+      "website": "https://the-little-ai-app-planet.pages.dev",
+      "GitHub": "https://github.com/PeterPanSwift/The-Little-AI-App-Planet"
     },
     {
       "date": "2026-06-15",
