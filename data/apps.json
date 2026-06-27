@@ -233,7 +233,7 @@
     {
       "date": "2026-06-27",
       "title": "找出最適合你的 Mac",
-      "platform": "Website, Python",
+      "platform": "Website",
       "description": "利用 Python 從 Apple 官網抓取 Mac 規格和價錢，然後製作 Mac 比價網頁。",
       "image": "找出最適合你的 Mac",
       "AI": "忘了",
