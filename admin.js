@@ -189,24 +189,21 @@ function parsedJsonEditor() {
 function appFromForm(formData) {
   const prompt = arrayValues("prompt");
   const notes = arrayValues("notes");
-
-  if (prompt.length === 0) {
-    throw new Error("Add at least one key prompt.");
-  }
+  const AI = formData.get("AI").trim();
 
   const app = {
     date: formData.get("date").trim(),
     title: formData.get("title").trim(),
     platform: formData.get("platform").trim(),
     description: formData.get("description").trim(),
-    AI: formData.get("AI").trim(),
-    prompt,
     notes,
   };
 
   const website = optionalUrl(formData.get("website"));
   const GitHub = optionalUrl(formData.get("GitHub"));
   const medium = optionalUrl(formData.get("medium"));
+  if (AI) app.AI = AI;
+  if (prompt.length > 0) app.prompt = prompt;
   if (website) app.website = website;
   if (GitHub) app.GitHub = GitHub;
   if (medium) app.medium = medium;
@@ -256,7 +253,7 @@ function fillEditArray(name, values) {
 function appFromEditForm(formData) {
   const prompt = editArrayValues("prompt");
   const notes = editArrayValues("notes");
-  if (prompt.length === 0) throw new Error("Add at least one key prompt.");
+  const AI = formData.get("AI").trim();
 
   const app = {
     date: formData.get("date").trim(),
@@ -264,13 +261,13 @@ function appFromEditForm(formData) {
     platform: formData.get("platform").trim(),
     description: formData.get("description").trim(),
     image: formData.get("image").trim(),
-    AI: formData.get("AI").trim(),
-    prompt,
     notes,
   };
   const website = optionalUrl(formData.get("website"));
   const GitHub = optionalUrl(formData.get("GitHub"));
   const medium = optionalUrl(formData.get("medium"));
+  if (AI) app.AI = AI;
+  if (prompt.length > 0) app.prompt = prompt;
   if (website) app.website = website;
   if (GitHub) app.GitHub = GitHub;
   if (medium) app.medium = medium;

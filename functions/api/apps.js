@@ -115,14 +115,16 @@ function normalizeApp(input, imageName = "") {
     platform: cleanString(input.platform),
     description: cleanString(input.description),
     image: imageName || cleanString(input.image),
-    AI: cleanString(input.AI),
-    prompt: cleanStringArray(input.prompt),
     notes: cleanStringArray(input.notes),
   };
 
+  const AI = cleanString(input.AI);
+  const prompt = cleanStringArray(input.prompt);
   const website = cleanOptionalUrl(input.website);
   const GitHub = cleanOptionalUrl(input.GitHub);
   const medium = cleanOptionalUrl(input.medium);
+  if (AI) app.AI = AI;
+  if (prompt.length > 0) app.prompt = prompt;
   if (website) app.website = website;
   if (GitHub) app.GitHub = GitHub;
   if (medium) app.medium = medium;
@@ -131,7 +133,7 @@ function normalizeApp(input, imageName = "") {
 }
 
 function validateApp(app) {
-  const requiredFields = ["date", "title", "platform", "description", "image", "AI"];
+  const requiredFields = ["date", "title", "platform", "description", "image"];
   const missing = requiredFields.filter((field) => !app[field]);
   if (missing.length > 0) {
     return `Missing required fields: ${missing.join(", ")}`;
@@ -139,10 +141,6 @@ function validateApp(app) {
 
   if (!/^\d{4}-\d{2}-\d{2}$/.test(app.date)) {
     return "Date must use YYYY-MM-DD.";
-  }
-
-  if (app.prompt.length === 0) {
-    return "Add at least one key prompt.";
   }
 
   return "";

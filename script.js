@@ -142,17 +142,25 @@ function createProjectCard(app) {
 
   const platform = createTextElement("p", "app-platform", app.platform);
 
-  const aiRow = document.createElement("div");
-  aiRow.className = "ai-row";
-  aiRow.append(
-    createTextElement("span", "ai-label", "AI"),
-    createTextElement("strong", "", app.AI),
-  );
+  const aiRow = typeof app.AI === "string" && app.AI.trim()
+    ? document.createElement("div")
+    : null;
+  if (aiRow) {
+    aiRow.className = "ai-row";
+    aiRow.append(
+      createTextElement("span", "ai-label", "AI"),
+      createTextElement("strong", "", app.AI.trim()),
+    );
+  }
 
-  const promptSection = document.createElement("div");
-  promptSection.className = "prompt-section";
-  promptSection.append(createTextElement("h4", "", "Key Prompts"));
-  promptSection.append(createAnimalList(app.prompt));
+  const promptSection = hasListItems(app.prompt)
+    ? document.createElement("div")
+    : null;
+  if (promptSection) {
+    promptSection.className = "prompt-section";
+    promptSection.append(createTextElement("h4", "", "Key Prompts"));
+    promptSection.append(createAnimalList(app.prompt));
+  }
 
   const notesSection = hasListItems(app.notes, { omitNone: true })
     ? document.createElement("div")
@@ -217,8 +225,8 @@ function createProjectCard(app) {
     platform,
     createTextElement("h3", "", app.title),
     createTextElement("p", "", app.description),
-    aiRow,
-    promptSection,
+    ...(aiRow ? [aiRow] : []),
+    ...(promptSection ? [promptSection] : []),
     ...(notesSection ? [notesSection] : []),
     appLinks,
   );
