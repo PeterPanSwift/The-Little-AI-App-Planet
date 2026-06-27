@@ -236,10 +236,6 @@
       "platform": "Website",
       "description": "利用 Python 從 Apple 官網抓取 Mac 規格和價錢，然後製作 Mac 比價網頁。",
       "image": "找出最適合你的 Mac",
-      "AI": "忘了",
-      "prompt": [
-        "忘了"
-      ],
       "notes": [],
       "website": "https://buy-mac.pages.dev/",
       "GitHub": "https://github.com/PeterPanSwift/buyMac"
