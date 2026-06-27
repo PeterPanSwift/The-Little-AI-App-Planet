@@ -239,6 +239,16 @@
       "notes": [],
       "website": "https://buy-mac.pages.dev/",
       "GitHub": "https://github.com/PeterPanSwift/buyMac"
+    },
+    {
+      "date": "2026-06-28",
+      "title": "Can Your Mac Tame Xcode",
+      "platform": "Website",
+      "description": "查詢自己的 Mac 可安裝哪一版的 Xcode",
+      "image": "Can Your Mac Tame Xcode",
+      "notes": [],
+      "website": "https://peterpanswift.github.io/MacXcodeMatch",
+      "GitHub": "https://github.com/PeterPanSwift/MacXcodeMatch"
     }
   ]
 }
