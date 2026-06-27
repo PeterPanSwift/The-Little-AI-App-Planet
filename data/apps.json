@@ -264,6 +264,18 @@
       ],
       "website": "https://peterpanswift.github.io/iphone-bezels",
       "GitHub": "https://github.com/PeterPanSwift/iphone-bezels"
+    },
+    {
+      "date": "2026-06-30",
+      "title": "B612 App Blog",
+      "platform": "Website",
+      "description": "將 Medium Blog 備份的文章清單變成網頁",
+      "image": "B612 App Blog",
+      "notes": [
+        "利用 Python 程式解析 Medium 備份輸出的 JSON"
+      ],
+      "website": "https://peterpanswift.github.io/b612-App-blog",
+      "GitHub": "https://github.com/PeterPanSwift/b612-App-blog"
     }
   ]
 }
