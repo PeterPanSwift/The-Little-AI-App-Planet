@@ -217,6 +217,18 @@
         "無"
       ],
       "medium": "https://medium.com/p/a43dd9f9abd8"
+    },
+    {
+      "date": "2026-06-26",
+      "title": "突顯圖片的指定區塊",
+      "platform": "AI",
+      "description": "請  AI 突顯圖片裡指定的區塊",
+      "image": "突顯圖片的指定區塊",
+      "AI": "自訂 GPT",
+      "prompt": [
+        "修改圖片，漂亮地突顯圖片裡指定的文字區塊"
+      ],
+      "notes": []
     }
   ]
 }
