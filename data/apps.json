@@ -246,7 +246,9 @@
       "platform": "Website",
       "description": "查詢自己的 Mac 可安裝哪一版的 Xcode",
       "image": "Can Your Mac Tame Xcode",
-      "notes": [],
+      "notes": [
+        "從 https://developer.apple.com/support/xcode 抓取 Xcode 資料"
+      ],
       "website": "https://peterpanswift.github.io/MacXcodeMatch",
       "GitHub": "https://github.com/PeterPanSwift/MacXcodeMatch"
     }
