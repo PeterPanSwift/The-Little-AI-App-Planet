@@ -217,6 +217,32 @@
         "無"
       ],
       "medium": "https://medium.com/p/a43dd9f9abd8"
+    },
+    {
+      "date": "2026-06-26",
+      "title": "突顯圖片的指定區塊",
+      "platform": "AI",
+      "description": "請  AI 突顯圖片裡指定的區塊",
+      "image": "突顯圖片的指定區塊",
+      "AI": "自訂 GPT",
+      "prompt": [
+        "修改圖片，漂亮地突顯圖片裡指定的區塊"
+      ],
+      "notes": []
+    },
+    {
+      "date": "2026-06-27",
+      "title": "找出最適合你的 Mac",
+      "platform": "Website",
+      "description": "利用 Python 從 Apple 官網抓取 Mac 規格和價錢，然後製作 Mac 比價網頁。",
+      "image": "找出最適合你的 Mac",
+      "AI": "忘了",
+      "prompt": [
+        "忘了"
+      ],
+      "notes": [],
+      "website": "https://buy-mac.pages.dev/",
+      "GitHub": "https://github.com/PeterPanSwift/buyMac"
     }
   ]
 }
