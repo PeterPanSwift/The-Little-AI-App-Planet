@@ -40,22 +40,52 @@ function randomAnimalEmojis(count) {
     .slice(0, count);
 }
 
-function createLinkedNoteText(text) {
+function appendAutoLinkedText(container, text) {
+  const urlPattern = /https?:\/\/[^\s<>"'，。！？；：、（）【】《》]+/gi;
+  let cursor = 0;
+
+  for (const match of text.matchAll(urlPattern)) {
+    const rawUrl = match[0];
+    const trailingPunctuation = rawUrl.match(/[),.;:!?\]}，。！？；：、]+$/u)?.[0] || "";
+    const url = rawUrl.slice(0, rawUrl.length - trailingPunctuation.length);
+
+    container.append(document.createTextNode(text.slice(cursor, match.index)));
+
+    const link = document.createElement("a");
+    link.className = "note-link";
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = url;
+    container.append(link);
+
+    if (trailingPunctuation) {
+      container.append(document.createTextNode(trailingPunctuation));
+    }
+    cursor = match.index + rawUrl.length;
+  }
+
+  container.append(document.createTextNode(text.slice(cursor)));
+}
+
+function createLinkedListText(text, options = {}) {
   const container = document.createElement("span");
   container.className = "list-text";
-  const match = text.match(/\(link:\s*(https?:\/\/[^\s)]+)\)/i);
+  const legacyNoteLink = options.linkNotes
+    ? text.match(/\(link:\s*(https?:\/\/[^\s)]+)\)/i)
+    : null;
 
-  if (!match) {
-    container.textContent = text;
+  if (!legacyNoteLink) {
+    appendAutoLinkedText(container, text);
     return container;
   }
 
   const link = document.createElement("a");
   link.className = "note-link";
-  link.href = match[1];
+  link.href = legacyNoteLink[1];
   link.target = "_blank";
   link.rel = "noopener noreferrer";
-  link.textContent = text.replace(match[0], "").trim() || "Open link";
+  link.textContent = text.replace(legacyNoteLink[0], "").trim() || "Open link";
   container.append(link);
   return container;
 }
@@ -68,9 +98,7 @@ function createAnimalList(items, options = {}) {
   listItems.forEach((item, index) => {
     const listItem = document.createElement("li");
     const emoji = createTextElement("span", "animal-marker", emojis[index]);
-    const content = options.linkNotes
-      ? createLinkedNoteText(item)
-      : createTextElement("span", "list-text", item);
+    const content = createLinkedListText(item, options);
     emoji.setAttribute("aria-hidden", "true");
     listItem.append(emoji, content);
     list.append(listItem);
