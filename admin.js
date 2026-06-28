@@ -38,6 +38,7 @@ const arrayFieldConfigs = {
     list: document.querySelector('[data-array-list="notes"]'),
     placeholder: "Write a note",
     removeLabel: "Remove note",
+    multiline: true,
   },
 };
 
@@ -218,9 +219,10 @@ function editArrayValues(name) {
 }
 
 function createEditArrayRow(name, value = "", shouldFocus = false) {
+  const config = arrayFieldConfigs[name];
   const list = appEditForm.querySelector(`[data-edit-array-list="${name}"]`);
   const row = document.createElement("div");
-  const input = document.createElement(name === "prompt" ? "textarea" : "input");
+  const input = document.createElement(config.multiline ? "textarea" : "input");
   const removeButton = document.createElement("button");
 
   row.className = "array-row";
@@ -228,12 +230,12 @@ function createEditArrayRow(name, value = "", shouldFocus = false) {
   else input.rows = 3;
   input.value = value;
   input.dataset.editArrayInput = name;
-  input.placeholder = name === "prompt" ? "Write a key prompt" : "Write a note";
+  input.placeholder = config.placeholder;
 
   removeButton.className = "array-remove";
   removeButton.type = "button";
   removeButton.textContent = "Remove";
-  removeButton.setAttribute("aria-label", `Remove ${name}`);
+  removeButton.setAttribute("aria-label", config.removeLabel);
   removeButton.addEventListener("click", () => {
     row.remove();
     if (list.children.length === 0) createEditArrayRow(name);
