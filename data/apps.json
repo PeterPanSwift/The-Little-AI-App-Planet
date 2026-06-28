@@ -254,6 +254,24 @@
       "GitHub": "https://github.com/PeterPanSwift/MacXcodeMatch"
     },
     {
+      "date": "2026-06-28",
+      "title": "Screen Atlas",
+      "platform": "Website",
+      "description": "將歷代 iPhone 與 iPad 依螢幕尺寸分組，快速找出相同尺寸的裝置。",
+      "image": "Screen Atlas",
+      "notes": [
+        "Apple Human Interface Guidelines 的裝置尺寸可從以下網址抓取 JSON   https://developer.apple.com/tutorials/data/design/human-interface-guidelines/layout.json"
+      ],
+      "AI": "Codex, GPT 5.5, high",
+      "prompt": [
+        "寫一個 python 程式，解析連結的 iOS, iPadOS device screen dimensions，整理成 JSON\nhttps://developer.apple.com/design/human-interface-guidelines/layout#iOS-iPadOS-device-screen-dimensions",
+        "製作一個精美的網頁，讀取 ios_ipados_screen_dimensions.json，將裝置以尺寸分組。\n在網頁上顯示表格，欄位有兩個，一個是尺寸(單位為 point)，一個是尺寸對應的裝置名字",
+        "加上 search 裝置名字的功能"
+      ],
+      "website": "https://ios-ipados-screen-dimensions.pages.dev/",
+      "GitHub": "https://github.com/PeterPanSwift/ios-ipados-screen-dimensions"
+    },
+    {
       "date": "2026-06-29",
       "title": "iPhone App Frame Composer",
       "platform": "Website",
