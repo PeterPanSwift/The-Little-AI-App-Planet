@@ -272,6 +272,23 @@
       "GitHub": "https://github.com/PeterPanSwift/MacXcodeMatch"
     },
     {
+      "date": "2026-06-29",
+      "title": "打地鼠 Flutter App",
+      "platform": "Flutter",
+      "description": "使用 Antigravity IDE 的 AI 開發打地鼠 Flutter App",
+      "image": "打地鼠 App",
+      "notes": [
+        "Gemini 使用 banana 繪製圖片"
+      ],
+      "AI": "Antigravity IDE, Gemini 3.5 Flash, high",
+      "prompt": [
+        "可愛的打地鼠 App",
+        "用 AI 繪製地鼠圖片"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/whack_mole",
+      "medium": "https://medium.com/p/80ddceabb6c0"
+    },
+    {
       "date": "2026-06-30",
       "title": "iPhone App Frame Composer",
       "platform": "Website",
