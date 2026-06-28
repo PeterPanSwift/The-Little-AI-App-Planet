@@ -241,19 +241,6 @@
       "GitHub": "https://github.com/PeterPanSwift/buyMac"
     },
     {
-      "date": "2026-06-29",
-      "title": "Can Your Mac Tame Xcode",
-      "platform": "Website",
-      "description": "查詢自己的 Mac 可安裝哪一版的 Xcode",
-      "image": "Can Your Mac Tame Xcode",
-      "notes": [
-        "從 https://developer.apple.com/support/xcode 抓取 Xcode 資料",
-        "從 https://en.wikipedia.org/wiki/MacOS 抓取 macOS 支援的 Mac"
-      ],
-      "website": "https://peterpanswift.github.io/MacXcodeMatch",
-      "GitHub": "https://github.com/PeterPanSwift/MacXcodeMatch"
-    },
-    {
       "date": "2026-06-28",
       "title": "Screen Atlas",
       "platform": "Website",
@@ -266,10 +253,23 @@
       "prompt": [
         "寫一個 python 程式，解析連結的 iOS, iPadOS device screen dimensions，整理成 JSON\nhttps://developer.apple.com/design/human-interface-guidelines/layout#iOS-iPadOS-device-screen-dimensions",
         "製作一個精美的網頁，讀取 ios_ipados_screen_dimensions.json，將裝置以尺寸分組。\n在網頁上顯示表格，欄位有兩個，一個是尺寸(單位為 point)，一個是尺寸對應的裝置名字",
-        "加上 search 裝置名字的功能"
+        "加上 search 裝置名字和尺寸的功能"
       ],
       "website": "https://ios-ipados-screen-dimensions.pages.dev/",
       "GitHub": "https://github.com/PeterPanSwift/ios-ipados-screen-dimensions"
+    },
+    {
+      "date": "2026-06-29",
+      "title": "Can Your Mac Tame Xcode",
+      "platform": "Website",
+      "description": "查詢自己的 Mac 可安裝哪一版的 Xcode",
+      "image": "Can Your Mac Tame Xcode",
+      "notes": [
+        "從 https://developer.apple.com/support/xcode 抓取 Xcode 資料",
+        "從 https://en.wikipedia.org/wiki/MacOS 抓取 macOS 支援的 Mac"
+      ],
+      "website": "https://peterpanswift.github.io/MacXcodeMatch",
+      "GitHub": "https://github.com/PeterPanSwift/MacXcodeMatch"
     },
     {
       "date": "2026-06-30",
