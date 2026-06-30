@@ -5,6 +5,7 @@ let allChronologicalApps = [];
 let includeFutureApps = false;
 let activeFilter = "all";
 let searchQuery = "";
+const platformOrder = ["SwiftUI", "Flutter", "AI", "Website", "Python"];
 
 function createTextElement(tag, className, text) {
   const element = document.createElement(tag);
@@ -307,6 +308,17 @@ function renderFilters(apps) {
     }
   });
 
+  const platformRanks = new Map(platformOrder.map((platform, index) => [platformKey(platform), index]));
+  platforms.splice(
+    1,
+    platforms.length - 1,
+    ...platforms.slice(1).sort((a, b) => {
+      const aRank = platformRanks.get(platformKey(a)) ?? platformOrder.length;
+      const bRank = platformRanks.get(platformKey(b)) ?? platformOrder.length;
+      return aRank - bRank;
+    }),
+  );
+
   const futureCount = allChronologicalApps.filter((app) => app.date > localDateString()).length;
   filters.replaceChildren();
   const categoryRow = document.createElement("div");
@@ -338,7 +350,7 @@ function renderFilters(apps) {
 
   platforms.forEach((platform) => {
     const filter = platform === "all" ? "all" : platformKey(platform);
-    const label = platform === "all" ? "All apps " : `${platform} `;
+    const label = platform === "all" ? "All Apps " : `${platform} `;
     const count = platform === "all"
       ? apps.length
       : apps.filter((app) => app.platform === platform).length;
