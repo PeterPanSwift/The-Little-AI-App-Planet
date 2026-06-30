@@ -259,19 +259,6 @@
       "GitHub": "https://github.com/PeterPanSwift/ios-ipados-screen-dimensions"
     },
     {
-      "date": "2026-06-30",
-      "title": "Can Your Mac Tame Xcode",
-      "platform": "Website",
-      "description": "查詢自己的 Mac 可安裝哪一版的 Xcode",
-      "image": "Can Your Mac Tame Xcode",
-      "notes": [
-        "從 https://developer.apple.com/support/xcode 抓取 Xcode 資料",
-        "從 https://en.wikipedia.org/wiki/MacOS 抓取 macOS 支援的 Mac"
-      ],
-      "website": "https://peterpanswift.github.io/MacXcodeMatch",
-      "GitHub": "https://github.com/PeterPanSwift/MacXcodeMatch"
-    },
-    {
       "date": "2026-06-29",
       "title": "打地鼠 Flutter App",
       "platform": "Flutter",
@@ -289,6 +276,19 @@
       "medium": "https://medium.com/p/80ddceabb6c0"
     },
     {
+      "date": "2026-06-30",
+      "title": "Can Your Mac Tame Xcode",
+      "platform": "Website",
+      "description": "查詢自己的 Mac 可安裝哪一版的 Xcode",
+      "image": "Can Your Mac Tame Xcode",
+      "notes": [
+        "從 https://developer.apple.com/support/xcode 抓取 Xcode 資料",
+        "從 https://en.wikipedia.org/wiki/MacOS 抓取 macOS 支援的 Mac"
+      ],
+      "website": "https://peterpanswift.github.io/MacXcodeMatch",
+      "GitHub": "https://github.com/PeterPanSwift/MacXcodeMatch"
+    },
+    {
       "date": "2026-07-01",
       "title": "iPhone App Frame Composer",
       "platform": "Website",
@@ -299,6 +299,23 @@
       ],
       "website": "https://peterpanswift.github.io/iphone-bezels",
       "GitHub": "https://github.com/PeterPanSwift/iphone-bezels"
+    },
+    {
+      "date": "2026-07-01",
+      "title": "打北極狐 SwiftUI App",
+      "platform": "SwiftUI",
+      "description": "使用 Xcode 的 AI 開發打北極狐 SwiftUI App",
+      "image": "打北極狐 SwiftUI App",
+      "notes": [
+        "使用 Xcode 的 Coding Assistant 開發 iOS App",
+        "使用 /plan 請 AI 訂定詳細的 App 開發計畫"
+      ],
+      "AI": "Xcode, Codex, 5.5",
+      "prompt": [
+        "可愛的打地鼠 App，將地鼠改成北極狐"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/FoxWhack",
+      "medium": "https://medium.com/p/f472826febc7"
     },
     {
       "date": "2026-07-02",
