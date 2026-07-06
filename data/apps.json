@@ -336,7 +336,7 @@
       "description": "使用 Create with Claude 建立北極狐風格 PowerPoint 的 Claude skill",
       "image": "建立北極狐風格 PowerPoint 的 Claude skill",
       "notes": [],
-      "AI": "Claude、Sonnet 5, Medium",
+      "AI": "Claude skill、Sonnet 5, Medium",
       "prompt": [
         "我想設計一個\"北極狐\"風格的 PowerPoint 格式，搭配我提供的北極狐背景圖片"
       ]
