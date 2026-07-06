@@ -340,6 +340,22 @@
       "prompt": [
         "我想設計一個\"北極狐\"風格的 PowerPoint 格式，搭配我提供的北極狐背景圖片"
       ]
+    },
+    {
+      "date": "2026-07-05",
+      "title": "圖片拼接工具",
+      "platform": "Website",
+      "description": "將多張圖片合併成一張圖，指定 rows × columns 和間距",
+      "image": "圖片拼接工具",
+      "notes": [],
+      "AI": "Claude、Fable 5、high",
+      "prompt": [
+        "製作一個將圖片合併的網頁，可以上傳電腦的圖片，然後設定幾 * 幾排列和圖片間的間距，比方上傳 6 張圖片，設定 2 * 3 排列，間距 10，輸出成一張圖",
+        "上傳圖片除了用選的，也可以 copy paste",
+        "網頁可以預覽合併後的圖片"
+      ],
+      "website": "https://peterpanswift.github.io/pic-grid",
+      "GitHub": "https://github.com/PeterPanSwift/pic-grid"
     }
   ]
 }
