@@ -387,6 +387,24 @@
       ],
       "website": "https://peterpanswift.github.io/code-background-remover",
       "GitHub": "https://github.com/PeterPanSwift/code-background-remover"
+    },
+    {
+      "date": "2026-07-08",
+      "title": "小狐狸的 AI 圓桌",
+      "platform": "AI",
+      "description": "輸入 prompt，透過本機的 Claude CLI、Codex CLI、Antigravity CLI 產生回答",
+      "image": "小狐狸的 AI 圓桌",
+      "notes": [
+        "本機執行，指令 \nnode server.js\n連到 http://localhost:3457",
+        "修正 UTF-8 編碼的「多位元組字元」問題"
+      ],
+      "AI": "Claude, Fable 5, high",
+      "prompt": [
+        "我有訂閱 Claude、GPT & Gemini。請寫一個網頁，讓我輸入 prompt 後，同時得到三個 AI 的回答，透過 Mac 上安裝的 Claude CLI、Codex CLI、Antigravity CLI(agy)",
+        "加上接續對話",
+        "prompt 可以附上圖片"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/fox-ai-roundtable"
     }
   ]
 }
