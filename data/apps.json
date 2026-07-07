@@ -356,6 +356,21 @@
       ],
       "website": "https://peterpanswift.github.io/pic-grid",
       "GitHub": "https://github.com/PeterPanSwift/pic-grid"
+    },
+    {
+      "date": "2026-07-06",
+      "title": "程式去背和調色工具",
+      "platform": "Website",
+      "description": "將深色背景 IDE 複製的程式變成適合貼到淺色背景投影片的程式",
+      "image": "Code Background Remover",
+      "notes": [],
+      "AI": "Claude, Fable 5, high",
+      "prompt": [
+        "當我從 IDE copy 程式，貼到投影片時，會包含黑色背景。請寫一個網頁，讓我可以貼上程式，按下按鈕將它轉成無背景的程式，而且程式顏色適合在白色背景顯示"
+      ],
+      "website": "https://peterpanswift.github.io/code-background-remover",
+      "GitHub": "https://github.com/PeterPanSwift/code-background-remover",
+      "medium": "https://medium.com/p/77135de0e49c"
     }
   ]
 }
