@@ -371,6 +371,22 @@
       "website": "https://peterpanswift.github.io/code-background-remover",
       "GitHub": "https://github.com/PeterPanSwift/code-background-remover",
       "medium": "https://medium.com/p/77135de0e49c"
+    },
+    {
+      "date": "2026-07-07",
+      "title": "程式螢光筆標注效果",
+      "platform": "Website",
+      "description": "選取程式，加上螢光筆效果",
+      "image": "程式螢光筆標注效果",
+      "notes": [],
+      "AI": "Claude、Fable 5、high",
+      "prompt": [
+        "加上標注程式的功能，使用者可以選取想標注的程式，它們會被加上背景顏色。結果如附上的圖片",
+        "只有文字的地方加背景，空白處不要加背景",
+        "文字中間的空格要連續標注"
+      ],
+      "website": "https://peterpanswift.github.io/code-background-remover",
+      "GitHub": "https://github.com/PeterPanSwift/code-background-remover"
     }
   ]
 }
