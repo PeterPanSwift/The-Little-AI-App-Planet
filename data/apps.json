@@ -402,7 +402,8 @@
       "prompt": [
         "我有訂閱 Claude、GPT & Gemini。請寫一個網頁，讓我輸入 prompt 後，同時得到三個 AI 的回答，透過 Mac 上安裝的 Claude CLI、Codex CLI、Antigravity CLI(agy)",
         "加上接續對話",
-        "prompt 可以附上圖片"
+        "prompt 可以附上圖片",
+        "加上選擇模型的功能"
       ],
       "GitHub": "https://github.com/PeterPanSwift/fox-ai-roundtable"
     }
