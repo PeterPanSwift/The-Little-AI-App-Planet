@@ -406,6 +406,23 @@
         "加上選擇模型的功能"
       ],
       "GitHub": "https://github.com/PeterPanSwift/fox-ai-roundtable"
+    },
+    {
+      "date": "2026-07-09",
+      "title": "幸運轉盤",
+      "platform": "Website",
+      "description": "透過 AI 解析使用者上傳的圖片，自動生成幸運轉盤",
+      "image": "幸運轉盤",
+      "notes": [],
+      "AI": "Claude, Fable 5, high",
+      "prompt": [
+        "使用 Artifacts 做一個幸運轉盤網頁，功能如下\n1. 要有漂亮酷炫的畫面設計跟動畫\n2. 轉盤內容來自使用者上傳的圖片\n3. 使用 AI 解析圖片生成轉盤顯示的文字",
+        "增加一個輸入框，讓使用者可以跟 AI 說明想從圖片抓取的資料(非必要)",
+        "圖片可上傳多張，可以按 cmd + v 貼上圖片",
+        "跳出框框說明轉到的幸運兒"
+      ],
+      "website": "https://claude.ai/public/artifacts/2d1ecc76-821f-49d4-94e0-7f3efbc8fa74",
+      "GitHub": "https://github.com/PeterPanSwift/lucky-roulette"
     }
   ]
 }
