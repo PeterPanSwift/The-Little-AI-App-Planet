@@ -423,6 +423,22 @@
       ],
       "website": "https://claude.ai/public/artifacts/efd5251d-36e7-4dfa-b7c5-ec6e36873330",
       "GitHub": "https://github.com/PeterPanSwift/lucky-roulette"
+    },
+    {
+      "date": "2026-07-10",
+      "title": "個人網站",
+      "platform": "Website",
+      "description": "請 AI 參考舊的個人網站，重新設計個人網站",
+      "image": "個人網站",
+      "notes": [
+        "AI 從網路抓取舊網站的全部資料，包含文字和圖片，重新設計新網站"
+      ],
+      "AI": "Claude, Fable 5, high",
+      "prompt": [
+        "參考我的個人網站，重新設計一個精美的網站，要包含原本的內容\nhttps://apppeterpan.mystrikingly.com"
+      ],
+      "website": "https://peterpanswift.github.io/personal-website",
+      "GitHub": "https://peterpanswift.github.io/personal-website"
     }
   ]
 }
