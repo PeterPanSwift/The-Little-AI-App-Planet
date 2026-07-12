@@ -439,6 +439,19 @@
       ],
       "website": "https://peterpanswift.github.io/personal-website",
       "GitHub": "https://peterpanswift.github.io/personal-website"
+    },
+    {
+      "date": "2026-07-11",
+      "title": "從程式用形狀繪製狐狸",
+      "platform": "SwiftUI",
+      "description": "使用 SwiftUI Shape 繪製狐狸",
+      "image": "Untitled 8",
+      "notes": [],
+      "AI": "Claude, Fable 5, high",
+      "prompt": [
+        "使用 SwiftUI shape 繪製可愛的北極狐，要畫得非常像，就像人手繪的北極狐"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/FoxShape"
     }
   ]
 }
