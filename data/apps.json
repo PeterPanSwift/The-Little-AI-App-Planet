@@ -452,6 +452,19 @@
         "使用 SwiftUI shape 繪製可愛的北極狐，要畫得非常像，就像人手繪的北極狐"
       ],
       "GitHub": "https://github.com/PeterPanSwift/FoxShape"
+    },
+    {
+      "date": "2026-07-12",
+      "title": "無 IDE 的 prompt 驅動開發模式",
+      "platform": "SwiftUI",
+      "description": "使用 ChatGPT、Claude、Antigravity 開發 App，示範無 IDE 的 prompt 驅動開發模式",
+      "image": "無 IDE 的 prompt 驅動開發模式",
+      "notes": [],
+      "AI": "GPT 5.6 Sol, Fable, Gemini 3.5 Flash",
+      "prompt": [
+        "模仿打地鼠 App，開發可愛的打北極狐"
+      ],
+      "medium": "https://medium.com/p/89665603a2cf"
     }
   ]
 }
