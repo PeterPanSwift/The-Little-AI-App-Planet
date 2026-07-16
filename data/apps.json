@@ -434,7 +434,7 @@
         "AI 從網路抓取舊網站的全部資料，包含文字和圖片，重新設計新網站",
         "資料與頁面分離",
         "幫助 SEO，搭配部署用的建置腳本，部署前執行 node build.js　產生 dist/ 資料夾，裡面是內容寫死在 HTML 的完整網站，",
-        "push 之後利用 GitHub Actions 自動建置部署"
+        "push 之後利用 GitHub Actions 自動建置部署，相關的設定存在 .github/workflows/deploy.yml"
       ],
       "AI": "Claude, Fable 5, high",
       "prompt": [
