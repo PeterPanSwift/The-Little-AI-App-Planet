@@ -431,14 +431,17 @@
       "description": "請 AI 參考舊的個人網站，重新設計個人網站",
       "image": "個人網站",
       "notes": [
-        "AI 從網路抓取舊網站的全部資料，包含文字和圖片，重新設計新網站"
+        "AI 從網路抓取舊網站的全部資料，包含文字和圖片，重新設計新網站",
+        "資料與頁面分離",
+        "幫助 SEO，搭配部署用的建置腳本，部署前執行 node build.js　產生 dist/ 資料夾，裡面是內容寫死在 HTML 的完整網站，",
+        "push 之後利用 GitHub Actions 自動建置部署"
       ],
       "AI": "Claude, Fable 5, high",
       "prompt": [
         "參考我的個人網站，重新設計一個精美的網站，要包含原本的內容\nhttps://apppeterpan.mystrikingly.com"
       ],
       "website": "https://peterpanswift.github.io/personal-website",
-      "GitHub": "https://peterpanswift.github.io/personal-website"
+      "GitHub": "https://github.com/PeterPanSwift/personal-website"
     },
     {
       "date": "2026-07-11",
