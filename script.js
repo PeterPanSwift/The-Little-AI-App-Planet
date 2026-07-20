@@ -121,7 +121,7 @@ function hasListItems(items, options = {}) {
 
 function imagePath(imageName) {
   const trimmedName = typeof imageName === "string" ? imageName.trim() : "";
-  const safeName = /^[\p{L}\p{N} _-]+$/u.test(trimmedName)
+  const safeName = /^[\p{L}\p{M}\p{N} _\uFF0D-]+$/u.test(trimmedName)
     ? trimmedName
     : "arctic-fox-hero";
   return `assets/${encodeURIComponent(safeName)}.png`;
