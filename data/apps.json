@@ -468,6 +468,20 @@
         "模仿打地鼠 App，開發可愛的打北極狐"
       ],
       "medium": "https://medium.com/p/89665603a2cf"
+    },
+    {
+      "date": "2026-07-20",
+      "title": "Todo － Cloudflare D1",
+      "platform": "Website",
+      "description": "Todo App，搭配 Cloudflare Workers，資料存在 Cloudflare D1",
+      "image": "Todo － Cloudflare D1",
+      "notes": [],
+      "AI": "Codex, GPT 5.6 Sol, high",
+      "prompt": [
+        "製作一個簡單的 ToDo 網頁，資料存在 Cloudflare D1"
+      ],
+      "website": "https://todo-d1.apppeterpan.workers.dev/",
+      "GitHub": "https://github.com/PeterPanSwift/ToDo"
     }
   ]
 }
