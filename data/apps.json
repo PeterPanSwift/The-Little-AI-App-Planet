@@ -293,7 +293,7 @@
       "title": "打北極狐 SwiftUI App",
       "platform": "SwiftUI",
       "description": "使用 Xcode 的 AI 開發打北極狐 SwiftUI App",
-      "image": "打北極狐 SwiftUI App",
+      "image": "打北極狐",
       "notes": [
         "使用 Xcode 的 Coding Assistant 開發 iOS App",
         "使用 /plan 請 AI 訂定詳細的 App 開發計畫"
@@ -302,7 +302,7 @@
       "prompt": [
         "可愛的打地鼠 App，將地鼠改成北極狐"
       ],
-      "GitHub": "https://github.com/PeterPanSwift/FoxWhack",
+      "GitHub": "https://github.com/PeterPanSwift/FoxWhack2",
       "medium": "https://medium.com/p/f472826febc7"
     },
     {
