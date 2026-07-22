@@ -482,6 +482,23 @@
       ],
       "website": "https://todo-d1.apppeterpan.workers.dev/",
       "GitHub": "https://github.com/PeterPanSwift/ToDo"
+    },
+    {
+      "date": "2026-07-22",
+      "title": "羊毛氈定格動畫",
+      "type": "image",
+      "platform": "AI Image",
+      "description": "以 AI 創作的溫馨童話羊毛氈定格動畫系列。",
+      "image": "羊毛氈定格動畫 1",
+      "images": [
+        "羊毛氈定格動畫 1",
+        "羊毛氈定格動畫 2",
+        "羊毛氈定格動畫 3"
+      ],
+      "notes": [],
+      "prompt": [
+        "溫馨童話羊毛氈定格動畫、手工玩偶、微縮場景、電影級柔光、淺景深、細膩纖維質感"
+      ]
     }
   ]
 }

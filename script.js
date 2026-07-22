@@ -5,7 +5,7 @@ let allChronologicalApps = [];
 let includeFutureApps = false;
 let activeFilter = "all";
 let searchQuery = "";
-const platformOrder = ["SwiftUI", "Flutter", "AI", "Website", "Python"];
+const platformOrder = ["SwiftUI", "Flutter", "AI", "AI Image", "Website", "Python"];
 
 function createTextElement(tag, className, text) {
   const element = document.createElement(tag);
@@ -127,19 +127,84 @@ function imagePath(imageName) {
   return `assets/${encodeURIComponent(safeName)}.png`;
 }
 
+function creationImages(app) {
+  const images = Array.isArray(app.images)
+    ? app.images.filter((image) => typeof image === "string" && image.trim())
+    : [];
+  return images.length > 0 ? images : [app.image];
+}
+
+function createProjectGallery(app) {
+  const visual = document.createElement("div");
+  const images = creationImages(app);
+  const mainImage = document.createElement("img");
+  let activeIndex = 0;
+
+  visual.className = `card-visual project-preview${images.length > 1 ? " has-gallery" : ""}`;
+  mainImage.className = "gallery-main-image";
+
+  const updateGallery = (index) => {
+    activeIndex = (index + images.length) % images.length;
+    const source = imagePath(images[activeIndex]);
+    mainImage.src = source;
+    mainImage.alt = images.length > 1
+      ? `${app.title}, image ${activeIndex + 1} of ${images.length}`
+      : `${app.title} preview`;
+    visual.style.setProperty("--preview-image", `url("${source}")`);
+    visual.querySelectorAll(".gallery-thumb").forEach((button, buttonIndex) => {
+      const selected = buttonIndex === activeIndex;
+      button.classList.toggle("active", selected);
+      button.setAttribute("aria-current", selected ? "true" : "false");
+    });
+    const counter = visual.querySelector(".gallery-counter");
+    if (counter) counter.textContent = `${activeIndex + 1} / ${images.length}`;
+  };
+
+  visual.append(mainImage);
+
+  if (images.length > 1) {
+    const previousButton = createTextElement("button", "gallery-arrow gallery-previous", "‹");
+    const nextButton = createTextElement("button", "gallery-arrow gallery-next", "›");
+    const counter = createTextElement("span", "gallery-counter", "");
+    const thumbnails = document.createElement("div");
+
+    previousButton.type = "button";
+    previousButton.setAttribute("aria-label", `Show previous image for ${app.title}`);
+    nextButton.type = "button";
+    nextButton.setAttribute("aria-label", `Show next image for ${app.title}`);
+    previousButton.addEventListener("click", () => updateGallery(activeIndex - 1));
+    nextButton.addEventListener("click", () => updateGallery(activeIndex + 1));
+
+    thumbnails.className = "gallery-thumbnails";
+    thumbnails.setAttribute("aria-label", `${app.title} image gallery`);
+    images.forEach((imageName, index) => {
+      const button = document.createElement("button");
+      const thumbnail = document.createElement("img");
+      button.className = "gallery-thumb";
+      button.type = "button";
+      button.setAttribute("aria-label", `Show image ${index + 1} of ${images.length}`);
+      thumbnail.src = imagePath(imageName);
+      thumbnail.alt = "";
+      thumbnail.loading = "lazy";
+      button.append(thumbnail);
+      button.addEventListener("click", () => updateGallery(index));
+      thumbnails.append(button);
+    });
+
+    visual.append(previousButton, nextButton, counter, thumbnails);
+  }
+
+  updateGallery(0);
+  return visual;
+}
+
 function createProjectCard(app) {
   const article = document.createElement("article");
   article.className = "project-card project-card-detail reveal";
   article.dataset.platform = platformKey(app.platform);
   article.dataset.title = app.title.toLocaleLowerCase();
 
-  const visual = document.createElement("div");
-  visual.className = "card-visual project-preview";
-  const image = document.createElement("img");
-  image.src = imagePath(app.image);
-  image.alt = `${app.title} preview`;
-  visual.style.setProperty("--preview-image", `url("${image.src}")`);
-  visual.append(image);
+  const visual = createProjectGallery(app);
 
   const body = document.createElement("div");
   body.className = "card-body";
@@ -149,7 +214,7 @@ function createProjectCard(app) {
   const appNumber = document.createElement("div");
   appNumber.className = "app-number";
   appNumber.append(
-    createTextElement("span", "app-number-label", "App"),
+    createTextElement("span", "app-number-label", app.type === "image" ? "Image" : "App"),
     createTextElement("strong", "", String(app.number).padStart(2, "0")),
   );
 
@@ -343,14 +408,14 @@ function renderFilters(apps) {
     projectGrid.querySelector(".search-empty")?.remove();
     if (visibleCount === 0) {
       projectGrid.append(
-        createTextElement("p", "data-error search-empty", `No apps found for “${query}”.`),
+        createTextElement("p", "data-error search-empty", `No creations found for “${query}”.`),
       );
     }
   };
 
   platforms.forEach((platform) => {
     const filter = platform === "all" ? "all" : platformKey(platform);
-    const label = platform === "all" ? "All Apps " : `${platform} `;
+    const label = platform === "all" ? "All Creations " : `${platform} `;
     const count = platform === "all"
       ? apps.length
       : apps.filter((app) => app.platform === platform).length;
@@ -382,8 +447,8 @@ function renderFilters(apps) {
   const searchInput = document.createElement("input");
   searchInput.className = "app-search-input";
   searchInput.type = "search";
-  searchInput.placeholder = "Search apps";
-  searchInput.setAttribute("aria-label", "Search apps by name");
+  searchInput.placeholder = "Search creations";
+  searchInput.setAttribute("aria-label", "Search creations by name");
   searchInput.value = searchQuery;
   searchInput.addEventListener("input", applyFilters);
   searchInput.addEventListener("search", applyFilters);
@@ -401,7 +466,7 @@ function renderFilters(apps) {
   });
   futureToggle.append(
     futureCheckbox,
-    createTextElement("span", "", futureCount > 0 ? `Show future apps ${futureCount}` : "Show future apps"),
+    createTextElement("span", "", futureCount > 0 ? `Show future creations ${futureCount}` : "Show future creations"),
   );
   toolsRow.append(futureToggle);
   applyFilters();
@@ -439,7 +504,7 @@ async function loadApps() {
     console.error(error);
     filters.replaceChildren();
     projectGrid.replaceChildren(
-      createTextElement("p", "data-error", "The apps could not be loaded. Please try again later."),
+      createTextElement("p", "data-error", "The creations could not be loaded. Please try again later."),
     );
   }
 }

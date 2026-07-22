@@ -316,7 +316,7 @@ function renderAppList() {
     const editButton = document.createElement("button");
 
     item.className = "app-admin-item";
-    image.src = `assets/${encodeURIComponent(app.image)}.png`;
+    image.src = `assets/${encodeURIComponent(app.image || app.images?.[0] || "arctic-fox-hero")}.png`;
     image.alt = "";
     image.loading = "lazy";
     content.className = "app-admin-content";
@@ -396,9 +396,15 @@ appEditForm.addEventListener("submit", async (event) => {
   try {
     if (!appListData || editingAppIndex < 0) throw new Error("Load and select an app first.");
     const editFormData = new FormData(appEditForm);
-    const updatedApp = appFromEditForm(editFormData);
+    const existingApp = appListData.apps[editingAppIndex];
+    const updatedApp = { ...existingApp, ...appFromEditForm(editFormData) };
     const imageFile = await imageUploadFromForm(editFormData, false);
-    if (imageFile) updatedApp.image = imageNameFromFileName(imageFile.name);
+    if (imageFile) {
+      updatedApp.image = imageNameFromFileName(imageFile.name);
+      if (Array.isArray(updatedApp.images) && updatedApp.images.length > 0) {
+        updatedApp.images = [updatedApp.image, ...updatedApp.images.slice(1)];
+      }
+    }
     const updatedData = {
       ...appListData,
       apps: appListData.apps.map((app, index) => index === editingAppIndex ? updatedApp : app),
