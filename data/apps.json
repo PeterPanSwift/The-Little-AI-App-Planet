@@ -499,6 +499,28 @@
       "prompt": [
         "溫馨童話羊毛氈定格動畫、手工玩偶、微縮場景、電影級柔光、淺景深、細膩纖維質感"
       ]
+    },
+    {
+      "date": "2026-07-23",
+      "title": "彼學島",
+      "platform": "Website",
+      "description": "使用者可輸入資料生成課程地圖和輸出圖片",
+      "image": "彼學島",
+      "notes": [
+        "從手機的 ChatGPT 控制遠端電腦的 ChatGPT 開發網站",
+        "部署到 ChatGPT 的 Sites"
+      ],
+      "AI": "ChatGPT, 5.6 Sol, high",
+      "prompt": [
+        "開發一個可愛的課程地圖網站，依據課程主題的清單動態長出類似照片 2 的格子，\n照片 1 的狐狸可以從第一個格子一路用動畫的方式移動到最後的格子。\n課程主題的清單可修改，網頁請提供修改的功能。\n先用一個 10 個 SwiftUI 主題的清單實作",
+        "增加可一次輸入多行文字編輯課程的功能，每行文字代表一個關卡",
+        "提供輸出圖片的功能，可輸出投影片比例的 4:3 和 16:9，包含整個課程地圖",
+        "小彼移動時網頁要一起捲動，不然會看不到小彼",
+        "走到格子時放大格子跟關卡的名字",
+        "提供使用者設定角色名字和圖片的功能"
+      ],
+      "website": "https://smallpetercoursemap.apppeterpan.chatgpt.site/",
+      "GitHub": "https://github.com/PeterPanSwift/smallpetercoursemap"
     }
   ]
 }
