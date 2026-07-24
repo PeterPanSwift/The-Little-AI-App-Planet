@@ -554,7 +554,7 @@
       "GitHub": "https://github.com/PeterPanSwift/swiftui-custom-list"
     },
     {
-      "date": "2026-07-24",
+      "date": "2026-07-25",
       "title": "顯示 AI 用量的 App",
       "platform": "SwiftUI",
       "description": "使用 SwiftUI 製作浮動在 Mac 桌面的視窗，顯示 Codex 和 Claude 用量",
