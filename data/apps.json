@@ -521,6 +521,20 @@
       ],
       "website": "https://smallpetercoursemap.apppeterpan.chatgpt.site/",
       "GitHub": "https://github.com/PeterPanSwift/smallpetercoursemap"
+    },
+    {
+      "date": "2026-07-24",
+      "title": "請 AI 設計作業說明網頁",
+      "platform": "Website",
+      "description": "請 AI 幫作業設定漂亮的作業說明網頁，以【顯示多筆資料的 SwiftUI List】當範例",
+      "image": "請 AI 設計作業說明網頁",
+      "notes": [],
+      "AI": "Codex, 5.6 Sol, high",
+      "prompt": [
+        "設計一個漂亮的作業說明網頁，\n作業名字是 \"顯示多筆資料的 SwiftUI List\"\n功能如下\n自訂資料型別 model\n資料定義在型別 SampleData\n自訂每筆資料對應的 row view\n使用 List 顯示多筆資料"
+      ],
+      "website": "https://swiftui-custom-list.apppeterpan.workers.dev/",
+      "GitHub": "https://github.com/PeterPanSwift/swiftui-custom-list"
     }
   ]
 }
