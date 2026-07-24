@@ -484,6 +484,23 @@
       "GitHub": "https://github.com/PeterPanSwift/ToDo"
     },
     {
+      "date": "2026-07-21",
+      "title": "SwiftUI App 的 Google 登入(ASWebAuthenticationSession)",
+      "platform": "SwiftUI",
+      "description": "使用 ASWebAuthenticationSession 實現 iOS App 的 Google 登入功能，不依賴套件",
+      "image": "SwiftUI App 的 Google 登入",
+      "notes": [
+        "使用 Apple 原生 ASWebAuthenticationSession 做 OAuth 2.0 流程，不用額外套件",
+        "實作 PKCE(Proof Key for Code Exchange) 登入流程，搭配 Google Cloud Console 建立的 Google OAuth Client ID"
+      ],
+      "AI": "Claude, Sonnet 5, high",
+      "prompt": [
+        "實作 Google 登入的畫面和功能"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/GoogleLogin",
+      "medium": "https://medium.com/p/4455c99b5724"
+    },
+    {
       "date": "2026-07-22",
       "title": "羊毛氈定格動畫",
       "type": "image",
