@@ -552,6 +552,24 @@
       ],
       "website": "https://swiftui-custom-list.apppeterpan.workers.dev/",
       "GitHub": "https://github.com/PeterPanSwift/swiftui-custom-list"
+    },
+    {
+      "date": "2026-07-24",
+      "title": "顯示 AI 用量的 App",
+      "platform": "SwiftUI",
+      "description": "使用 SwiftUI 製作浮動在 Mac 桌面的視窗，顯示 Codex 和 Claude 用量",
+      "image": "AI usage",
+      "notes": [
+        "Claude：claude -p \"/usage\" --output-format json --no-session-persistence，回應的 result 文字裡就有「Current session」和「Current week」百分比",
+        "Codex：啟動 codex app-server 後透過 JSON-RPC 呼叫 account/rateLimits/read，直接回傳 usedPercent、視窗長度和重置時間"
+      ],
+      "AI": "Claude, Fable 5, Extra",
+      "prompt": [
+        "使用 SwiftUI 製作浮動在 Mac 桌面的視窗，顯示可愛的圖片，在圖片上方顯示 Codex 和 Claude 的短期用量和每週用量，每 60 秒透過 Codex CLI 和 Claude CLI 查詢",
+        "加上設定面版",
+        "App 全螢幕時不要蓋住面板，讓面板永遠不會被蓋住"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/UsageWidget"
     }
   ]
 }
