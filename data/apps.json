@@ -543,7 +543,7 @@
       "date": "2026-07-24",
       "title": "請 AI 設計作業說明網頁",
       "platform": "Website",
-      "description": "請 AI 幫作業設定漂亮的作業說明網頁，以【顯示多筆資料的 SwiftUI List】當範例",
+      "description": "請 AI 幫作業設計漂亮的作業說明網頁，以【顯示多筆資料的 SwiftUI List】當範例",
       "image": "請 AI 設計作業說明網頁",
       "notes": [],
       "AI": "Codex, 5.6 Sol, high",
