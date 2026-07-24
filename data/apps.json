@@ -569,7 +569,8 @@
         "加上設定面版",
         "App 全螢幕時不要蓋住面板，讓面板永遠不會被蓋住"
       ],
-      "GitHub": "https://github.com/PeterPanSwift/UsageWidget"
+      "GitHub": "https://github.com/PeterPanSwift/UsageWidget",
+      "website": "https://github.com/PeterPanSwift/UsageWidget/releases"
     }
   ]
 }
