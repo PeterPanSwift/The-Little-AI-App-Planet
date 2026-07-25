@@ -571,6 +571,21 @@
       ],
       "GitHub": "https://github.com/PeterPanSwift/UsageWidget",
       "website": "https://github.com/PeterPanSwift/UsageWidget/releases"
+    },
+    {
+      "date": "2026-07-26",
+      "title": "一鍵取得加上外框的 Xcode preview screenshot",
+      "platform": "Xcode",
+      "description": "自訂 Xcode behavior，按下 cmd + p 得到加上外框的 preview screenshot",
+      "image": "Xcode preview screenshot 外框",
+      "notes": [
+        "透過 AppleScript 點擊 Editor ▸ Canvas ▸ Copy Preview Screenshot"
+      ],
+      "AI": "Claude, Fable 5, Extra",
+      "prompt": [
+        "寫一個 Xcode Custom Behavior 的 run script，透過 Xcode menu 的 copy preview screenshot 取得 preview 的 screenshot，然後加上 bezel，輸出合成圖後存到 pasteboard"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/PreviewBezel"
     }
   ]
 }
