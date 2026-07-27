@@ -586,6 +586,20 @@
         "寫一個 Xcode Custom Behavior 的 run script，透過 Xcode menu 的 copy preview screenshot 取得 preview 的 screenshot，然後加上 bezel，輸出合成圖後存到 pasteboard"
       ],
       "GitHub": "https://github.com/PeterPanSwift/PreviewBezel"
+    },
+    {
+      "date": "2026-07-27",
+      "title": "串接 iTunes API 的歌曲搜尋網頁",
+      "platform": "Website",
+      "description": "串接 iTunes API 的歌曲搜尋網頁",
+      "image": "串接 iTunes API 的歌曲搜尋網頁",
+      "notes": [],
+      "AI": "Claude, Fable 5, Extra",
+      "prompt": [
+        "寫一個串接 iTunes API 查歌曲資訊的網頁，可輸入歌名和歌手名，顯示以下資訊。\n1 歌名\n2 歌手名\n3 專輯名\n4 專輯圖片\n5 預覽網址\n點選播放鍵可播放音樂\n點選複製鍵可複製內容，包含歌名、歌手名、專輯名、專輯圖片網址、預覽網址。\nAPI 格式如下\nhttps://itunes.apple.com/search?term=歌名+歌手名&media=music&count\n\n使用 Cloudflare Worker 解決 CORS 限制"
+      ],
+      "website": "https://itunes-music-search.apppeterpan.workers.dev/",
+      "GitHub": "https://github.com/PeterPanSwift/itunes-music-search"
     }
   ]
 }
