@@ -470,6 +470,20 @@
       "medium": "https://medium.com/p/89665603a2cf"
     },
     {
+      "date": "2026-07-19",
+      "title": "串接 iTunes API 的 Python 程式",
+      "platform": "Python",
+      "description": "串接 iTunes API 的 Python 程式",
+      "image": "itunes_python",
+      "notes": [],
+      "AI": "Claude, Fabel 5, Extra",
+      "prompt": [
+        "寫一個 python 程式，串接 iTunes API 查歌曲資訊，可輸入關鍵字，顯示以下資訊。\n1 歌名\n2 歌手名\n3 專輯名\n4 專輯圖片網址\n5 預覽網址"
+      ],
+      "website": "https://colab.research.google.com/drive/10tS4PHlIQ-264CZF5Pre-3Z7Qa4igwrx",
+      "GitHub": "https://gist.github.com/PeterPanSwift/d3f6f39a716076e97d28958837feff6e"
+    },
+    {
       "date": "2026-07-20",
       "title": "Todo － Cloudflare D1",
       "platform": "Website",
