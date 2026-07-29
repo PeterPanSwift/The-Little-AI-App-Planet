@@ -599,7 +599,8 @@
       "prompt": [
         "寫一個 Xcode Custom Behavior 的 run script，透過 Xcode menu 的 copy preview screenshot 取得 preview 的 screenshot，然後加上 bezel，輸出合成圖後存到 pasteboard"
       ],
-      "GitHub": "https://github.com/PeterPanSwift/PreviewBezel"
+      "GitHub": "https://github.com/PeterPanSwift/PreviewBezel",
+      "medium": "https://medium.com/p/d724f75d1d7c"
     },
     {
       "date": "2026-07-27",
@@ -629,7 +630,8 @@
       "prompt": [
         "使用 WatchPaths 偵測模擬器 screenshot 在 Desktop 產生的檔案，將它加上 bezel.png"
       ],
-      "GitHub": "https://github.com/PeterPanSwift/simulator-bezel"
+      "GitHub": "https://github.com/PeterPanSwift/simulator-bezel",
+      "medium": "https://medium.com/p/d724f75d1d7c"
     },
     {
       "date": "2026-07-29",
@@ -644,7 +646,8 @@
       "prompt": [
         "使用 WatchPaths 偵測模擬器錄影在 Desktop 產生的影片檔，將它加上 bezel.png，然後輸出成加框的影片跟加框的 gif"
       ],
-      "GitHub": "https://github.com/PeterPanSwift/simulator-video-bezel"
+      "GitHub": "https://github.com/PeterPanSwift/simulator-video-bezel",
+      "medium": "https://medium.com/p/d724f75d1d7c"
     }
   ]
 }
