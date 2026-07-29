@@ -618,7 +618,7 @@
     {
       "date": "2026-07-28",
       "title": "模擬器截圖自動加外框",
-      "platform": "macOS",
+      "platform": "Xcode",
       "description": "iPhone 模擬器的截圖存到桌面後，自動套上實機外框",
       "image": "Simulator Bezel",
       "notes": [
