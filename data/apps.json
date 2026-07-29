@@ -630,6 +630,21 @@
         "使用 WatchPaths 偵測模擬器 screenshot 在 Desktop 產生的檔案，將它加上 bezel.png"
       ],
       "GitHub": "https://github.com/PeterPanSwift/simulator-bezel"
+    },
+    {
+      "date": "2026-07-29",
+      "title": "模擬器錄影自動加外框",
+      "platform": "Xcode",
+      "description": "幫 iOS 模擬器的螢幕錄影自動加上 iPhone 外框，錄影檔一出現在桌面，launchd 就會自動觸發處理，產生加框的影片檔和 gif 檔",
+      "image": "模擬器錄影自動加外框",
+      "notes": [
+        "使用 ffmpeg"
+      ],
+      "AI": "Claude, Fable 5, extra",
+      "prompt": [
+        "使用 WatchPaths 偵測模擬器錄影在 Desktop 產生的影片檔，將它加上 bezel.png，然後輸出成加框的影片跟加框的 gif"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/simulator-video-bezel"
     }
   ]
 }
