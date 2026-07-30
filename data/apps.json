@@ -648,6 +648,20 @@
       ],
       "GitHub": "https://github.com/PeterPanSwift/simulator-video-bezel",
       "medium": "https://medium.com/p/d724f75d1d7c"
+    },
+    {
+      "date": "2026-07-30",
+      "title": "Curl Canvas - Vibe coding 自己的 PostMan",
+      "platform": "macOS",
+      "description": "開發一個在本機跑的網頁，觸發本機的 curl 指令串接外部 API，在網頁顯示漂亮的 JSON 結果",
+      "image": "curl canvas",
+      "notes": [],
+      "AI": "Codex, GPT 5.6 Sol, high",
+      "prompt": [
+        "開發一個在本機跑的網頁，觸發本機的 curl 指令串接外部 API，在網頁顯示漂亮的 JSON 結果。不需要使用 Sites 建置技能"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/curl-canvas",
+      "medium": "https://medium.com/p/4a948a5d7c79"
     }
   ]
 }
