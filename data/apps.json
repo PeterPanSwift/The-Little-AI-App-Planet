@@ -470,6 +470,20 @@
       "medium": "https://medium.com/p/89665603a2cf"
     },
     {
+      "date": "2026-07-19",
+      "title": "串接 iTunes API 的 Python 程式",
+      "platform": "Python",
+      "description": "串接 iTunes API 的 Python 程式",
+      "image": "itunes_python",
+      "notes": [],
+      "AI": "Claude, Fabel 5, Extra",
+      "prompt": [
+        "寫一個 python 程式，串接 iTunes API 查歌曲資訊，可輸入關鍵字，顯示以下資訊。\n1 歌名\n2 歌手名\n3 專輯名\n4 專輯圖片網址\n5 預覽網址"
+      ],
+      "website": "https://colab.research.google.com/drive/10tS4PHlIQ-264CZF5Pre-3Z7Qa4igwrx",
+      "GitHub": "https://gist.github.com/PeterPanSwift/d3f6f39a716076e97d28958837feff6e"
+    },
+    {
       "date": "2026-07-20",
       "title": "Todo － Cloudflare D1",
       "platform": "Website",
@@ -482,6 +496,23 @@
       ],
       "website": "https://todo-d1.apppeterpan.workers.dev/",
       "GitHub": "https://github.com/PeterPanSwift/ToDo"
+    },
+    {
+      "date": "2026-07-21",
+      "title": "SwiftUI App 的 Google 登入(ASWebAuthenticationSession)",
+      "platform": "SwiftUI",
+      "description": "使用 ASWebAuthenticationSession 實現 iOS App 的 Google 登入功能，不依賴套件",
+      "image": "SwiftUI App 的 Google 登入",
+      "notes": [
+        "使用 Apple 原生 ASWebAuthenticationSession 做 OAuth 2.0 流程，不用額外套件",
+        "實作 PKCE(Proof Key for Code Exchange) 登入流程，搭配 Google Cloud Console 建立的 Google OAuth Client ID"
+      ],
+      "AI": "Claude, Sonnet 5, high",
+      "prompt": [
+        "實作 Google 登入的畫面和功能"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/GoogleLogin",
+      "medium": "https://medium.com/p/4455c99b5724"
     },
     {
       "date": "2026-07-22",
@@ -499,6 +530,172 @@
       "prompt": [
         "溫馨童話羊毛氈定格動畫、手工玩偶、微縮場景、電影級柔光、淺景深、細膩纖維質感"
       ]
+    },
+    {
+      "date": "2026-07-23",
+      "title": "彼學島",
+      "platform": "Website",
+      "description": "使用者可輸入資料生成課程地圖和輸出圖片",
+      "image": "彼學島",
+      "notes": [
+        "從手機的 ChatGPT 控制遠端電腦的 ChatGPT 開發網站",
+        "部署到 ChatGPT 的 Sites"
+      ],
+      "AI": "ChatGPT, 5.6 Sol, high",
+      "prompt": [
+        "開發一個可愛的課程地圖網站，依據課程主題的清單動態長出類似照片 2 的格子，\n照片 1 的狐狸可以從第一個格子一路用動畫的方式移動到最後的格子。\n課程主題的清單可修改，網頁請提供修改的功能。\n先用一個 10 個 SwiftUI 主題的清單實作",
+        "增加可一次輸入多行文字編輯課程的功能，每行文字代表一個關卡",
+        "提供輸出圖片的功能，可輸出投影片比例的 4:3 和 16:9，包含整個課程地圖",
+        "小彼移動時網頁要一起捲動，不然會看不到小彼",
+        "走到格子時放大格子跟關卡的名字",
+        "提供使用者設定角色名字和圖片的功能"
+      ],
+      "website": "https://smallpetercoursemap.apppeterpan.chatgpt.site/",
+      "GitHub": "https://github.com/PeterPanSwift/smallpetercoursemap"
+    },
+    {
+      "date": "2026-07-24",
+      "title": "請 AI 設計作業說明網頁",
+      "platform": "Website",
+      "description": "請 AI 幫作業設計漂亮的作業說明網頁，以【顯示多筆資料的 SwiftUI List】當範例",
+      "image": "請 AI 設計作業說明網頁",
+      "notes": [],
+      "AI": "Codex, 5.6 Sol, high",
+      "prompt": [
+        "設計一個漂亮的作業說明網頁，\n作業名字是 \"顯示多筆資料的 SwiftUI List\"\n功能如下\n自訂資料型別 model\n資料定義在型別 SampleData\n自訂每筆資料對應的 row view\n使用 List 顯示多筆資料"
+      ],
+      "website": "https://swiftui-custom-list.apppeterpan.workers.dev/",
+      "GitHub": "https://github.com/PeterPanSwift/swiftui-custom-list"
+    },
+    {
+      "date": "2026-07-25",
+      "title": "顯示 AI 用量的 App",
+      "platform": "SwiftUI",
+      "description": "使用 SwiftUI 製作浮動在 Mac 桌面的視窗，顯示 Codex 和 Claude 用量",
+      "image": "AI usage",
+      "notes": [
+        "Claude：claude -p \"/usage\" --output-format json --no-session-persistence，回應的 result 文字裡就有「Current session」和「Current week」百分比",
+        "Codex：啟動 codex app-server 後透過 JSON-RPC 呼叫 account/rateLimits/read，直接回傳 usedPercent、視窗長度和重置時間"
+      ],
+      "AI": "Claude, Fable 5, Extra",
+      "prompt": [
+        "使用 SwiftUI 製作浮動在 Mac 桌面的視窗，顯示可愛的圖片，在圖片上方顯示 Codex 和 Claude 的短期用量和每週用量，每 60 秒透過 Codex CLI 和 Claude CLI 查詢",
+        "加上設定面版",
+        "App 全螢幕時不要蓋住面板，讓面板永遠不會被蓋住"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/UsageWidget",
+      "website": "https://github.com/PeterPanSwift/UsageWidget/releases"
+    },
+    {
+      "date": "2026-07-26",
+      "title": "一鍵取得加上外框的 Xcode preview screenshot",
+      "platform": "Xcode",
+      "description": "自訂 Xcode behavior，按下 cmd + p 得到加上外框的 preview screenshot",
+      "image": "Xcode preview screenshot 外框",
+      "notes": [
+        "透過 AppleScript 點擊 Editor ▸ Canvas ▸ Copy Preview Screenshot"
+      ],
+      "AI": "Claude, Fable 5, Extra",
+      "prompt": [
+        "寫一個 Xcode Custom Behavior 的 run script，透過 Xcode menu 的 copy preview screenshot 取得 preview 的 screenshot，然後加上 bezel，輸出合成圖後存到 pasteboard"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/PreviewBezel",
+      "medium": "https://medium.com/p/d724f75d1d7c"
+    },
+    {
+      "date": "2026-07-27",
+      "title": "串接 iTunes API 的歌曲搜尋網頁",
+      "platform": "Website",
+      "description": "串接 iTunes API 的歌曲搜尋網頁",
+      "image": "串接 iTunes API 的歌曲搜尋網頁",
+      "notes": [],
+      "AI": "Claude, Fable 5, Extra",
+      "prompt": [
+        "寫一個串接 iTunes API 查歌曲資訊的網頁，可輸入歌名和歌手名，顯示以下資訊。\n1 歌名\n2 歌手名\n3 專輯名\n4 專輯圖片\n5 預覽網址\n點選播放鍵可播放音樂\n點選複製鍵可複製內容，包含歌名、歌手名、專輯名、專輯圖片網址、預覽網址。\nAPI 格式如下\nhttps://itunes.apple.com/search?term=歌名+歌手名&media=music&count\n\n使用 Cloudflare Worker 解決 CORS 限制"
+      ],
+      "website": "https://itunes-music-search.apppeterpan.workers.dev/",
+      "GitHub": "https://github.com/PeterPanSwift/itunes-music-search"
+    },
+    {
+      "date": "2026-07-28",
+      "title": "模擬器截圖自動加外框",
+      "platform": "Xcode",
+      "description": "iPhone 模擬器的截圖存到桌面後，自動套上實機外框",
+      "image": "Simulator Bezel",
+      "notes": [
+        "LaunchAgent 用 WatchPaths 監看 ~/Desktop:桌面一有變動,系統就喚起 bezel-frame --scan 掃描一次",
+        "檔名符合 Screenshot iPhone*.png 或 Simulator Screenshot*iPhone*.png 的檔案才會處理"
+      ],
+      "AI": "Claude, Fable 5, Extra",
+      "prompt": [
+        "使用 WatchPaths 偵測模擬器 screenshot 在 Desktop 產生的檔案，將它加上 bezel.png"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/simulator-bezel",
+      "medium": "https://medium.com/p/d724f75d1d7c"
+    },
+    {
+      "date": "2026-07-29",
+      "title": "模擬器錄影自動加外框",
+      "platform": "Xcode",
+      "description": "幫 iOS 模擬器的螢幕錄影自動加上 iPhone 外框，錄影檔一出現在桌面，launchd 就會自動觸發處理，產生加框的影片檔和 gif 檔",
+      "image": "模擬器錄影自動加外框",
+      "notes": [
+        "使用 ffmpeg"
+      ],
+      "AI": "Claude, Fable 5, extra",
+      "prompt": [
+        "使用 WatchPaths 偵測模擬器錄影在 Desktop 產生的影片檔，將它加上 bezel.png，然後輸出成加框的影片跟加框的 gif"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/simulator-video-bezel",
+      "medium": "https://medium.com/p/d724f75d1d7c"
+    },
+    {
+      "date": "2026-07-30",
+      "title": "Curl Canvas - Vibe coding 自己的 PostMan",
+      "platform": "macOS",
+      "description": "開發一個在本機跑的網頁，觸發本機的 curl 指令串接外部 API，在網頁顯示漂亮的 JSON 結果",
+      "image": "curl canvas",
+      "notes": [],
+      "AI": "Codex, GPT 5.6 Sol, high",
+      "prompt": [
+        "開發一個在本機跑的網頁，觸發本機的 curl 指令串接外部 API，在網頁顯示漂亮的 JSON 結果。不需要使用 Sites 建置技能"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/curl-canvas",
+      "medium": "https://medium.com/p/4a948a5d7c79"
+    },
+    {
+      "date": "2026-07-31",
+      "title": "蜘蛛人重生日 App",
+      "platform": "SwiftUI",
+      "description": "串接 TMDB API 介紹電影蜘蛛人重生日",
+      "image": "Spider Man",
+      "notes": [
+        "申請 TMDB API Read Access Token",
+        "使用 .xcconfig 管理 TMDB API token，透過 .gitignore  防止 token 上傳到 GitHub"
+      ],
+      "AI": "Codex, GPT 5.6 Sol, high",
+      "prompt": [
+        "使用 SwiftUI 製作漂亮的蜘蛛人重生日電影 App，包含以下需求\n\n請從網路先查詢電影的相關資料再開始製作 App\n串接 TMDb API 抓取電影的相關資料和圖片\n使用 TabView 進行分頁切換，有 4 個 tab\n使用 NavigationStack & NavigationLink 實現頁面切換，NavigationLink 搭配的 init 是 init(destination: Destination, @ContentBuilder label: () -> Label)\n使用 List 製作表格，List 搭配遵從 protocol Identifiable 的資料\n使用 TabView 實現水平滑動的分頁\n使用 WebView 顯示網頁\n使用 LazyVGrid 實現格子狀排列的頁面\n上下捲動的頁面裡有水平捲動的區塊\n動畫效果"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/Spider-Man"
+    },
+    {
+      "date": "2026-08-01",
+      "title": "使用 ChatGPT 的 Sites 建站流程建立桌球網站",
+      "platform": "Website",
+      "description": "使用 ChatGPT 建立網站和指定部署的平台",
+      "image": "table tennis",
+      "notes": [
+        "ChatGPT 建立網站時預設會使用 Sites 建站流程部署到 OpenAI 後台",
+        "提醒 AI 不要使用 Sites，它才不會自動部署到 OpenAI 後台"
+      ],
+      "AI": "Codex, GPT 5.6 Sol, high",
+      "prompt": [
+        "製作一個簡單的桌球介紹網站",
+        "製作一個簡單的桌球介紹網站，不要用 Sites，部署到 Cloudflare"
+      ],
+      "website": "https://table-tennis-starter-tw.apppeterpan.chatgpt.site/",
+      "medium": "https://medium.com/p/6312054831f7"
     }
   ]
 }
