@@ -678,6 +678,24 @@
         "使用 SwiftUI 製作漂亮的蜘蛛人重生日電影 App，包含以下需求\n\n請從網路先查詢電影的相關資料再開始製作 App\n串接 TMDb API 抓取電影的相關資料和圖片\n使用 TabView 進行分頁切換，有 4 個 tab\n使用 NavigationStack & NavigationLink 實現頁面切換，NavigationLink 搭配的 init 是 init(destination: Destination, @ContentBuilder label: () -> Label)\n使用 List 製作表格，List 搭配遵從 protocol Identifiable 的資料\n使用 TabView 實現水平滑動的分頁\n使用 WebView 顯示網頁\n使用 LazyVGrid 實現格子狀排列的頁面\n上下捲動的頁面裡有水平捲動的區塊\n動畫效果"
       ],
       "GitHub": "https://github.com/PeterPanSwift/Spider-Man"
+    },
+    {
+      "date": "2026-08-01",
+      "title": "使用 ChatGPT 的 Sites 建站流程建立桌球網站",
+      "platform": "Website",
+      "description": "使用 ChatGPT 建立網站和指定部署的平台",
+      "image": "table tennis",
+      "notes": [
+        "ChatGPT 建立網站時預設會使用 Sites 建站流程部署到 OpenAI 後台",
+        "提醒 AI 不要使用 Sites，它才不會自動部署到 OpenAI 後台"
+      ],
+      "AI": "Codex, GPT 5.6 Sol, high",
+      "prompt": [
+        "製作一個簡單的桌球介紹網站",
+        "製作一個簡單的桌球介紹網站，不要用 Sites，部署到 Cloudflare"
+      ],
+      "website": "https://table-tennis-starter-tw.apppeterpan.chatgpt.site/",
+      "medium": "https://medium.com/p/6312054831f7"
     }
   ]
 }
