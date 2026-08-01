@@ -203,6 +203,7 @@ function createProjectCard(app) {
   article.className = "project-card project-card-detail reveal";
   article.dataset.platform = platformKey(app.platform);
   article.dataset.title = app.title.toLocaleLowerCase();
+  article.dataset.description = app.description.toLocaleLowerCase();
 
   const visual = createProjectGallery(app);
 
@@ -400,7 +401,8 @@ function renderFilters(apps) {
     projectGrid.querySelectorAll(".project-card").forEach((card) => {
       const matchesPlatform = activeFilter === "all" || card.dataset.platform === activeFilter;
       const matchesTitle = !query || card.dataset.title.includes(query);
-      const visible = matchesPlatform && matchesTitle;
+      const matchesDescription = !query || card.dataset.description.includes(query);
+      const visible = matchesPlatform && (matchesTitle || matchesDescription);
       card.classList.toggle("hidden", !visible);
       if (visible) visibleCount += 1;
     });
@@ -448,7 +450,7 @@ function renderFilters(apps) {
   searchInput.className = "app-search-input";
   searchInput.type = "search";
   searchInput.placeholder = "Search creations";
-  searchInput.setAttribute("aria-label", "Search creations by name");
+  searchInput.setAttribute("aria-label", "Search creations by name or description");
   searchInput.value = searchQuery;
   searchInput.addEventListener("input", applyFilters);
   searchInput.addEventListener("search", applyFilters);
