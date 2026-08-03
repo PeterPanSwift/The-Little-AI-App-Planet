@@ -696,6 +696,22 @@
       ],
       "website": "https://table-tennis-starter-tw.apppeterpan.chatgpt.site/",
       "medium": "https://medium.com/p/6312054831f7"
+    },
+    {
+      "date": "2026-08-04",
+      "title": "使用 AI 開發 Xcode Source Editor Extension",
+      "platform": "Xcode",
+      "description": "AI 很適合開發 Xcode Source Editor Extension，開發一些讓 Xcode 更方便修改程式的功能，比方開發 SwiftUI Unembed Container",
+      "image": "SwiftUI Unembed Container",
+      "notes": [
+        "XcodeKit.framework 要記得包進 bundle"
+      ],
+      "AI": "Claude, Opus 5, high",
+      "prompt": [
+        "開發 Xcode Source Editor Extension，製作 SwiftUI 的 unembed 功能"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/SwiftUIUnembed",
+      "medium": "https://medium.com/p/4f21422b1da9"
     }
   ]
 }
