@@ -620,7 +620,7 @@
       "date": "2026-07-28",
       "title": "模擬器截圖自動加外框",
       "platform": "Xcode",
-      "description": "iPhone 模擬器的截圖存到桌面後，自動套上實機外框",
+      "description": "iPhone 模擬器和實機的截圖存到桌面後，自動套上實機外框",
       "image": "Simulator Bezel",
       "notes": [
         "LaunchAgent 用 WatchPaths 監看 ~/Desktop:桌面一有變動,系統就喚起 bezel-frame --scan 掃描一次",
@@ -628,7 +628,7 @@
       ],
       "AI": "Claude, Fable 5, Extra",
       "prompt": [
-        "使用 WatchPaths 偵測模擬器 screenshot 在 Desktop 產生的檔案，將它加上 bezel.png"
+        "使用 WatchPaths 偵測模擬器和實機 screenshot 在 Desktop 產生的檔案，將它加上 bezel.png"
       ],
       "GitHub": "https://github.com/PeterPanSwift/simulator-bezel",
       "medium": "https://medium.com/p/d724f75d1d7c"
