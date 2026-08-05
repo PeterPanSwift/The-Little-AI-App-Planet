@@ -712,6 +712,21 @@
       ],
       "GitHub": "https://github.com/PeterPanSwift/SwiftUIUnembed",
       "medium": "https://medium.com/p/4f21422b1da9"
+    },
+    {
+      "date": "2026-08-06",
+      "title": "定期在雲端為我們工作的 AI",
+      "platform": "AI",
+      "description": "請 AI 每天早上八點查詢未來 7 天的桌球比賽，透過 Claude scheduled task、ChatGPT scheduled task、Gemini Spark",
+      "image": "ai-cloud-scheduled-tasks-cute",
+      "notes": [
+        "AI 可定期在雲端為我們工作，我們的電腦不用開啟"
+      ],
+      "AI": "Claude、ChatGPT、Gemini",
+      "prompt": [
+        "每天早上 8 點從以下網址查詢未來 7 天的賈斯伯比賽，然後給我比賽的網頁連結跟相關資訊\nhttps://www.tain.tw"
+      ],
+      "medium": "https://medium.com/p/2af931b54610"
     }
   ]
 }
