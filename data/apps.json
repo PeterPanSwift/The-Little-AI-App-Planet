@@ -715,6 +715,18 @@
       "medium": "https://medium.com/p/4f21422b1da9"
     },
     {
+      "date": "2026-08-05",
+      "title": "Claude for Microsoft 365 的跨 App 溝通",
+      "platform": "AI",
+      "description": "Claude 依據開啟的 word & excel 檔生成 ppt",
+      "image": "Claude for Microsoft 365 的跨 App 溝通",
+      "notes": [],
+      "AI": "Claude, Sonnet 5",
+      "prompt": [
+        "依據目前開啟的 word & excel內容，製作介紹東野圭吾的投影片|"
+      ]
+    },
+    {
       "date": "2026-08-06",
       "title": "定期在雲端為我們工作的 AI",
       "platform": "AI",
