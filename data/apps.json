@@ -740,6 +740,19 @@
         "每天早上 8 點從以下網址查詢未來 7 天的賈斯伯比賽，然後給我比賽的網頁連結跟相關資訊\nhttps://www.tain.tw"
       ],
       "medium": "https://medium.com/p/2af931b54610"
+    },
+    {
+      "date": "2026-08-07",
+      "title": "Gist Uploader for Xcode",
+      "platform": "Xcode",
+      "description": "透過 GitHub CLI(gh)，直接在 Xcode 的 Editor 選單把目前檔案或選取的程式碼上傳成 GitHub Gist",
+      "image": "Gist Uploader for Xcode",
+      "notes": [],
+      "AI": "Claude, Fable 5, high",
+      "prompt": [
+        "開發 Xcode Source Editor Extension，透過 gh 指令將目前的檔案或選取的程式上傳 gist"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/XcodeGistUploader"
     }
   ]
 }
