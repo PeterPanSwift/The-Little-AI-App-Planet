@@ -624,7 +624,8 @@
       "image": "Simulator Bezel",
       "notes": [
         "LaunchAgent 用 WatchPaths 監看 ~/Desktop:桌面一有變動,系統就喚起 bezel-frame --scan 掃描一次",
-        "檔名符合 Screenshot iPhone*.png 或 Simulator Screenshot*iPhone*.png 的檔案才會處理"
+        "檔名開頭是 Screenshot(或 Simulator Screenshot)且名稱含有 iPhone 的檔案才會處理",
+        "指令加框範例\n./bezel-frame bezel.png ~/Desktop/demo.png ~/Desktop/demo-bezel.png"
       ],
       "AI": "Claude, Fable 5, Extra",
       "prompt": [
