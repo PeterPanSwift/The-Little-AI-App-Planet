@@ -474,19 +474,24 @@ function renderFilters(apps) {
   applyFilters();
 }
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12 },
-);
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const observer =
+  "IntersectionObserver" in window && !reducedMotion
+    ? new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      )
+    : null;
 
 function observeReveals() {
+  if (!observer) return;
   document.querySelectorAll(".reveal:not(.visible)").forEach((element) => observer.observe(element));
 }
 
@@ -515,7 +520,6 @@ observeReveals();
 loadApps();
 
 const heroArt = document.querySelector(".hero-art");
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (heroArt && !reducedMotion) {
   window.addEventListener(

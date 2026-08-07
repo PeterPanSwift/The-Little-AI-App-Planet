@@ -304,9 +304,11 @@ button { font: inherit; }
 .json-editor:disabled { cursor: not-allowed; opacity: .62; }
 .json-panel > .field-hint { display: block; margin-top: 8px; }
 .json-actions { margin-top: 20px; }
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal { opacity: 1; transform: translateY(0); }
+.reveal.visible { animation: revealIn .7s ease; }
 @keyframes pulse { 50% { box-shadow: 0 0 0 9px rgba(156,231,197,0); } }
 @keyframes spin { to { transform: rotate(360deg); } }
+@keyframes revealIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes heroSettle { from { opacity: 0; transform: scale(1.07); } to { opacity: 1; transform: scale(1.015); } }
 @keyframes codeFloat { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-7px) rotate(1deg); } }
 @keyframes codeType { 0%, 12% { transform: scaleX(.08); opacity: .35; } 55%, 82% { transform: scaleX(1); opacity: .9; } 100% { transform: scaleX(.08); opacity: .35; } }
@@ -329,4 +331,4 @@ button { font: inherit; }
   .admin-shell { width: min(100% - 30px, 980px); padding-top: 26px; }.admin-top { margin-bottom: 38px; }.admin-grid { grid-template-columns: 1fr; }.access-panel, .admin-form, .app-manager, .json-panel { padding: 22px; }.array-field-top, .json-panel-heading { display: grid; align-items: start; }.array-row { grid-template-columns: 1fr; }.array-remove { justify-self: start; }.json-load, .app-list-load { justify-self: start; }.app-admin-item { grid-template-columns: 64px minmax(0, 1fr); gap: 12px; }.app-admin-item img { width: 64px; height: 56px; }.app-item-edit { grid-column: 1 / -1; width: 100%; }.json-editor { min-height: 440px; }
   .site-footer { padding: 40px 22px; display: block; }.site-footer p { margin: 20px 0; }.footer-links { justify-content: space-between; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }.reveal.visible { animation: none; } }
