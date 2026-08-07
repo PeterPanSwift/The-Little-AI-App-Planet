@@ -620,15 +620,16 @@
       "date": "2026-07-28",
       "title": "模擬器截圖自動加外框",
       "platform": "Xcode",
-      "description": "iPhone 模擬器的截圖存到桌面後，自動套上實機外框",
+      "description": "iPhone 模擬器和實機的截圖存到桌面後，自動套上實機外框",
       "image": "Simulator Bezel",
       "notes": [
         "LaunchAgent 用 WatchPaths 監看 ~/Desktop:桌面一有變動,系統就喚起 bezel-frame --scan 掃描一次",
-        "檔名符合 Screenshot iPhone*.png 或 Simulator Screenshot*iPhone*.png 的檔案才會處理"
+        "檔名開頭是 Screenshot(或 Simulator Screenshot)且名稱含有 iPhone 的檔案才會處理",
+        "指令加框範例\n./bezel-frame bezel.png ~/Desktop/demo.png ~/Desktop/demo-bezel.png"
       ],
       "AI": "Claude, Fable 5, Extra",
       "prompt": [
-        "使用 WatchPaths 偵測模擬器 screenshot 在 Desktop 產生的檔案，將它加上 bezel.png"
+        "使用 WatchPaths 偵測模擬器和實機 screenshot 在 Desktop 產生的檔案，將它加上 bezel.png"
       ],
       "GitHub": "https://github.com/PeterPanSwift/simulator-bezel",
       "medium": "https://medium.com/p/d724f75d1d7c"
@@ -696,6 +697,62 @@
       ],
       "website": "https://table-tennis-starter-tw.apppeterpan.chatgpt.site/",
       "medium": "https://medium.com/p/6312054831f7"
+    },
+    {
+      "date": "2026-08-04",
+      "title": "使用 AI 開發 Xcode Source Editor Extension",
+      "platform": "Xcode",
+      "description": "AI 很適合開發 Xcode Source Editor Extension，開發一些讓 Xcode 更方便修改程式的功能，比方開發 SwiftUI Unembed Container",
+      "image": "SwiftUI Unembed Container",
+      "notes": [
+        "XcodeKit.framework 要記得包進 bundle"
+      ],
+      "AI": "Claude, Opus 5, high",
+      "prompt": [
+        "開發 Xcode Source Editor Extension，製作 SwiftUI 的 unembed 功能"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/SwiftUIUnembed",
+      "medium": "https://medium.com/p/4f21422b1da9"
+    },
+    {
+      "date": "2026-08-05",
+      "title": "Claude for Microsoft 365 的跨 App 溝通",
+      "platform": "AI",
+      "description": "Claude 依據開啟的 word & excel 檔生成 ppt",
+      "image": "Claude for Microsoft 365 的跨 App 溝通",
+      "notes": [],
+      "AI": "Claude, Sonnet 5",
+      "prompt": [
+        "依據目前開啟的 word & excel內容，製作介紹東野圭吾的投影片|"
+      ]
+    },
+    {
+      "date": "2026-08-06",
+      "title": "定期在雲端為我們工作的 AI",
+      "platform": "AI",
+      "description": "請 AI 每天早上八點查詢未來 7 天的桌球比賽，透過 Claude scheduled task、ChatGPT scheduled task、Gemini Spark",
+      "image": "ai-cloud-scheduled-tasks-cute",
+      "notes": [
+        "AI 可定期在雲端為我們工作，我們的電腦不用開啟"
+      ],
+      "AI": "Claude、ChatGPT、Gemini",
+      "prompt": [
+        "每天早上 8 點從以下網址查詢未來 7 天的賈斯伯比賽，然後給我比賽的網頁連結跟相關資訊\nhttps://www.tain.tw"
+      ],
+      "medium": "https://medium.com/p/2af931b54610"
+    },
+    {
+      "date": "2026-08-07",
+      "title": "Gist Uploader for Xcode",
+      "platform": "Xcode",
+      "description": "透過 GitHub CLI(gh)，直接在 Xcode 的 Editor 選單把目前檔案或選取的程式碼上傳成 GitHub Gist",
+      "image": "Gist Uploader for Xcode",
+      "notes": [],
+      "AI": "Claude, Fable 5, high",
+      "prompt": [
+        "開發 Xcode Source Editor Extension，透過 gh 指令將目前的檔案或選取的程式上傳 gist"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/XcodeGistUploader"
     }
   ]
 }
