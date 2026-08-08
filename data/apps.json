@@ -753,6 +753,25 @@
         "開發 Xcode Source Editor Extension，透過 gh 指令將目前的檔案或選取的程式上傳 gist"
       ],
       "GitHub": "https://github.com/PeterPanSwift/XcodeGistUploader"
+    },
+    {
+      "date": "2026-08-08",
+      "title": "將圖片加上 3D 立體泡泡標記",
+      "platform": "Python, macOS",
+      "description": "在圖片中找到指定文字，並加上漂亮的發光圈選效果",
+      "image": "xcode_marked",
+      "notes": [
+        "python circle_text.py image.png \"text to highlight\"",
+        "開發搭配 python 程式的圈選文字.app，利用 osacompile 將 AppleScript 編譯成 App",
+        "在 Finder 對某張圖片叫出右鍵選單時，將可點選打開檔案的應用程式 > 圈選文字"
+      ],
+      "AI": "Claude, Fable 5, high",
+      "prompt": [
+        "寫一個 python 程式，使用者可提供圖片和想標記的文字，在文字上添加 3D 立體泡泡的圈選效果",
+        "支援圈選多個文字組合的區塊 ，而且能延伸到整個選項的框框"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/image-text-highlighter",
+      "medium": "https://medium.com/p/7f6a3fce4760"
     }
   ]
 }
