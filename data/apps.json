@@ -757,7 +757,7 @@
     {
       "date": "2026-08-08",
       "title": "將圖片加上漂亮標記 – 立體玻璃泡泡／發光框／手繪蠟筆",
-      "platform": "Python, macOS",
+      "platform": "macOS",
       "description": "在圖片中找到指定文字，並加上漂亮的發光圈選效果",
       "image": "xcode_marked",
       "notes": [
