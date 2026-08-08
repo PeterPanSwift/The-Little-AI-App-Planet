@@ -769,7 +769,8 @@
       "prompt": [
         "寫一個 python 程式，使用者可提供圖片和想標記的文字，在文字上添加 3D 立體泡泡的圈選效果",
         "支援圈選多個文字組合的區塊 ，而且能延伸到整個選項的框框",
-        "除了立體泡泡，另外再提供發光框跟不規則形狀的手繪蠟筆樣式。"
+        "除了立體泡泡，另外再提供發光框跟不規則形狀的手繪蠟筆樣式。",
+        "python 指令沒有指定圖片時，對 pasteboard 的圖片加上外框，圈選完再放回 pasteboard"
       ],
       "GitHub": "https://github.com/PeterPanSwift/image-text-highlighter",
       "medium": "https://medium.com/p/7f6a3fce4760"
