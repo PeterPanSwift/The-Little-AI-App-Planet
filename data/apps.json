@@ -774,6 +774,28 @@
       ],
       "GitHub": "https://github.com/PeterPanSwift/image-text-highlighter",
       "medium": "https://medium.com/p/7f6a3fce4760"
+    },
+    {
+      "date": "2026-08-09",
+      "title": "使用 Cloudflare 開發具備登入和 CRUD 功能的 API & API 文件",
+      "platform": "Website",
+      "description": "請 AI 使用 Cloudflare 開發具備帳密登入和資料 CRUD 功能的 API，並生成可互動測試的 API 文件",
+      "image": "使用 Cloudflare 開發具備登入和 CRUD 功能的 API",
+      "notes": [
+        "使用 Cloudflare Workers 建置後端 API",
+        "使用 Cloudflare D1 當關聯式資料庫",
+        "使用 Cloudflare R2 儲存圖檔",
+        "以 OpenAPI 3.1 定義 API 規格，再透過 Scalar API Reference 產生 API 文件"
+      ],
+      "AI": "Codex, GPT 5.6 Sol, high",
+      "prompt": [
+        "開發訂飲料 App 的 API，請先從以下網址抓取 menu，\n包含名字、價錢、照片、簡介、詳細介紹、分類，資料存在 cloudflare\nhttps://kebuke.com/menu",
+        "開發帳密登入和 CRUD 訂飲料的 API",
+        "加入分組 API，可建立群組，在群組裡訂飲料",
+        "請製作並部署漂亮可互動測試的 API 文件",
+        "請依據以下 OpenAPI 規格，使用 SwiftUI 開發訂飲料 App"
+      ],
+      "medium": "https://medium.com/p/6352f84192d8"
     }
   ]
 }
