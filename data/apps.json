@@ -778,7 +778,7 @@
     {
       "date": "2026-08-09",
       "title": "使用 Cloudflare 開發具備登入和 CRUD 功能的 API & API 文件",
-      "platform": "Website",
+      "platform": "API",
       "description": "請 AI 使用 Cloudflare 開發具備帳密登入和資料 CRUD 功能的 API，並生成可互動測試的 API 文件",
       "image": "使用 Cloudflare 開發具備登入和 CRUD 功能的 API",
       "notes": [
