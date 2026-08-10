@@ -796,6 +796,24 @@
         "請依據以下 OpenAPI 規格，使用 SwiftUI 開發訂飲料 App"
       ],
       "medium": "https://medium.com/p/6352f84192d8"
+    },
+    {
+      "date": "2026-08-10",
+      "title": "將圖片的機密文字馬賽克",
+      "platform": "Python",
+      "description": "用 OCR 找出圖片裡的指定文字，然後蓋上 emoji 馬賽克（預設 🦊）",
+      "image": "example-scalar-docs",
+      "notes": [
+        "python mosaic_text.py photo.jpg -t 王小明",
+        "使用 python mosaic_text.py --watch 每秒監看，儲存最近一次 copy 的圖片和文字"
+      ],
+      "AI": "Claude, Opus 5, high",
+      "prompt": [
+        "寫 python 程式，能將圖片裡指定的文字加上馬賽克，預設使用 fox emoji 🦊，可透過參數傳入自訂的 emoji",
+        "參數沒有傳圖片名字時，從 pasteboard 取得圖片",
+        "當圖片名和文字都沒有給時，取得最近一次 copy 的文字和圖片。由於只能讀到最近一次 copy 的資料，為了能讀到分別讀到最近一次 copy 的文字和圖片，請每秒監看 NSPasteboard.changeCount，然後儲存圖片和文字"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/image-text-mosaic"
     }
   ]
 }
