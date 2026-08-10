@@ -814,6 +814,22 @@
         "當圖片名和文字都沒有給時，取得最近一次 copy 的文字和圖片。由於只能讀到最近一次 copy 的資料，為了能讀到分別讀到最近一次 copy 的文字和圖片，請每秒監看 NSPasteboard.changeCount，然後儲存圖片和文字"
       ],
       "GitHub": "https://github.com/PeterPanSwift/image-text-mosaic"
+    },
+    {
+      "date": "2026-08-11",
+      "title": "移除 PDF 和圖片的浮水印",
+      "platform": "Python",
+      "description": "撰寫移除浮水印的 python 程式，程式可針對想去除浮水印的檔案量身訂做",
+      "image": "移除 PDF 和圖片的浮水印",
+      "notes": [
+        "當 PDF 的浮水印是獨立的圖片、文字或向量物件時，程式可以找到並移除。",
+        "如果 PDF 的內容已經成為點陣圖，處理難度將大幅提高。此時它和去除圖片的浮水印類似，需要利用影像處理的相關技術。"
+      ],
+      "AI": "Claude, Opus 5, high",
+      "prompt": [
+        "寫一個 python 程式，能移除附檔裡圖片和 PDF 的浮水印"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/pdf-image-watermark-remover"
     }
   ]
 }
