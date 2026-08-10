@@ -805,7 +805,7 @@
       "image": "example-scalar-docs",
       "notes": [
         "python mosaic_text.py photo.jpg -t 王小明",
-        "使用 python mosaic_text.py --watch 每秒監看，儲存最近一次 copy 的圖片和文字"
+        "使用 python mosaic_text.py --watch 每秒監看，儲存最近一次 copy 的圖片和文字，透過 pyobjc 讀取 NSPasteboard.generalPasteboard().changeCount()"
       ],
       "AI": "Claude, Opus 5, high",
       "prompt": [
