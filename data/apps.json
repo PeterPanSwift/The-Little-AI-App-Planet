@@ -829,7 +829,8 @@
       "prompt": [
         "寫一個 python 程式，能移除附檔裡圖片和 PDF 的浮水印"
       ],
-      "GitHub": "https://github.com/PeterPanSwift/pdf-image-watermark-remover"
+      "GitHub": "https://github.com/PeterPanSwift/pdf-image-watermark-remover",
+      "medium": "https://medium.com/p/91866363d313"
     }
   ]
 }
