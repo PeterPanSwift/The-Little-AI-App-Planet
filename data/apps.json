@@ -831,6 +831,19 @@
       ],
       "GitHub": "https://github.com/PeterPanSwift/pdf-image-watermark-remover",
       "medium": "https://medium.com/p/91866363d313"
+    },
+    {
+      "date": "2026-08-12",
+      "title": "製作課程獎狀",
+      "platform": "Website",
+      "description": "依據使用者輸入的文字資料和上傳的圖片合成獎狀",
+      "image": "合成課程獎狀",
+      "notes": [],
+      "AI": "Claude, Opus 5, high",
+      "prompt": [
+        "寫一個網頁，利用 certificate.jpg 合成獎狀，使用者可輸入相關資料和 QR Code 的網址，以及上傳照片，生成類似附檔的照片"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/course-certificate-generator"
     }
   ]
 }
