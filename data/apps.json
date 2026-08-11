@@ -838,10 +838,13 @@
       "platform": "Website",
       "description": "依據使用者輸入的文字資料和上傳的圖片合成獎狀",
       "image": "合成課程獎狀",
-      "notes": [],
+      "notes": [
+        "GitHub ReadMe 利用錨點連結切換語言"
+      ],
       "AI": "Claude, Opus 5, high",
       "prompt": [
-        "寫一個網頁，利用 certificate.jpg 合成獎狀，使用者可輸入相關資料和 QR Code 的網址，以及上傳照片，生成類似附檔的照片"
+        "寫一個網頁，利用 certificate.jpg 合成獎狀，使用者可輸入相關資料和 QR Code 的網址，以及上傳照片，生成類似附檔的照片",
+        "課名除了打字輸入，也可以從下拉選單選擇，有三種，彼得潘的 iOS SwiftUI App 程式設計入門、文組生的 iOS SwiftUI App 程式設計入門、彼得潘的 iOS SwiftUI App 程式設計入門、彼得潘的 Flutter 跨平台 App 程式設計入門"
       ],
       "GitHub": "https://github.com/PeterPanSwift/course-certificate-generator"
     }
