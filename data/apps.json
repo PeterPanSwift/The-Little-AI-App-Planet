@@ -847,6 +847,19 @@
         "課名除了打字輸入，也可以從下拉選單選擇，有三種，彼得潘的 iOS SwiftUI App 程式設計入門、文組生的 iOS SwiftUI App 程式設計入門、彼得潘的 iOS SwiftUI App 程式設計入門、彼得潘的 Flutter 跨平台 App 程式設計入門"
       ],
       "GitHub": "https://github.com/PeterPanSwift/course-certificate-generator"
+    },
+    {
+      "date": "2026-08-13",
+      "title": "使用描述延伸功能製作 custom Safari extension - 以生成 Medium 文章的短網址為例",
+      "platform": "macOS",
+      "description": "從 macOS 27 開始，使用文字描述想要的功能，Safari 就會利用 Apple Intelligence 生成 Safari extension。",
+      "image": "使用描述延伸功能製作 custom Safari extension",
+      "notes": [],
+      "AI": "Apple Intelligence",
+      "prompt": [
+        "將 Medium 網址變成短網址，存在剪貼簿\n範例: https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/macos-27-內建的螢幕錄影終於能錄製系統音訊-錄製有聲的-ios-app-操作影片-d0e4d4cfab67 -> https://medium.com/p/d0e4d4cfab67"
+      ],
+      "medium": "https://medium.com/p/75355b96d2dc"
     }
   ]
 }
