@@ -629,7 +629,9 @@
       ],
       "AI": "Claude, Fable 5, Extra",
       "prompt": [
-        "使用 WatchPaths 偵測模擬器和實機 screenshot 在 Desktop 產生的檔案，將它加上 bezel.png"
+        "使用 WatchPaths 偵測模擬器和實機 screenshot 在 Desktop 產生的檔案，將它加上 bezel.png",
+        "利用 osacompile 製作 App，讓圖片可以從右鍵選單點選 App 加上外框",
+        "建立圖片的 Quick Action，執行程式 bezel-frame 加外框"
       ],
       "GitHub": "https://github.com/PeterPanSwift/simulator-bezel",
       "medium": "https://medium.com/p/d724f75d1d7c"
