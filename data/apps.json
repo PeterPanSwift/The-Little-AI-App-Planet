@@ -867,10 +867,10 @@
       "date": "2026-08-15",
       "title": "透過 AI 新增和查詢 Apple 行事曆的行程",
       "platform": "AI",
-      "description": "透過 AI 助理，使用自然語言新增和查詢 Apple 行事曆的行程，以 macOS 27 的 Siri AI、Claude 和 ChatGPT 為例",
+      "description": "透過 AI 助理，使用自然語言新增和查詢 Apple 行事曆的行程，以 iOS 27 / macOS 27 的 Siri AI、Claude 和 ChatGPT 為例",
       "image": "透過 AI 新增和查詢 Apple 行事曆的行程",
       "notes": [
-        "使用 macOS 27 的 Siri AI",
+        "使用 iOS 27 / macOS 27 的 Siri AI",
         "Claude & ChatGPT 原先並沒有操作 Apple 行事曆的能力，必須串接本機運行的 Apple Calendar MCP Server"
       ],
       "AI": "Claude, Opus 5, high",
