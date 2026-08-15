@@ -879,6 +879,18 @@
       ],
       "GitHub": "https://github.com/PeterPanSwift/apple-calendar-mcp",
       "medium": "https://medium.com/p/62a56de52ff0"
+    },
+    {
+      "date": "2026-08-16",
+      "title": "macOS 27 的 Visual Intelligence with Siri",
+      "platform": "macOS",
+      "description": "透過 macOS 27 神奇的 Visual Intelligence with Siri，我們可以詢問 Siri 畫面的各種問題。",
+      "image": "macOS 27 的 Visual Intelligence with Siri",
+      "notes": [
+        "智慧截圖的快速鍵 cmd + shift + 6"
+      ],
+      "AI": "Siri",
+      "medium": "https://medium.com/p/b50f45b42137"
     }
   ]
 }
