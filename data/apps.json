@@ -862,6 +862,23 @@
         "將 Medium 網址變成短網址，存在剪貼簿\n範例: https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/macos-27-內建的螢幕錄影終於能錄製系統音訊-錄製有聲的-ios-app-操作影片-d0e4d4cfab67 -> https://medium.com/p/d0e4d4cfab67"
       ],
       "medium": "https://medium.com/p/75355b96d2dc"
+    },
+    {
+      "date": "2026-08-15",
+      "title": "透過 AI 新增和查詢 Apple 行事曆的行程",
+      "platform": "AI",
+      "description": "透過 AI 助理，使用自然語言新增和查詢 Apple 行事曆的行程，以 macOS 27 的 Siri AI、Claude 和 ChatGPT 為例",
+      "image": "透過 AI 新增和查詢 Apple 行事曆的行程",
+      "notes": [
+        "使用 macOS 27 的 Siri AI",
+        "Claude & ChatGPT 原先並沒有操作 Apple 行事曆的能力，必須串接本機運行的 Apple Calendar MCP Server"
+      ],
+      "AI": "Claude, Opus 5, high",
+      "prompt": [
+        "開發 Apple Calendar MCP server"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/apple-calendar-mcp",
+      "medium": "https://medium.com/p/62a56de52ff0"
     }
   ]
 }
