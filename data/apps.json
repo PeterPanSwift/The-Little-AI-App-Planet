@@ -908,9 +908,9 @@
     },
     {
       "date": "2026-08-18",
-      "title": "讓 Xcode 能複製生成淺色和深色模式的程式區塊",
+      "title": "從 Xcode 一鍵複製生成淺色或深色模式的程式區塊",
       "platform": "Xcode",
-      "description": "使用 AI 開發 Xcode Source Editor Extension，讓 Xcode 能複製生成淺色和深色模式的程式區塊",
+      "description": "使用 AI 開發 Xcode Source Editor Extension，從 Xcode 一鍵複製生成淺色或深色模式的程式區塊",
       "image": "quick-actions",
       "notes": [],
       "AI": "Claude, Fable 5, high",
@@ -918,7 +918,8 @@
         "製作 Xcode Source Editor Extension，\n可以 copy 選取的程式區塊，\ncopy 成 light 或 dark 的樣式。\nXcodeKit.framework 要記得包進 bundle，\n要設定 Team 帳號，不能用 Sign to Run Locally／ad hoc",
         "copy 的程式預設字體大小 24，文字不要有像圖片那樣的白色和黑色背景"
       ],
-      "GitHub": "https://github.com/PeterPanSwift/CopyCodeStyled"
+      "GitHub": "https://github.com/PeterPanSwift/CopyCodeStyled",
+      "medium": "https://medium.com/p/1928962263a0"
     }
   ]
 }
