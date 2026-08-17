@@ -707,7 +707,8 @@
       "description": "AI 很適合開發 Xcode Source Editor Extension，開發一些讓 Xcode 更方便修改程式的功能，比方開發 SwiftUI Unembed Container",
       "image": "SwiftUI Unembed Container",
       "notes": [
-        "XcodeKit.framework 要記得包進 bundle"
+        "XcodeKit.framework 要記得包進 bundle",
+        "要設定 Team 帳號，不能用 Sign to Run Locally／ad hoc"
       ],
       "AI": "Claude, Opus 5, high",
       "prompt": [
