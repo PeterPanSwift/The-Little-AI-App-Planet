@@ -892,6 +892,18 @@
       ],
       "AI": "Siri",
       "medium": "https://medium.com/p/b50f45b42137"
+    },
+    {
+      "date": "2026-08-17",
+      "title": "一鍵 copy Apple 文件的程式區塊",
+      "platform": "macOS",
+      "description": "使用描述延伸功能製作 custom Safari extension，在 Apple 文件網頁的程式區塊點選 copy 按鈕複製",
+      "image": "一鍵 copy Apple 文件的程式區塊",
+      "notes": [],
+      "AI": "Apple Intelligence",
+      "prompt": [
+        "一鍵 copy Apple 文件的程式區塊"
+      ]
     }
   ]
 }
