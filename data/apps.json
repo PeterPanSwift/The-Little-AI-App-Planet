@@ -753,7 +753,8 @@
       "notes": [],
       "AI": "Claude, Fable 5, high",
       "prompt": [
-        "開發 Xcode Source Editor Extension，透過 gh 指令將目前的檔案或選取的程式上傳 gist"
+        "開發 Xcode Source Editor Extension，透過 gh 指令將目前的檔案或選取的程式上傳 gist",
+        "可選擇多個檔案，建立包含多個檔案的 gist"
       ],
       "GitHub": "https://github.com/PeterPanSwift/XcodeGistUploader"
     },
