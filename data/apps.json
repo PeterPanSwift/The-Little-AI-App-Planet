@@ -921,6 +921,20 @@
       ],
       "GitHub": "https://github.com/PeterPanSwift/CopyCodeStyled",
       "medium": "https://medium.com/p/1928962263a0"
+    },
+    {
+      "date": "2026-08-19",
+      "title": "使用 RenderPreview 自動生成多國語言的 App 畫面截圖",
+      "platform": "Xcode",
+      "description": "請 AI 截圖多個指定的畫面，包含英文版和中文版，將圖片存到指定的資料夾。",
+      "image": "使用 RenderPreview 自動生成多國語言的 App 畫面截圖",
+      "notes": [],
+      "prompt": [
+        "使用 RenderPreview 截圖 DetailView",
+        "使用 RenderPreview 截圖 preview 名字有 screenshot 的畫面，\n包含英文版和中文版，將截圖存到 ~/Desktop/screenshot",
+        "使用模擬器 iPhone 17 Pro Max 操作 App，使用 xcrun simctl 指令截取 App 畫面，請截取 spider man 的文字和圖片頁面，包含英文版和中文版，將截圖存到 ~/Desktop/screenshot"
+      ],
+      "medium": "https://medium.com/p/ad75095d7777"
     }
   ]
 }
