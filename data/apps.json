@@ -936,6 +936,21 @@
         "使用模擬器 iPhone 17 Pro Max 操作 App，使用 xcrun simctl 指令截取 App 畫面，請截取 spider man 的文字和圖片頁面，包含英文版和中文版，將截圖存到 ~/Desktop/screenshot"
       ],
       "medium": "https://medium.com/p/ad75095d7777"
+    },
+    {
+      "date": "2026-08-20",
+      "title": "外部的 coding agent 透過 Xcode MCP Tools 開發 App",
+      "platform": "Xcode",
+      "description": "Xcode 沒開時，外部的 coding agent 也能透過 Xcode MCP Tools 進行 App 開發的工作，像是建立專案、編譯 App、預覽畫面、操作 App",
+      "image": "外部的 coding agent 透過 Xcode MCP Tools 開發 App",
+      "notes": [
+        "sudo xcrun mcp-server enable",
+        "xcrun mcp-server status",
+        "xcrun mcp-server start",
+        "codex mcp add xcode -- /usr/bin/xcrun mcpbridge",
+        "claude mcp add --scope user Xcode -- /usr/bin/xcrun mcpbridge"
+      ],
+      "medium": "https://medium.com/p/37f5fd650c61"
     }
   ]
 }
