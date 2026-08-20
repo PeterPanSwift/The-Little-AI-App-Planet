@@ -70,17 +70,22 @@
             <label>
               App image
               <input name="imageFile" type="file" accept=".png,.jpg,.jpeg,.webp,image/png,image/jpeg,image/webp" required />
-              <span class="field-hint">Choose a PNG, JPG, or WebP, or paste an image with ⌘V. The file name becomes the JSON image value.</span>
+              <span class="field-hint">Choose a PNG, JPG, or WebP, or paste an image with ⌘V.</span>
             </label>
             <label>
-              AI
-              <input name="AI" type="text" placeholder="Codex, GPT 5.5, high" />
+              Image asset name
+              <input name="imageName" type="text" placeholder="Defaults to the selected file name" />
+              <span class="field-hint">Optional. The correct extension is applied automatically.</span>
             </label>
           </div>
           <div class="image-preview" id="image-preview" hidden>
             <img alt="Selected app preview" />
             <span></span>
           </div>
+          <label>
+            AI
+            <input name="AI" type="text" placeholder="Codex, GPT 5.5, high" />
+          </label>
           <div class="admin-grid">
             <label>
               Website URL
@@ -264,6 +269,6 @@
         </div>
       </section>
     </main>
-    <script src="admin.js?v=20260820-2"></script>
+    <script src="admin.js?v=20260820-3"></script>
   </body>
 </html>

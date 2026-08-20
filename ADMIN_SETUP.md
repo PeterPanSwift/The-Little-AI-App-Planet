@@ -47,5 +47,7 @@ GITHUB_BRANCH=main
 - Do not put the GitHub token in frontend JavaScript.
 - `/admin.html` is intentionally not linked from the public home page.
 - The admin page accepts PNG, JPG, and WebP uploads, including images pasted with ⌘V.
+  Add app also accepts an optional custom image asset name; otherwise it uses the
+  selected or pasted file name.
   PNG image values omit `.png` for compatibility with existing data; JPG and
   WebP image values include `.jpg` and `.webp`.

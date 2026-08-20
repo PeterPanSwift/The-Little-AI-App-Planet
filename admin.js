@@ -126,12 +126,20 @@ async function imageUploadFromForm(formData, required = true) {
 
   const dataUrl = await readFileAsDataUrl(file);
   const [, contentBase64 = ""] = dataUrl.split(",");
+  const customName = formData.get("imageName");
+  const uploadName = typeof customName === "string" && customName.trim()
+    ? customName.trim()
+    : file.name;
+  const cleanUploadName = imageNameFromFileName(uploadName);
+  if (!cleanUploadName) {
+    throw new Error("Enter a valid image asset name.");
+  }
 
   return {
-    name: file.name,
+    name: cleanUploadName,
     mimeType: file.type,
     contentBase64,
-    assetReference: imageReferenceFromFile(file),
+    assetReference: imageReferenceFromFile(file, cleanUploadName),
   };
 }
 
@@ -144,8 +152,8 @@ function imageNameFromFileName(fileName) {
     .trim();
 }
 
-function imageReferenceFromFile(file) {
-  const name = imageNameFromFileName(file.name) || `pasted-image-${Date.now()}`;
+function imageReferenceFromFile(file, fileName = file.name) {
+  const name = imageNameFromFileName(fileName) || `pasted-image-${Date.now()}`;
   if (file.type === "image/jpeg") return `${name}.jpg`;
   if (file.type === "image/webp") return `${name}.webp`;
   return name;
