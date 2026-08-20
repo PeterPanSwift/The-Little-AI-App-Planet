@@ -21,10 +21,12 @@ const editImageInput = appEditForm.elements.imageFile;
 const editImagePreview = document.querySelector("#edit-image-preview");
 const editImagePreviewImage = editImagePreview.querySelector("img");
 const editImagePreviewName = editImagePreview.querySelector("span");
+const supportedImageTypes = new Set(["image/png", "image/jpeg"]);
 let jsonFileSha = "";
 let appListData = null;
 let appListSha = "";
 let editingAppIndex = -1;
+let activeImageInput = imageInput;
 const arrayFieldConfigs = {
   prompt: {
     addButton: document.querySelector('[data-array-add="prompt"]'),
@@ -115,11 +117,11 @@ async function imageUploadFromForm(formData, required = true) {
 
   if (!(file instanceof File) || file.size === 0) {
     if (!required) return null;
-    throw new Error("Upload a PNG image.");
+    throw new Error("Upload or paste a PNG or JPG image.");
   }
 
-  if (file.type !== "image/png") {
-    throw new Error("The app image must be a PNG file.");
+  if (!supportedImageTypes.has(file.type)) {
+    throw new Error("The app image must be a PNG or JPG file.");
   }
 
   const dataUrl = await readFileAsDataUrl(file);
@@ -129,6 +131,7 @@ async function imageUploadFromForm(formData, required = true) {
     name: file.name,
     mimeType: file.type,
     contentBase64,
+    assetReference: imageReferenceFromFile(file),
   };
 }
 
@@ -139,6 +142,43 @@ function imageNameFromFileName(fileName) {
     .replace(/\s+/g, " ")
     .replace(/-+/g, "-")
     .trim();
+}
+
+function imageReferenceFromFile(file) {
+  const name = imageNameFromFileName(file.name) || `pasted-image-${Date.now()}`;
+  return file.type === "image/jpeg" ? `${name}.jpg` : name;
+}
+
+function imageAssetPath(imageName) {
+  const trimmedName = typeof imageName === "string" ? imageName.trim() : "";
+  const safeName = /^[\p{L}\p{M}\p{N} _\uFF0D-]+(?:\.(?:png|jpe?g))?$/iu.test(trimmedName)
+    ? trimmedName
+    : "arctic-fox-hero";
+  const fileName = /\.(?:png|jpe?g)$/i.test(safeName) ? safeName : `${safeName}.png`;
+  return `assets/${encodeURIComponent(fileName)}`;
+}
+
+function imageFileFromClipboard(event) {
+  const items = Array.from(event.clipboardData?.items || []);
+  const imageItem = items.find(
+    (item) => item.kind === "file" && supportedImageTypes.has(item.type),
+  );
+  if (imageItem) return imageItem.getAsFile();
+
+  return Array.from(event.clipboardData?.files || []).find(
+    (file) => supportedImageTypes.has(file.type),
+  ) || null;
+}
+
+function setImageInputFile(input, file) {
+  const extension = file.type === "image/jpeg" ? "jpg" : "png";
+  const namedFile = file.name
+    ? file
+    : new File([file], `pasted-image-${Date.now()}.${extension}`, { type: file.type });
+  const transfer = new DataTransfer();
+  transfer.items.add(namedFile);
+  input.files = transfer.files;
+  input.dispatchEvent(new Event("change", { bubbles: true }));
 }
 
 function setStatus(message, type = "") {
@@ -316,7 +356,7 @@ function renderAppList() {
     const editButton = document.createElement("button");
 
     item.className = "app-admin-item";
-    image.src = `assets/${encodeURIComponent(app.image || app.images?.[0] || "arctic-fox-hero")}.png`;
+    image.src = imageAssetPath(app.image || app.images?.[0] || "arctic-fox-hero");
     image.alt = "";
     image.loading = "lazy";
     content.className = "app-admin-content";
@@ -349,6 +389,29 @@ appEditForm.querySelectorAll("[data-edit-array-add]").forEach((button) => {
 });
 
 appEditCancelButton.addEventListener("click", closeAppEditor);
+
+[imageInput, editImageInput].forEach((input) => {
+  input.addEventListener("focus", () => { activeImageInput = input; });
+  input.addEventListener("pointerdown", () => { activeImageInput = input; });
+});
+
+document.addEventListener("paste", (event) => {
+  const file = imageFileFromClipboard(event);
+  if (!file) return;
+
+  const focusedForm = document.activeElement?.closest?.("form");
+  const targetInput = focusedForm === appEditForm && !appEditForm.hidden
+    ? editImageInput
+    : focusedForm === form
+      ? imageInput
+      : activeImageInput === editImageInput && !appEditForm.hidden
+        ? editImageInput
+        : imageInput;
+
+  event.preventDefault();
+  activeImageInput = targetInput;
+  setImageInputFile(targetInput, file);
+});
 
 editImageInput.addEventListener("change", () => {
   const [file] = editImageInput.files;
@@ -400,7 +463,7 @@ appEditForm.addEventListener("submit", async (event) => {
     const updatedApp = { ...existingApp, ...appFromEditForm(editFormData) };
     const imageFile = await imageUploadFromForm(editFormData, false);
     if (imageFile) {
-      updatedApp.image = imageNameFromFileName(imageFile.name);
+      updatedApp.image = imageFile.assetReference;
       if (Array.isArray(updatedApp.images) && updatedApp.images.length > 0) {
         updatedApp.images = [updatedApp.image, ...updatedApp.images.slice(1)];
       }

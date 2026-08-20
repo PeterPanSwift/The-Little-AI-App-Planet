@@ -76,17 +76,31 @@ function normalizeImageUpload(input) {
   };
 }
 
+function imageExtensionForMimeType(mimeType) {
+  if (mimeType === "image/png") return "png";
+  if (mimeType === "image/jpeg") return "jpg";
+  return "";
+}
+
+function imageReferenceForUpload(upload) {
+  return upload.mimeType === "image/jpeg" ? `${upload.name}.jpg` : upload.name;
+}
+
+function imageFileNameForUpload(upload) {
+  return `${upload.name}.${imageExtensionForMimeType(upload.mimeType)}`;
+}
+
 function validateImageUpload(upload) {
   if (!upload) {
-    return "Upload a PNG image.";
+    return "Upload or paste a PNG or JPG image.";
   }
 
   if (!upload.name) {
     return "The uploaded image needs a file name.";
   }
 
-  if (upload.mimeType !== "image/png") {
-    return "The app image must be a PNG file.";
+  if (!imageExtensionForMimeType(upload.mimeType)) {
+    return "The app image must be a PNG or JPG file.";
   }
 
   if (!upload.contentBase64) {
@@ -94,15 +108,18 @@ function validateImageUpload(upload) {
   }
 
   if (upload.contentBase64.length > MAX_IMAGE_BASE64_LENGTH) {
-    return "The PNG image is too large.";
+    return "The image is too large.";
   }
 
   if (!/^[A-Za-z0-9+/=]+$/.test(upload.contentBase64)) {
     return "The uploaded image content is not valid base64.";
   }
 
-  if (!upload.contentBase64.startsWith("iVBORw0KGgo")) {
-    return "The app image must be a valid PNG file.";
+  const hasValidSignature = upload.mimeType === "image/png"
+    ? upload.contentBase64.startsWith("iVBORw0KGgo")
+    : upload.contentBase64.startsWith("/9j/");
+  if (!hasValidSignature) {
+    return "The app image content does not match its PNG or JPG type.";
   }
 
   return "";
@@ -240,14 +257,15 @@ export async function onRequestPost({ request, env }) {
     return json({ error: imageValidationError }, 400);
   }
 
-  const app = normalizeApp(body?.app || body || {}, imageUpload.name);
+  const imageReference = imageReferenceForUpload(imageUpload);
+  const app = normalizeApp(body?.app || body || {}, imageReference);
   const validationError = validateApp(app);
   if (validationError) {
     return json({ error: validationError }, 400);
   }
 
   const { branch, fileUrl, owner, repo } = repositoryConfig(env);
-  const imagePath = `${ASSETS_DIR}/${imageUpload.name}.png`;
+  const imagePath = `${ASSETS_DIR}/${imageFileNameForUpload(imageUpload)}`;
   const imageUrl = githubContentsUrl(owner, repo, imagePath);
 
   try {
@@ -274,7 +292,7 @@ export async function onRequestPost({ request, env }) {
     const imagePayload = {
       branch,
       content: imageUpload.contentBase64,
-      message: `Add image: ${imageUpload.name}.png`,
+      message: `Add image: ${imageFileNameForUpload(imageUpload)}`,
     };
 
     const updatedImageFile = await githubRequest(imageUrl, env, {
@@ -354,7 +372,7 @@ export async function onRequestPut({ request, env }) {
       return json({ error: imageValidationError }, 400);
     }
     const imageIsReferenced = body?.data?.apps?.some(
-      (app) => cleanString(app?.image) === imageUpload.name,
+      (app) => cleanString(app?.image) === imageReferenceForUpload(imageUpload),
     );
     if (!imageIsReferenced) {
       return json({ error: "The uploaded image must be assigned to an app." }, 400);
@@ -380,7 +398,7 @@ export async function onRequestPut({ request, env }) {
 
     let image = null;
     if (imageUpload) {
-      const imagePath = `${ASSETS_DIR}/${imageUpload.name}.png`;
+      const imagePath = `${ASSETS_DIR}/${imageFileNameForUpload(imageUpload)}`;
       const imageUrl = githubContentsUrl(owner, repo, imagePath);
       const currentImageFile = await githubRequest(`${imageUrl}?ref=${branch}`, env, {}, {
         allowNotFound: true,
@@ -388,7 +406,7 @@ export async function onRequestPut({ request, env }) {
       const imagePayload = {
         branch,
         content: imageUpload.contentBase64,
-        message: `${currentImageFile ? "Update" : "Add"} image: ${imageUpload.name}.png`,
+        message: `${currentImageFile ? "Update" : "Add"} image: ${imageFileNameForUpload(imageUpload)}`,
       };
       if (currentImageFile) imagePayload.sha = currentImageFile.sha;
 
