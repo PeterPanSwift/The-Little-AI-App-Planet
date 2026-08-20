@@ -69,8 +69,8 @@
           <div class="admin-grid">
             <label>
               App image
-              <input name="imageFile" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" required />
-              <span class="field-hint">Choose a PNG or JPG, or paste an image with ⌘V. The file name becomes the JSON image value.</span>
+              <input name="imageFile" type="file" accept=".png,.jpg,.jpeg,.webp,image/png,image/jpeg,image/webp" required />
+              <span class="field-hint">Choose a PNG, JPG, or WebP, or paste an image with ⌘V. The file name becomes the JSON image value.</span>
             </label>
             <label>
               AI
@@ -171,12 +171,12 @@
             <label>
               Image asset name
               <input name="image" type="text" required />
-              <span class="field-hint">File name in <code>assets</code>. PNG may omit the extension; JPG includes it.</span>
+              <span class="field-hint">File name in <code>assets</code>. PNG may omit the extension; JPG and WebP include it.</span>
             </label>
             <label>
               New app image
-              <input name="imageFile" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg" />
-              <span class="field-hint">Optional. Choose a PNG or JPG, or paste one with ⌘V.</span>
+              <input name="imageFile" type="file" accept=".png,.jpg,.jpeg,.webp,image/png,image/jpeg,image/webp" />
+              <span class="field-hint">Optional. Choose a PNG, JPG, or WebP, or paste one with ⌘V.</span>
             </label>
           </div>
           <div class="image-preview" id="edit-image-preview" hidden>
@@ -264,6 +264,6 @@
         </div>
       </section>
     </main>
-    <script src="admin.js?v=20260820-1"></script>
+    <script src="admin.js?v=20260820-2"></script>
   </body>
 </html>

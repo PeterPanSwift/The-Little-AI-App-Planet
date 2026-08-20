@@ -21,7 +21,7 @@ const editImageInput = appEditForm.elements.imageFile;
 const editImagePreview = document.querySelector("#edit-image-preview");
 const editImagePreviewImage = editImagePreview.querySelector("img");
 const editImagePreviewName = editImagePreview.querySelector("span");
-const supportedImageTypes = new Set(["image/png", "image/jpeg"]);
+const supportedImageTypes = new Set(["image/png", "image/jpeg", "image/webp"]);
 let jsonFileSha = "";
 let appListData = null;
 let appListSha = "";
@@ -117,11 +117,11 @@ async function imageUploadFromForm(formData, required = true) {
 
   if (!(file instanceof File) || file.size === 0) {
     if (!required) return null;
-    throw new Error("Upload or paste a PNG or JPG image.");
+    throw new Error("Upload or paste a PNG, JPG, or WebP image.");
   }
 
   if (!supportedImageTypes.has(file.type)) {
-    throw new Error("The app image must be a PNG or JPG file.");
+    throw new Error("The app image must be a PNG, JPG, or WebP file.");
   }
 
   const dataUrl = await readFileAsDataUrl(file);
@@ -146,15 +146,17 @@ function imageNameFromFileName(fileName) {
 
 function imageReferenceFromFile(file) {
   const name = imageNameFromFileName(file.name) || `pasted-image-${Date.now()}`;
-  return file.type === "image/jpeg" ? `${name}.jpg` : name;
+  if (file.type === "image/jpeg") return `${name}.jpg`;
+  if (file.type === "image/webp") return `${name}.webp`;
+  return name;
 }
 
 function imageAssetPath(imageName) {
   const trimmedName = typeof imageName === "string" ? imageName.trim() : "";
-  const safeName = /^[\p{L}\p{M}\p{N} _\uFF0D-]+(?:\.(?:png|jpe?g))?$/iu.test(trimmedName)
+  const safeName = /^[\p{L}\p{M}\p{N} _\uFF0D-]+(?:\.(?:png|jpe?g|webp))?$/iu.test(trimmedName)
     ? trimmedName
     : "arctic-fox-hero";
-  const fileName = /\.(?:png|jpe?g)$/i.test(safeName) ? safeName : `${safeName}.png`;
+  const fileName = /\.(?:png|jpe?g|webp)$/i.test(safeName) ? safeName : `${safeName}.png`;
   return `assets/${encodeURIComponent(fileName)}`;
 }
 
@@ -171,7 +173,11 @@ function imageFileFromClipboard(event) {
 }
 
 function setImageInputFile(input, file) {
-  const extension = file.type === "image/jpeg" ? "jpg" : "png";
+  const extension = file.type === "image/jpeg"
+    ? "jpg"
+    : file.type === "image/webp"
+      ? "webp"
+      : "png";
   const namedFile = file.name
     ? file
     : new File([file], `pasted-image-${Date.now()}.${extension}`, { type: file.type });

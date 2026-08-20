@@ -3,7 +3,7 @@
 The admin page lives at `/admin.html`. It posts app data to the Cloudflare Pages
 Function at `/api/apps`.
 
-The function uploads the app PNG or JPG into `assets/`, updates `data/apps.json`
+The function uploads the app PNG, JPG, or WebP into `assets/`, updates `data/apps.json`
 through the GitHub API, and creates commits on `main`.
 
 The JSON editor on the same page can also load, validate, and replace the full
@@ -11,7 +11,7 @@ The JSON editor on the same page can also load, validate, and replace the full
 the editor loaded it.
 
 The app library provides a safer form-based editing flow: load the current app
-list, select one app, edit its fields, optionally upload or paste a replacement PNG/JPG, and
+list, select one app, edit its fields, optionally upload or paste a replacement PNG/JPG/WebP, and
 save it. It uses the same stale-file check as the JSON editor. The replacement
 file name becomes the app's new `image` value; an existing asset with that name
 is overwritten.
@@ -46,6 +46,6 @@ GITHUB_BRANCH=main
 
 - Do not put the GitHub token in frontend JavaScript.
 - `/admin.html` is intentionally not linked from the public home page.
-- The admin page accepts PNG and JPG uploads, including images pasted with ⌘V.
-  PNG image values omit `.png` for compatibility with existing data; JPG image
-  values include `.jpg`.
+- The admin page accepts PNG, JPG, and WebP uploads, including images pasted with ⌘V.
+  PNG image values omit `.png` for compatibility with existing data; JPG and
+  WebP image values include `.jpg` and `.webp`.

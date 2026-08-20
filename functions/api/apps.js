@@ -79,11 +79,14 @@ function normalizeImageUpload(input) {
 function imageExtensionForMimeType(mimeType) {
   if (mimeType === "image/png") return "png";
   if (mimeType === "image/jpeg") return "jpg";
+  if (mimeType === "image/webp") return "webp";
   return "";
 }
 
 function imageReferenceForUpload(upload) {
-  return upload.mimeType === "image/jpeg" ? `${upload.name}.jpg` : upload.name;
+  if (upload.mimeType === "image/jpeg") return `${upload.name}.jpg`;
+  if (upload.mimeType === "image/webp") return `${upload.name}.webp`;
+  return upload.name;
 }
 
 function imageFileNameForUpload(upload) {
@@ -92,7 +95,7 @@ function imageFileNameForUpload(upload) {
 
 function validateImageUpload(upload) {
   if (!upload) {
-    return "Upload or paste a PNG or JPG image.";
+    return "Upload or paste a PNG, JPG, or WebP image.";
   }
 
   if (!upload.name) {
@@ -100,7 +103,7 @@ function validateImageUpload(upload) {
   }
 
   if (!imageExtensionForMimeType(upload.mimeType)) {
-    return "The app image must be a PNG or JPG file.";
+    return "The app image must be a PNG, JPG, or WebP file.";
   }
 
   if (!upload.contentBase64) {
@@ -115,11 +118,21 @@ function validateImageUpload(upload) {
     return "The uploaded image content is not valid base64.";
   }
 
-  const hasValidSignature = upload.mimeType === "image/png"
-    ? upload.contentBase64.startsWith("iVBORw0KGgo")
-    : upload.contentBase64.startsWith("/9j/");
+  let hasValidSignature = false;
+  if (upload.mimeType === "image/png") {
+    hasValidSignature = upload.contentBase64.startsWith("iVBORw0KGgo");
+  } else if (upload.mimeType === "image/jpeg") {
+    hasValidSignature = upload.contentBase64.startsWith("/9j/");
+  } else if (upload.mimeType === "image/webp") {
+    try {
+      const header = atob(upload.contentBase64.slice(0, 16));
+      hasValidSignature = header.startsWith("RIFF") && header.slice(8, 12) === "WEBP";
+    } catch {
+      hasValidSignature = false;
+    }
+  }
   if (!hasValidSignature) {
-    return "The app image content does not match its PNG or JPG type.";
+    return "The app image content does not match its PNG, JPG, or WebP type.";
   }
 
   return "";

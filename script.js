@@ -121,10 +121,10 @@ function hasListItems(items, options = {}) {
 
 function imagePath(imageName) {
   const trimmedName = typeof imageName === "string" ? imageName.trim() : "";
-  const safeName = /^[\p{L}\p{M}\p{N} _\uFF0D-]+(?:\.(?:png|jpe?g))?$/iu.test(trimmedName)
+  const safeName = /^[\p{L}\p{M}\p{N} _\uFF0D-]+(?:\.(?:png|jpe?g|webp))?$/iu.test(trimmedName)
     ? trimmedName
     : "arctic-fox-hero";
-  const fileName = /\.(?:png|jpe?g)$/i.test(safeName) ? safeName : `${safeName}.png`;
+  const fileName = /\.(?:png|jpe?g|webp)$/i.test(safeName) ? safeName : `${safeName}.png`;
   return `assets/${encodeURIComponent(fileName)}`;
 }
 
