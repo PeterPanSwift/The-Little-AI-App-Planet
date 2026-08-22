@@ -965,6 +965,21 @@
         "將圖片辨識的文字翻成中文再存到 pasteboard"
       ],
       "medium": "https://medium.com/p/1950da034033"
+    },
+    {
+      "date": "2026-08-22",
+      "title": "把影片變成投影片",
+      "platform": "Python",
+      "description": "程式會自動辨識影片中的投影片畫面，擷取適合的畫面，最後整理成一份 pdf 檔",
+      "image": "把影片變成投影片",
+      "notes": [],
+      "AI": "Claude, Fable 5, high",
+      "prompt": [
+        "寫一個 python 程式，能夠解析影片，找出投影片的畫面，生成投影片。\n請參考 video.mp4",
+        "支援 YouTube 連結的影片"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/video-to-slides",
+      "medium": "https://medium.com/p/9865927df5dd"
     }
   ]
 }
