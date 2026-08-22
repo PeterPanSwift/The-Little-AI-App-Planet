@@ -980,6 +980,15 @@
       ],
       "GitHub": "https://github.com/PeterPanSwift/video-to-slides",
       "medium": "https://medium.com/p/9865927df5dd"
+    },
+    {
+      "date": "2026-08-23",
+      "title": "利用捷徑(shortcut)觸發 Python 程式",
+      "platform": "Python",
+      "description": "從 Finder 的檔案點選右鍵選單的捷徑，再透過捷徑觸發 Python 程式。",
+      "image": "image",
+      "notes": [],
+      "medium": "https://medium.com/p/aa3c3882bbb7"
     }
   ]
 }
