@@ -989,6 +989,15 @@
       "image": "image",
       "notes": [],
       "medium": "https://medium.com/p/aa3c3882bbb7"
+    },
+    {
+      "date": "2026-08-24",
+      "title": "讓 Mac 捷徑(shortcut)處理多種來源的檔案",
+      "platform": "macOS",
+      "description": "Finder 的 Quick Actions、分享選單、Spotlight + Clipboard、Spotlight + 手動選檔",
+      "image": "讓 Mac 捷徑處理多種來源的檔案",
+      "notes": [],
+      "medium": "https://medium.com/p/2cb9474a176d"
     }
   ]
 }
