@@ -1011,6 +1011,20 @@
         "寫一個 python 程式，使用 FFmpeg 偵測較長的無聲區間 ，將影片切割成多個，切完後的影片會移除較長的無聲區塊。使用專案裡的 @demo1.mp4 測試"
       ],
       "GitHub": "https://github.com/PeterPanSwift/video-silence-splitter"
+    },
+    {
+      "date": "2026-08-26",
+      "title": "Mac 的影片字幕播放器",
+      "platform": "macOS",
+      "description": "用 SwiftUI 打造的 Mac 影片播放器，可搭配 SRT 字幕檔同步顯示字幕。",
+      "image": "Mac 的影片字幕播放器",
+      "notes": [],
+      "AI": "Claude, Fable 5, high",
+      "prompt": [
+        "請用 SwiftUI 開發影片播放的 Mac App，可搭配 srt 檔顯示字幕",
+        "自動偵測跟影片檔放在一起的 srt 檔"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/VideoSubtitle"
     }
   ]
 }
