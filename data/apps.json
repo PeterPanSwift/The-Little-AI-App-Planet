@@ -998,6 +998,19 @@
       "image": "讓 Mac 捷徑處理多種來源的檔案",
       "notes": [],
       "medium": "https://medium.com/p/2cb9474a176d"
+    },
+    {
+      "date": "2026-08-25",
+      "title": "Video Silence Splitter - 切割影片，移除長無聲區塊",
+      "platform": "Python",
+      "description": "用 FFmpeg 偵測影片中的長無聲區塊，自動切割成多個片段，並在切割時移除這些無聲區塊。",
+      "image": "移除長無聲區塊",
+      "notes": [],
+      "AI": "Claude, Fable 5, high",
+      "prompt": [
+        "寫一個 python 程式，使用 FFmpeg 偵測較長的無聲區間 ，將影片切割成多個，切完後的影片會移除較長的無聲區塊。使用專案裡的 @demo1.mp4 測試"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/video-silence-splitter"
     }
   ]
 }
