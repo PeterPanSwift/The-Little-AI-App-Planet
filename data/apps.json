@@ -1025,6 +1025,20 @@
         "自動偵測跟影片檔放在一起的 srt 檔"
       ],
       "GitHub": "https://github.com/PeterPanSwift/VideoSubtitle"
+    },
+    {
+      "date": "2026-08-27",
+      "title": "使用 ChatGPT 創作貼圖(Stickers)",
+      "platform": "AI",
+      "description": "生成 9 張去背的貼圖，而且還能直接加到 iMessage & WhatsApp。",
+      "image": "使用 ChatGPT 創作貼圖",
+      "notes": [],
+      "AI": "ChatGPT",
+      "prompt": [
+        "以 iOS App 開發為主題，每張圖搭配的文字依序是 \n謝謝、早安、晚安、不客氣、加油、OK、Good、Go、Love U",
+        "以 iOS App 開發為主題，每張圖的文字搭配 SwiftUI 元件名字"
+      ],
+      "medium": "https://medium.com/p/b1a4d7f2538b"
     }
   ]
 }
