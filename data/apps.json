@@ -1039,6 +1039,20 @@
         "以 iOS App 開發為主題，每張圖的文字搭配 SwiftUI 元件名字"
       ],
       "medium": "https://medium.com/p/b1a4d7f2538b"
+    },
+    {
+      "date": "2026-08-28",
+      "title": "使用 Gemini 生成影片字幕的 SRT 檔",
+      "platform": "AI",
+      "description": "請 Gemini 依據影片生成字幕和翻譯字幕",
+      "image": "使用 Gemini 生成影片字幕的 SRT 檔",
+      "notes": [],
+      "AI": "Gemini 3.7 Flash",
+      "prompt": [
+        "生成影片的台灣中文字幕 SRT 檔，請精準對齊字幕時間",
+        "將剛剛的 SRT 檔翻成英文"
+      ],
+      "medium": "https://medium.com/p/37295a98c4aa"
     }
   ]
 }
