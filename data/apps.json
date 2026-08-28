@@ -1064,6 +1064,22 @@
       "image": "從 Finder 執行任何的 Python 檔",
       "notes": [],
       "medium": "https://medium.com/p/2e3211f60649"
+    },
+    {
+      "date": "2026-08-30",
+      "title": "透過 Claude Project 快速搜尋自己的 Medium 文章",
+      "platform": "Python",
+      "description": "建立在雲端執行 search_medium_posts.py 的 Claude Project，透過 search_medium_posts.py 從 Medium 文章的 JSON 檔查資料",
+      "image": "透過 Claude Project 快速搜尋自己的 Medium 文章",
+      "notes": [
+        "使用者輸入查詢的關鍵字，請執行 search_medium_posts.py，回覆相關的文章標題跟 Medium 網址。\n\n執行的方式有兩種\n1. python search_medium_posts.py Direct Distribution\n將 Direct 和 Distribution 視為兩個獨立關鍵字，找出同時包含兩者的文章，兩個關鍵字不必相鄰\n2. python search_medium_posts.py -p Direct Distribution\n找出包含完整片語 Direct Distribution 的文章\n\nprompt 開頭輸入\"all \" 時會使用加上參數 -p 的指令。\n\n範例\nprompt 輸入 \"Direct Distribution\"\n執行 python search_medium_posts.py Direct Distribution\n\nprompt 開頭輸入\"all\"，比方 \"all Direct Distribution\"\n執行 python search_medium_posts.py -p Direct Distribution"
+      ],
+      "AI": "Codex, 5.6 Sol, high",
+      "prompt": [
+        "寫一個 python 程式，使用者可輸入查詢的關鍵字，回覆相關的文章標題跟 Medium 網址\n\n程式會讀取以下連結的 JSON\nhttps://raw.githubusercontent.com/PeterPanSwift/b612-App-blog/refs/heads/main/posts\\_summary.json\n\nMedium 網址的格式為 https://medium.com/p/ 加上文章 id"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/b612-App-blog",
+      "medium": "https://medium.com/p/1190af1c753f"
     }
   ]
 }
