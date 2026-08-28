@@ -1018,7 +1018,9 @@
       "platform": "macOS",
       "description": "用 SwiftUI 打造的 Mac 影片播放器，可搭配 SRT 字幕檔同步顯示字幕。",
       "image": "Mac 的影片字幕播放器",
-      "notes": [],
+      "notes": [
+        "透過 Xcode 的 Direct Distribution 製作公開下載的 Mac App(https://medium.com/p/5a9dccde648b)"
+      ],
       "AI": "Claude, Fable 5, high",
       "prompt": [
         "請用 SwiftUI 開發影片播放的 Mac App，可搭配 srt 檔顯示字幕",
