@@ -1055,6 +1055,15 @@
         "將剛剛的 SRT 檔翻成英文"
       ],
       "medium": "https://medium.com/p/37295a98c4aa"
+    },
+    {
+      "date": "2026-08-29",
+      "title": "從 Finder 執行任何的 Python 檔",
+      "platform": "Python",
+      "description": "建立執行 Python 檔的 Quick Actions 捷徑",
+      "image": "從 Finder 執行任何的 Python 檔",
+      "notes": [],
+      "medium": "https://medium.com/p/2e3211f60649"
     }
   ]
 }
