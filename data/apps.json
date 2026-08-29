@@ -936,6 +936,165 @@
         "使用模擬器 iPhone 17 Pro Max 操作 App，使用 xcrun simctl 指令截取 App 畫面，請截取 spider man 的文字和圖片頁面，包含英文版和中文版，將截圖存到 ~/Desktop/screenshot"
       ],
       "medium": "https://medium.com/p/ad75095d7777"
+    },
+    {
+      "date": "2026-08-20",
+      "title": "外部的 coding agent 透過 Xcode MCP Tools 開發 App",
+      "platform": "Xcode",
+      "description": "Xcode 沒開時，外部的 coding agent 也能透過 Xcode MCP Tools 進行 App 開發的工作，像是建立專案、編譯 App、預覽畫面、操作 App",
+      "image": "外部的 coding agent 透過 Xcode MCP Tools 開發 App",
+      "notes": [
+        "sudo xcrun mcp-server enable",
+        "xcrun mcp-server status",
+        "xcrun mcp-server start",
+        "codex mcp add xcode -- /usr/bin/xcrun mcpbridge",
+        "claude mcp add --scope user Xcode -- /usr/bin/xcrun mcpbridge"
+      ],
+      "medium": "https://medium.com/p/37f5fd650c61"
+    },
+    {
+      "date": "2026-08-21",
+      "title": "利用 macOS 27 的 Apple Intelligence 建立捷徑 — 結合 Apple 雲端 AI 複製和翻譯圖片的文字",
+      "platform": "macOS",
+      "description": "利用 Apple Intelligence 建立兩個方便的捷徑，可以自動複製和翻譯圖片的文字。",
+      "image": "利用 macOS 27 的 Apple Intelligence 建立捷徑",
+      "notes": [],
+      "AI": "Apple Intelligence",
+      "prompt": [
+        "使用 AI 讀取圖片的文字，\n存到 pasteboard，\n做完時顯示通知。\n圖片的來源有三種，\nFinder 檔案右鍵選單的 Quick Actions、\n網頁上圖片的 Share ＞ Shortcut、\npasteboard。",
+        "將圖片辨識的文字翻成中文再存到 pasteboard"
+      ],
+      "medium": "https://medium.com/p/1950da034033"
+    },
+    {
+      "date": "2026-08-22",
+      "title": "把影片變成投影片",
+      "platform": "Python",
+      "description": "程式會自動辨識影片中的投影片畫面，擷取適合的畫面，最後整理成一份 pdf 檔",
+      "image": "把影片變成投影片",
+      "notes": [],
+      "AI": "Claude, Fable 5, high",
+      "prompt": [
+        "寫一個 python 程式，能夠解析影片，找出投影片的畫面，生成投影片。\n請參考 video.mp4",
+        "支援 YouTube 連結的影片"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/video-to-slides",
+      "medium": "https://medium.com/p/9865927df5dd"
+    },
+    {
+      "date": "2026-08-23",
+      "title": "利用捷徑(shortcut)觸發 Python 程式",
+      "platform": "Python",
+      "description": "從 Finder 的檔案點選右鍵選單的捷徑，再透過捷徑觸發 Python 程式。",
+      "image": "image",
+      "notes": [],
+      "medium": "https://medium.com/p/aa3c3882bbb7"
+    },
+    {
+      "date": "2026-08-24",
+      "title": "讓 Mac 捷徑(shortcut)處理多種來源的檔案",
+      "platform": "macOS",
+      "description": "Finder 的 Quick Actions、分享選單、Spotlight + Clipboard、Spotlight + 手動選檔",
+      "image": "讓 Mac 捷徑處理多種來源的檔案",
+      "notes": [],
+      "medium": "https://medium.com/p/2cb9474a176d"
+    },
+    {
+      "date": "2026-08-25",
+      "title": "Video Silence Splitter - 切割影片，移除長無聲區塊",
+      "platform": "Python",
+      "description": "用 FFmpeg 偵測影片中的長無聲區塊，自動切割成多個片段，並在切割時移除這些無聲區塊。",
+      "image": "移除長無聲區塊",
+      "notes": [],
+      "AI": "Claude, Fable 5, high",
+      "prompt": [
+        "寫一個 python 程式，使用 FFmpeg 偵測較長的無聲區間 ，將影片切割成多個，切完後的影片會移除較長的無聲區塊。使用專案裡的 @demo1.mp4 測試"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/video-silence-splitter"
+    },
+    {
+      "date": "2026-08-26",
+      "title": "Mac 的影片字幕播放器",
+      "platform": "macOS",
+      "description": "用 SwiftUI 打造的 Mac 影片播放器，可搭配 SRT 字幕檔同步顯示字幕。",
+      "image": "Mac 的影片字幕播放器",
+      "notes": [
+        "透過 Xcode 的 Direct Distribution 製作公開下載的 Mac App(https://medium.com/p/5a9dccde648b)"
+      ],
+      "AI": "Claude, Fable 5, high",
+      "prompt": [
+        "請用 SwiftUI 開發影片播放的 Mac App，可搭配 srt 檔顯示字幕",
+        "自動偵測跟影片檔放在一起的 srt 檔"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/VideoSubtitle"
+    },
+    {
+      "date": "2026-08-27",
+      "title": "使用 ChatGPT 創作貼圖(Stickers)",
+      "platform": "AI",
+      "description": "生成 9 張去背的貼圖，而且還能直接加到 iMessage & WhatsApp。",
+      "image": "使用 ChatGPT 創作貼圖",
+      "notes": [],
+      "AI": "ChatGPT",
+      "prompt": [
+        "以 iOS App 開發為主題，每張圖搭配的文字依序是 \n謝謝、早安、晚安、不客氣、加油、OK、Good、Go、Love U",
+        "以 iOS App 開發為主題，每張圖的文字搭配 SwiftUI 元件名字"
+      ],
+      "medium": "https://medium.com/p/b1a4d7f2538b"
+    },
+    {
+      "date": "2026-08-28",
+      "title": "使用 Gemini 生成影片字幕的 SRT 檔",
+      "platform": "AI",
+      "description": "請 Gemini 依據影片生成字幕和翻譯字幕",
+      "image": "使用 Gemini 生成影片字幕的 SRT 檔",
+      "notes": [],
+      "AI": "Gemini 3.7 Flash",
+      "prompt": [
+        "生成影片的台灣中文字幕 SRT 檔，請精準對齊字幕時間",
+        "將剛剛的 SRT 檔翻成英文"
+      ],
+      "medium": "https://medium.com/p/37295a98c4aa"
+    },
+    {
+      "date": "2026-08-29",
+      "title": "從 Finder 執行任何的 Python 檔",
+      "platform": "Python",
+      "description": "建立執行 Python 檔的 Quick Actions 捷徑",
+      "image": "從 Finder 執行任何的 Python 檔",
+      "notes": [],
+      "medium": "https://medium.com/p/2e3211f60649"
+    },
+    {
+      "date": "2026-08-30",
+      "title": "透過 Claude Project 快速搜尋自己的 Medium 文章",
+      "platform": "Python",
+      "description": "建立在雲端執行 search_medium_posts.py 的 Claude Project，透過 search_medium_posts.py 從 Medium 文章的 JSON 檔查資料",
+      "image": "透過 Claude Project 快速搜尋自己的 Medium 文章",
+      "notes": [
+        "使用者輸入查詢的關鍵字，請執行 search_medium_posts.py，回覆相關的文章標題跟 Medium 網址。\n\n執行的方式有兩種\n1. python search_medium_posts.py Direct Distribution\n將 Direct 和 Distribution 視為兩個獨立關鍵字，找出同時包含兩者的文章，兩個關鍵字不必相鄰\n2. python search_medium_posts.py -p Direct Distribution\n找出包含完整片語 Direct Distribution 的文章\n\nprompt 開頭輸入\"all \" 時會使用加上參數 -p 的指令。\n\n範例\nprompt 輸入 \"Direct Distribution\"\n執行 python search_medium_posts.py Direct Distribution\n\nprompt 開頭輸入\"all\"，比方 \"all Direct Distribution\"\n執行 python search_medium_posts.py -p Direct Distribution"
+      ],
+      "AI": "Codex, 5.6 Sol, high",
+      "prompt": [
+        "寫一個 python 程式，使用者可輸入查詢的關鍵字，回覆相關的文章標題跟 Medium 網址\n\n程式會讀取以下連結的 JSON\nhttps://raw.githubusercontent.com/PeterPanSwift/b612-App-blog/refs/heads/main/posts\\_summary.json\n\nMedium 網址的格式為 https://medium.com/p/ 加上文章 id"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/b612-App-blog",
+      "medium": "https://medium.com/p/1190af1c753f"
+    },
+    {
+      "date": "2026-08-31",
+      "title": "網站只想自己用？用 Cloudflare Zero Trust 的 One-time PIN 上鎖",
+      "platform": "Website",
+      "description": "請 AI 製作課程進度記錄的網站，部署到 Cloudflare Workers，透過 Zero Trust 的 One-time PIN 設定只有自己能存取網站",
+      "image": "用 Cloudflare Zero Trust 的 One-time PIN 上鎖",
+      "notes": [],
+      "AI": "Claude, Fable 5, high",
+      "prompt": [
+        "製作一個課程進度記錄的網頁\n1. 可記錄這星期教到哪，也可看到每星期的進度\n2. 每週上課的話，可指定上課是星期幾\n3. 有大學課程、一對一家教和企業內訓\n4. 將網站做漂亮一點\n5. 使用 wrangler 將網站部署到 Cloudflare workers，資料存到 D1"
+      ],
+      "website": "https://course-tracker.apppeterpan.workers.dev/",
+      "GitHub": "https://github.com/PeterPanSwift/course-tracker",
+      "medium": "https://medium.com/p/c2a900a1c699"
     }
   ]
 }
