@@ -1095,6 +1095,20 @@
       "website": "https://course-tracker.apppeterpan.workers.dev/",
       "GitHub": "https://github.com/PeterPanSwift/course-tracker",
       "medium": "https://medium.com/p/c2a900a1c699"
+    },
+    {
+      "date": "2026-09-01",
+      "title": "請 AI 生成美美的 README",
+      "platform": "AI",
+      "description": "專案上 GitHub 前，別忘了請 AI 生一份美美的 README",
+      "image": "請 AI 生成美美的 README",
+      "notes": [],
+      "AI": "Codex, 5.6 Sol",
+      "prompt": [
+        "在專案加上 README，需求如下\n1. App 的截圖和操作 gif\n2. 先寫英文版，再寫中文版，用錨點切換\n3. 加上 emoji & badge \n4. 漂亮"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/Snakes-and-Ladders",
+      "medium": "https://medium.com/p/3e1d704f503d"
     }
   ]
 }
