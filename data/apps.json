@@ -1109,6 +1109,18 @@
       ],
       "GitHub": "https://github.com/PeterPanSwift/Snakes-and-Ladders",
       "medium": "https://medium.com/p/3e1d704f503d"
+    },
+    {
+      "date": "2026-09-02",
+      "title": "從 DESIGN.md 建立 Claude Design 的 Design System",
+      "platform": "AI",
+      "description": "利用 DESIGN.md 建立 Claude Design 的 Design System，讓 Claude Design 依照指定的風格進行設計。",
+      "image": "建立 Claude Design 的 Design System",
+      "notes": [
+        "Awesome DESIGN.md(https://github.com/VoltAgent/awesome-design-md)"
+      ],
+      "AI": "Claude",
+      "medium": "https://medium.com/p/4edf68e92fbc"
     }
   ]
 }
