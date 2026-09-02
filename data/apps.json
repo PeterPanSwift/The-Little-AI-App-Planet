@@ -1121,6 +1121,25 @@
       ],
       "AI": "Claude",
       "medium": "https://medium.com/p/4edf68e92fbc"
+    },
+    {
+      "date": "2026-09-03",
+      "title": "動態歌詞影片",
+      "platform": "Python",
+      "description": "搭配歌詞辨識音樂生成 SRT，然後結合音樂、SRT 和圖片生成漂亮的動態歌詞影片",
+      "image": "動態歌詞影片",
+      "notes": [
+        "用 Whisper 辨識人聲",
+        "python3 audio_to_srt.py song.mp3 lyrics.txt --image bg.png"
+      ],
+      "AI": "Claude, Fable 5.1, high",
+      "prompt": [
+        "寫 python 程式，辨識傳入的 mp3 檔，生成歌詞的 SRT",
+        "除了傳入音檔，也可以傳入歌詞的 txt，搭配歌詞生成 SRT",
+        "結合音樂、SRT 和圖片生成漂亮的動態歌詞影片",
+        "加上漂亮的動畫，比方音樂頻譜跟 Particles 粒子"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/lyric-video-generator"
     }
   ]
 }
