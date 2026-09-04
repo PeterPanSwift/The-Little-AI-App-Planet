@@ -1087,7 +1087,9 @@
       "platform": "Website",
       "description": "請 AI 製作課程進度記錄的網站，部署到 Cloudflare Workers，透過 Zero Trust 的 One-time PIN 設定只有自己能存取網站",
       "image": "用 Cloudflare Zero Trust 的 One-time PIN 上鎖",
-      "notes": [],
+      "notes": [
+        "Cloudflare Zero Trust 免費方案最多登入 50 位使用者"
+      ],
       "AI": "Claude, Fable 5, high",
       "prompt": [
         "製作一個課程進度記錄的網頁\n1. 可記錄這星期教到哪，也可看到每星期的進度\n2. 每週上課的話，可指定上課是星期幾\n3. 有大學課程、一對一家教和企業內訓\n4. 將網站做漂亮一點\n5. 使用 wrangler 將網站部署到 Cloudflare workers，資料存到 D1"
