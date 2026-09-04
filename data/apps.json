@@ -1140,6 +1140,21 @@
         "加上漂亮的動畫，比方音樂頻譜跟 Particles 粒子"
       ],
       "GitHub": "https://github.com/PeterPanSwift/lyric-video-generator"
+    },
+    {
+      "date": "2026-09-04",
+      "title": "投影片拆分工具",
+      "platform": "Website",
+      "description": "將檔案太大的 PPT 或 PDF 均分成多個檔案",
+      "image": "投影片拆分工具",
+      "notes": [],
+      "AI": "Claude Design, Opus 5, high",
+      "prompt": [
+        "投影片折分工具，可以上傳 PPT 或 PDF，依據頁數均分，比方 30 頁的投影片變成三個檔，每個檔案 10 頁",
+        "使用者可設定要拆成幾個檔"
+      ],
+      "website": "https://peterpanswift.github.io/slide-splitter",
+      "GitHub": "https://github.com/PeterPanSwift/slide-splitter"
     }
   ]
 }
