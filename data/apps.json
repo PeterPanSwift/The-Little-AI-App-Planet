@@ -1189,6 +1189,21 @@
         "用 SwiftUI 繪製圖片的 fox"
       ],
       "GitHub": "https://github.com/PeterPanSwift/FoxPainter"
+    },
+    {
+      "date": "2026-09-07",
+      "title": "Keynote Text Extractor",
+      "platform": "macOS",
+      "description": "逐頁讀取 Keynote (.key) 與 PowerPoint (.pptx)，將每頁的文字寫入文字檔，投影片的圖片則透過 macOS 捷徑的 Apple 雲端 AI 辨識",
+      "image": "Keynote Text Extractor",
+      "notes": [],
+      "AI": "Codex, 6 Astra, high",
+      "prompt": [
+        "寫一個 AppleScript，可以讀取 Keynote & PowerPoint，取出每一頁的文字，如果遇到圖片，則利用 shortcut \"提取圖片文字\" 取出圖片的文字",
+        "請設計成可選擇跳過圖片，如果跳過則不管圖片",
+        "文字如果是超連結，也要取出它的超連結"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/DeckExtractText"
     }
   ]
 }
