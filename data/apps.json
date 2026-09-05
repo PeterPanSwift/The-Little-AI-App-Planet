@@ -1174,6 +1174,21 @@
         "依據這張投影片的內容生成漂亮的一頁投影片，比例 4:3"
       ],
       "medium": "https://medium.com/p/08e21b12cac7"
+    },
+    {
+      "date": "2026-09-06",
+      "title": "使用 SwiftUI 繪製圖片的狐狸",
+      "platform": "SwiftUI",
+      "description": "請 AI 參考圖片，使用 SwiftUI 的繪製狐狸",
+      "image": "使用 SwiftUI 繪製圖片的狐狸",
+      "notes": [
+        "使用 SwiftUI Canvas、貝茲曲線與漸層繪圖"
+      ],
+      "AI": "Codex, 6 Astra, high",
+      "prompt": [
+        "用 SwiftUI 繪製圖片的 fox"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/FoxPainter"
     }
   ]
 }
