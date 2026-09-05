@@ -1166,7 +1166,7 @@
       "image": "使用 AI 將一頁投影片變漂亮",
       "notes": [
         "使用 ChatGPT(Codex) 或 Gemini 將整頁投影片變成圖片",
-        "使用 Claude Design 將整頁投影片變成網頁"
+        "使用 Claude Design 重新設計投影片再輸出圖片"
       ],
       "AI": "ChatGPT(Codex)、Gemini、Claude Design",
       "prompt": [
