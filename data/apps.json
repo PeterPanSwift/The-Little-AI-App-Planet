@@ -1157,6 +1157,23 @@
       ],
       "website": "https://peterpanswift.github.io/slide-splitter",
       "GitHub": "https://github.com/PeterPanSwift/slide-splitter"
+    },
+    {
+      "date": "2026-09-05",
+      "title": "使用 AI 將一頁投影片變漂亮",
+      "platform": "AI",
+      "description": "將原本的投影片截圖，然後請 AI 重新設計，生成既吸睛又有趣的的投影片。",
+      "image": "使用 AI 將一頁投影片變漂亮",
+      "notes": [
+        "使用 ChatGPT(Codex) 或 Gemini 將整頁投影片變成圖片",
+        "使用 Claude Design 將整頁投影片變成網頁"
+      ],
+      "AI": "ChatGPT(Codex)、Gemini、Claude Design",
+      "prompt": [
+        "依據這張投影片的內容生成漂亮的投影片圖片，比例 4:3",
+        "依據這張投影片的內容生成漂亮的一頁投影片，比例 4:3"
+      ],
+      "medium": "https://medium.com/p/08e21b12cac7"
     }
   ]
 }
