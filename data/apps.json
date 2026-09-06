@@ -1199,7 +1199,7 @@
       "notes": [],
       "AI": "Codex, 6 Astra, high",
       "prompt": [
-        "寫一個 AppleScript，可以讀取 Keynote & PowerPoint，取出每一頁的文字，如果遇到圖片，則利用 shortcut \"提取圖片文字\" 取出圖片的文字",
+        "寫一個 AppleScript，可以讀取 Keynote & PowerPoint，取出每一頁的文字，如果遇到圖片，則利用 shortcut \"提取圖片文字\" 取出圖片的文字(https://medium.com/p/1950da034033)",
         "請設計成可選擇跳過圖片，如果跳過則不管圖片",
         "文字如果是超連結，也要取出它的超連結"
       ],
