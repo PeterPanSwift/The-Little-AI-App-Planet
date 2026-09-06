@@ -1177,10 +1177,10 @@
     },
     {
       "date": "2026-09-06",
-      "title": "使用 SwiftUI 繪製圖片的狐狸",
+      "title": "使用 SwiftUI 繪製圖片的 Kanken",
       "platform": "SwiftUI",
-      "description": "請 AI 參考圖片，使用 SwiftUI 的繪製狐狸",
-      "image": "使用 SwiftUI 繪製圖片的狐狸",
+      "description": "請 AI 參考圖片，使用 SwiftUI 繪製 Kanken",
+      "image": "image",
       "notes": [
         "使用 SwiftUI Canvas、貝茲曲線與漸層繪圖"
       ],
@@ -1188,7 +1188,7 @@
       "prompt": [
         "用 SwiftUI 繪製圖片的 fox"
       ],
-      "GitHub": "https://github.com/PeterPanSwift/FoxPainter"
+      "GitHub": "https://github.com/PeterPanSwift/Kanken"
     },
     {
       "date": "2026-09-07",
