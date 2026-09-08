@@ -1205,6 +1205,19 @@
         "再加一個選項，”取出圖片\"，將圖片整理在資料夾，然後在 txt 描述圖檔名稱。若發現圖片是 tif，請將它改成 png"
       ],
       "GitHub": "https://github.com/PeterPanSwift/DeckExtractText"
+    },
+    {
+      "date": "2026-09-08",
+      "title": "用 SwiftUI 內建形狀繪製圖案",
+      "platform": "SwiftUI",
+      "description": "使用 SwiftUI 內建形狀繪圖，不要使用 custom shape",
+      "image": "用 SwiftUI 內建形狀繪製圖案",
+      "notes": [],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "用 SwiftUI 內建的形狀繪製可愛的狐狸，只能用內建形狀，不要用 custom shape"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/ShapeDemo"
     }
   ]
 }
