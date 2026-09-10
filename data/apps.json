@@ -1218,6 +1218,21 @@
         "用 SwiftUI 內建的形狀繪製可愛的狐狸，只能用內建形狀，不要用 custom shape"
       ],
       "GitHub": "https://github.com/PeterPanSwift/ShapeDemo"
+    },
+    {
+      "date": "2026-09-10",
+      "title": "在控制中心顯示 AI 用量(usage)",
+      "platform": "SwiftUI",
+      "description": "fn + c 一鍵打開控制中心，顯示 Codex、Claude、Antigravity 的每週和 5 小時用量",
+      "image": "在控制中心顯示 AI 用量",
+      "notes": [
+        "Antigravity 利用 agy-usage 抓取，連結是 https://github.com/orrisroot/agy-usage"
+      ],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "實作 macOS 27 的 ControlWidget，顯示 Codex、Claude、Antigravity 的每週和 5 小時用量\nCodex 利用 app-server，透過 JSON-RPC 呼叫 account/rateLimits/read，直接回傳 usedPercent、視窗長度與重置時間\nClaude 利用 claude -p \"/usage\" --output-format json --no-session-persistence 取得\nAntigravity 利用  agy-usage quota --json 抓取，它在 /Applications/agy-usage 下"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/AIUsage"
     }
   ]
 }
