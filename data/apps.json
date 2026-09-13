@@ -1233,6 +1233,17 @@
         "實作 macOS 27 的 ControlWidget，顯示 Codex、Claude、Antigravity 的每週和 5 小時用量\nCodex 利用 app-server，透過 JSON-RPC 呼叫 account/rateLimits/read，直接回傳 usedPercent、視窗長度與重置時間\nClaude 利用 claude -p \"/usage\" --output-format json --no-session-persistence 取得\nAntigravity 利用  agy-usage quota --json 抓取，它在 /Applications/agy-usage 下"
       ],
       "GitHub": "https://github.com/PeterPanSwift/AIUsage"
+    },
+    {
+      "date": "2026-09-13",
+      "title": "精準修圖的 Google Pics",
+      "platform": "AI",
+      "description": "示範 Google Pics 常用的修圖功能",
+      "image": "精準修圖的 Google Pics",
+      "notes": [],
+      "AI": "Gemini",
+      "website": "https://docs.google.com/images",
+      "medium": "https://medium.com/p/974c7cbdf45b"
     }
   ]
 }
