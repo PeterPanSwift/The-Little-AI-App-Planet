@@ -1244,6 +1244,15 @@
       "AI": "Gemini",
       "website": "https://docs.google.com/images",
       "medium": "https://medium.com/p/974c7cbdf45b"
+    },
+    {
+      "date": "2026-09-18",
+      "title": "使用 Claude Slides 製作投影片",
+      "platform": "AI",
+      "description": "熟悉使用 Claude Slides 製作投影片的相關技術",
+      "image": "使用 Claude Slides 製作投影片",
+      "notes": [],
+      "AI": "Claude, Sonnet 5, high"
     }
   ]
 }
