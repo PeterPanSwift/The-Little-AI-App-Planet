@@ -1253,6 +1253,19 @@
       "image": "使用 Claude Slides 製作投影片",
       "notes": [],
       "AI": "Claude, Sonnet 5, high"
+    },
+    {
+      "date": "2026-09-20",
+      "title": "鏞不止步的 MAYAW",
+      "platform": "SwiftUI",
+      "description": "用 SwiftUI 內建的 shape 繪製 MAYAW",
+      "image": "鏞不止步的 MAYAW",
+      "notes": [],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "用 SwiftUI 內建的 shape 繪製圖片的 MAYAW，不要用 path"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/MAYAW"
     }
   ]
 }
