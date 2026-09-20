@@ -1255,6 +1255,19 @@
       "AI": "Claude, Sonnet 5, high"
     },
     {
+      "date": "2026-09-19",
+      "title": "選擇 iPhone Duo 的外框樣式",
+      "platform": "Xcode",
+      "description": "Xcode preview 加框時選擇 iPhone Duo 的外框樣式",
+      "image": "Xcode preview 加框時選擇 iPhone Duo 的外框樣式",
+      "notes": [],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "再添加兩張 iPhone Duo 的外框，變成有 3 張 iPhone Duo 的外框，當偵測到是 iPhone Duo 要加上  iPhone Duo  外框時，跳出選項給使用者選擇要加的外框"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/PreviewBezel"
+    },
+    {
       "date": "2026-09-20",
       "title": "鏞不止步的 MAYAW",
       "platform": "SwiftUI",
