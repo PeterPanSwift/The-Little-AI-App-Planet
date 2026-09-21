@@ -1279,6 +1279,18 @@
         "用 SwiftUI 內建的 shape 繪製圖片的 MAYAW，不要用 path"
       ],
       "GitHub": "https://github.com/PeterPanSwift/MAYAW"
+    },
+    {
+      "date": "2026-09-21",
+      "title": "投影片的文字雲動畫",
+      "platform": "AI",
+      "description": "使用 Claude Slides 製作投影片的文字雲動畫",
+      "image": "投影片的文字雲動畫",
+      "notes": [],
+      "AI": "Claude, Opus 5, high",
+      "prompt": [
+        "用漂亮的文字雲呈現 SwiftUI Views library 裡各式各樣的 view，加上文字會動的效果"
+      ]
     }
   ]
 }
