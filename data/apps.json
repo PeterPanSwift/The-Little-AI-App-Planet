@@ -1304,6 +1304,21 @@
         "加上各個部位逐一長出的動畫"
       ],
       "GitHub": "https://gist.github.com/PeterPanSwift/5d55bea58325b95039a28a15aeaeca18"
+    },
+    {
+      "date": "2026-09-23",
+      "title": "Grokbot 繪圖",
+      "platform": "SwiftUI",
+      "description": "請 AI 參考 Grokbot，使用  SwiftUI Shape 繪圖\nhttps://grokbot-icon-studio.serio-ai.chatgpt.site",
+      "image": "Grokbot 繪圖",
+      "notes": [
+        "使用重疊的橢圓遮罩把髮尾收尖"
+      ],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "使用 SwiftUI 內建形狀繪製圖片，不要用 path"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/Grokbot"
     }
   ]
 }
