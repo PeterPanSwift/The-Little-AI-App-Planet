@@ -1312,7 +1312,7 @@
       "description": "請 AI 參考 Grokbot，使用  SwiftUI Shape 繪圖\nhttps://grokbot-icon-studio.serio-ai.chatgpt.site",
       "image": "Grokbot 繪圖",
       "notes": [
-        "使用重疊的橢圓遮罩把髮尾收尖"
+        "使用重疊的橢圓遮罩把髮尾收尖(mask modifier)"
       ],
       "AI": "Codex, GPT 6 Astra, high",
       "prompt": [
