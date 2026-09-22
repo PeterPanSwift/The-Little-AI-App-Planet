@@ -1291,6 +1291,19 @@
       "prompt": [
         "用漂亮的文字雲呈現 SwiftUI Views library 裡各式各樣的 view，加上文字會動的效果"
       ]
+    },
+    {
+      "date": "2026-09-22",
+      "title": "SwiftUI 內建形狀繪製的圖案加上動畫",
+      "platform": "SwiftUI",
+      "description": "加上動畫，讓繪製圖案的各個部位逐一長出",
+      "image": "SwiftUI 內建形狀繪製的圖案加上動畫",
+      "notes": [],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "加上各個部位逐一長出的動畫"
+      ],
+      "GitHub": "https://gist.github.com/PeterPanSwift/5d55bea58325b95039a28a15aeaeca18"
     }
   ]
 }
