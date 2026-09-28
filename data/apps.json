@@ -1321,6 +1321,24 @@
       "GitHub": "https://github.com/PeterPanSwift/Grokbot"
     },
     {
+      "date": "2026-09-27",
+      "title": "小王子與狐狸：SwiftUI Modifier 馴養指南",
+      "platform": "AI",
+      "description": "請 Claude 發揮創意創作有聲影片",
+      "image": "小王子與狐狸：SwiftUI Modifier 馴養指南",
+      "notes": [
+        "字幕用台灣的 jf 粉圓字型",
+        "用微軟的台灣中文神經語音，旁白是曉臻，小王子用雲哲調高音調，狐狸用曉雨，嘴型會跟著聲音開合",
+        "配樂和音效： 都是程式自己寫出來的原創曲，用音樂盒、烏克麗麗和鐘琴，台詞出現時音樂會自動降低",
+        "流程分成 5 步\n劇本 → 配音與時間軸 → 動畫畫面 → 配樂、音效與混音 → 合成 MP4\nhttps://gist.github.com/PeterPanSwift/5a1c5c5fc48887049dc08e50c1de41c4\n1. 劇本\n在 script.py 裡寫好 13 個場景、52 句台詞\n2. 配音與時間軸\ntts.py 用 edge-tts 呼叫微軟的台灣中文語音，一句一句生成配音\n3. 動畫畫面\n畫面是在網頁的 Canvas 上畫的\n4. 輸出影格\n把每一格轉成 JPEG 後直接交給 ffmpeg 壓成 H.264 影片\n5. 配樂、音效與混音\naudio.py 全部用數學公式直接產生聲波"
+      ],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "請發揮你的創意，製作讓人驚豔的影片，介紹 SwiftUI 的 modifier，結合小王子馴養狐狸的故事，風格可愛有趣幽默，搭配好聽的台灣中文聲音和背景音樂"
+      ],
+      "website": "https://www.youtube.com/watch?v=EqdQGSmsMiM"
+    },
+    {
       "date": "2026-09-28",
       "title": "使用 Claude 製作有聲影片",
       "platform": "AI",
