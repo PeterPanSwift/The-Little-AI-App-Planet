@@ -1319,6 +1319,23 @@
         "使用 SwiftUI 內建形狀繪製圖片，不要用 path"
       ],
       "GitHub": "https://github.com/PeterPanSwift/Grokbot"
+    },
+    {
+      "date": "2026-09-28",
+      "title": "使用 Claude 製作有聲影片",
+      "platform": "AI",
+      "description": "請 Claude 依據提供的投影片生成有聲影片",
+      "image": "請 Claude 依據提供的投影片生成有聲影片",
+      "notes": [
+        "有中文配音和字幕",
+        "配音使用微軟的台灣中文女聲「曉臻」，講稿文字送到微軟的語音服務。",
+        "背景音樂用程式合成的輕柔和弦加鋼琴琶音，旁白說話時音樂會自動變小聲。",
+        "製作流程: \n1. 準備素材：crop.py（Python）\n2. 產生配音：tts.py（Python）\n3. 畫面動畫：video.html（HTML + CSS + JavaScript）\n4. 渲染成影片：render.py（Python + Playwright + ffmpeg）"
+      ],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "依據 pdf 的內容，生成生動的影片，搭配好聽的講解聲音，介紹使用 Claude 整理和製作文件"
+      ]
     }
   ]
 }
