@@ -1367,6 +1367,19 @@
         "這是 Apple 的範例，用 SwiftUI 內建形狀創作小男孩。\n請用 SwiftUI 內建形狀創作一個令人驚豔的圖案，不要用 path，比原本的小男孩範例好 100 倍"
       ],
       "GitHub": "https://github.com/PeterPanSwift/NeonSunset"
+    },
+    {
+      "date": "2026-10-01",
+      "title": "Windows 也能 vibe coding iOS App - 使用 GitHub Actions 生成 App",
+      "platform": "AI",
+      "description": "從 Windows 製作 iOS App。請 AI 寫程式開發 App，然後使用 GitHub Actions 的 macOS runner 生成 iOS App，最後再上傳到 appetize，，透過它提供的雲端模擬器從瀏覽器操作 App",
+      "image": "Windows 也能 vibe coding iOS App",
+      "notes": [],
+      "AI": "Codex, GPT 6.1 Sol, high",
+      "prompt": [
+        "用 SwiftUI 開發一個簡單的打地鼠 App，用 GitHub Actions 生成 iOS App 跟上傳到 Appetize，得到  App 的分享網址。Appetize 的 token 是 xxx"
+      ],
+      "medium": "https://medium.com/p/ee1c8d65b72e"
     }
   ]
 }
