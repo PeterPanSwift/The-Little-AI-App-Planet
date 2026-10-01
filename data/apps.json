@@ -1369,6 +1369,19 @@
       "GitHub": "https://github.com/PeterPanSwift/NeonSunset"
     },
     {
+      "date": "2026-09-30",
+      "title": "小王子的 44 次日落",
+      "platform": "SwiftUI",
+      "description": "將計數 App 變成小王子浪漫的 44 次日落",
+      "image": "小王子的 44 次日落",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "修改小王子看日落的計數 App，請將畫面設計成超漂亮，符合小王子看日落故事的感覺"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/B612SunsetCount"
+    },
+    {
       "date": "2026-10-01",
       "title": "Windows 也能 vibe coding iOS App - 使用 GitHub Actions 生成 App",
       "platform": "AI",
