@@ -1419,6 +1419,19 @@
         "在程式的最下方加上 Ascii Art 注解，繪製圖片的北極狐圖案"
       ],
       "GitHub": "https://github.com/PeterPanSwift/AsciiCommentArt"
+    },
+    {
+      "date": "2026-10-04",
+      "title": "統一獅介紹頁面",
+      "platform": "SwiftUI",
+      "description": "使用 SwiftUI 製作一頁精美的統一獅介紹",
+      "image": "統一獅介紹頁面",
+      "notes": [],
+      "AI": "Codex, GPT 6.1 Sol, extra high",
+      "prompt": [
+        "製作介紹統一獅的一頁畫面，要做得很漂亮很棒\n- 功能需求\n  - 一定要使用的元件。\n    - VStack、HStack、ZStack、Text、Image，ScrollView。\n  - 圖片用到 asset 跟 SF Symbol。\n  - 使用多個 modifier。\n  - 使用 ScrollView，畫面可以上下捲動。\n  - 使用多個檔案定義 view 的型別。\n  - 使用 property 客製自訂的 view。"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/UniLions"
     }
   ]
 }
