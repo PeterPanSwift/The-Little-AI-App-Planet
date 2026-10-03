@@ -1395,6 +1395,19 @@
       "medium": "https://medium.com/p/ee1c8d65b72e"
     },
     {
+      "date": "2026-10-02",
+      "title": "模擬器截圖加上 iPhone Duo 的外框",
+      "platform": "Xcode",
+      "description": "模擬器截圖判斷是 iPhone Duo 時，請使用者選擇 iPhone Duo 的外框樣式",
+      "image": "模擬器截圖選擇 iPhone Duo 的外框樣式",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "添加 3 張 iPhone Duo 的外框，變成有 3 張 iPhone Duo 的外框，當偵測到是 iPhone Duo 要加上 iPhone Duo 外框時，跳出選項給使用者選擇要加的外框"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/simulator-bezel"
+    },
+    {
       "date": "2026-10-03",
       "title": "ASCII art 注解",
       "platform": "SwiftUI",
