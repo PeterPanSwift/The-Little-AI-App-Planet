@@ -1432,6 +1432,19 @@
         "製作介紹統一獅的一頁畫面，要做得很漂亮很棒\n- 功能需求\n  - 一定要使用的元件。\n    - VStack、HStack、ZStack、Text、Image，ScrollView。\n  - 圖片用到 asset 跟 SF Symbol。\n  - 使用多個 modifier。\n  - 使用 ScrollView，畫面可以上下捲動。\n  - 使用多個檔案定義 view 的型別。\n  - 使用 property 客製自訂的 view。"
       ],
       "GitHub": "https://github.com/PeterPanSwift/UniLions"
+    },
+    {
+      "date": "2026-10-05",
+      "title": "復刻 App Store 頁面",
+      "platform": "SwiftUI",
+      "description": "請 AI 參考 App Store 截圖製作一模一樣的畫面",
+      "image": "請 AI 參考 App Store 截圖製作一模一樣的畫面",
+      "notes": [],
+      "AI": "Codex, GPT 6.1 Sol, extra high",
+      "prompt": [
+        "參考圖片製作 App 畫面，要做得一模一樣\n- 功能需求\n  - 一定要使用的元件。\n    - VStack、HStack、ZStack、Text、Image，ScrollView。\n  - 圖片用到 asset 跟 SF Symbol。\n  - 使用多個 modifier。\n  - 使用 ScrollView，畫面可以上下捲動。\n  - 使用多個檔案定義 view 的型別。\n  - 使用 property 客製自訂的 view。"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/AppStore"
     }
   ]
 }
