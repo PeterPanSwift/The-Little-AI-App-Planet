@@ -1263,7 +1263,7 @@
       "notes": [],
       "AI": "Codex, GPT 6 Astra, high",
       "prompt": [
-        "再添加兩張 iPhone Duo 的外框，變成有 3 張 iPhone Duo 的外框，當偵測到是 iPhone Duo 要加上  iPhone Duo  外框時，跳出選項給使用者選擇要加的外框"
+        "再添加 3 張 iPhone Duo 的外框，變成有 3 張 iPhone Duo 的外框，當偵測到是 iPhone Duo 要加上  iPhone Duo  外框時，跳出選項給使用者選擇要加的外框"
       ],
       "GitHub": "https://github.com/PeterPanSwift/PreviewBezel"
     },
