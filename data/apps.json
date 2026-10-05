@@ -1463,6 +1463,19 @@
       ],
       "website": "https://singkeys-melody-studio.apppeterpan.chatgpt.site/",
       "GitHub": "https://github.com/PeterPanSwift/SingKeys"
+    },
+    {
+      "date": "2026-10-07",
+      "title": "今天吃什麼",
+      "platform": "SwiftUI",
+      "description": "隨機決定今天吃什麼",
+      "image": "今天吃什麼",
+      "notes": [],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "製作一個今天吃什麼 App，要超級漂亮，令人眼睛一亮跟有創意\n功能需求如下\n- 從三種美食隨機\n- 點選隨機 button 後用圖文呈現答案\n- 至少顯示三種資訊\n- 定義資料的型別\n- 使用 AI 生成圖片加到 asset"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/TodayEat"
     }
   ]
 }
