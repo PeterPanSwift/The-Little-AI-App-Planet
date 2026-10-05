@@ -1445,6 +1445,23 @@
         "參考圖片製作 App 畫面，要做得一模一樣\n- 功能需求\n  - 一定要使用的元件。\n    - VStack、HStack、ZStack、Text、Image，ScrollView。\n  - 圖片用到 asset 跟 SF Symbol。\n  - 使用多個 modifier。\n  - 使用 ScrollView，畫面可以上下捲動。\n  - 使用多個檔案定義 view 的型別。\n  - 使用 property 客製自訂的 view。"
       ],
       "GitHub": "https://github.com/PeterPanSwift/AppStore"
+    },
+    {
+      "date": "2026-10-06",
+      "title": "SingKeys: 把歌聲化為琴聲",
+      "platform": "Website",
+      "description": "辨識歌曲，將歌聲變成網頁上彈奏的琴聲",
+      "image": "SingKeys",
+      "notes": [
+        "分離出主唱人聲、追蹤音高，再把旋律變成落在琴鍵上的鋼琴音符",
+        "四種播放模式：鋼琴 · 原曲 · 人聲 · 合奏（原曲＋鋼琴）"
+      ],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "寫一個網頁，能辨識歌曲唱歌的音調，生成鋼琴彈奏，畫面上有琴鍵彈奏的動畫，可看到是彈了哪個鍵。\n歌曲參考提供的範例"
+      ],
+      "website": "https://singkeys-melody-studio.apppeterpan.chatgpt.site/",
+      "GitHub": "https://github.com/PeterPanSwift/SingKeys"
     }
   ]
 }
