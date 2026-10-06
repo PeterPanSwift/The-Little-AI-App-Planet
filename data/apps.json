@@ -1491,6 +1491,22 @@
         "製作骰子 App，要超級漂亮，令人眼睛一亮跟有創意\n功能需求如下\n- 有兩顆骰子\n- 點擊按鈕可改變骰子點數\n- 顯示總合"
       ],
       "GitHub": "https://github.com/PeterPanSwift/LuckyDice"
+    },
+    {
+      "date": "2026-10-09",
+      "title": "請 AI 解析 App 畫面",
+      "platform": "AI",
+      "description": "請 AI 解析 App 畫面，提供顏色、圖片、字體和位置大小資訊",
+      "image": "請 AI 解析 App 畫面.jpg",
+      "notes": [],
+      "AI": "Codex, GPT 6.1 Sol, high",
+      "prompt": [
+        "我要用 SwiftUI 製作圖片的畫面，請解析圖片提供我以下資料，並將需要的顏色和圖片加到 assets\n- RGB\n- icon 圖片。提供 SF Symbol 名字。如果沒有 SF Symbol，請繪製圖片給我",
+        "請提供字體資訊",
+        "請標示畫面上各區塊的位置大小"
+      ],
+      "website": "https://museum-swiftui-screen-spec.apppeterpan.chatgpt.site/",
+      "medium": "https://medium.com/p/5e3abc1b2066"
     }
   ]
 }
