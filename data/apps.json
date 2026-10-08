@@ -1512,7 +1512,7 @@
       "date": "2026-10-10",
       "title": "SwiftUI 調整間距和位置的像素遊戲",
       "platform": "SwiftUI",
-      "description": "請 Claude 生動有趣的動畫說明 SwiftUI 如何調整元件的間距和位置，風格採用復古像素遊戲 Pixel Art",
+      "description": "請 Claude 製作生動有趣的動畫說明 SwiftUI 如何調整元件的間距和位置，風格採用復古像素遊戲 Pixel Art",
       "image": "SwiftUI 調整間距和位置的像素遊戲",
       "notes": [],
       "AI": "Claude, Opus 5.5, high",
