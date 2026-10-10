@@ -1520,6 +1520,19 @@
         "SwiftUI 調整元件的間距和位置，常見的做法有以下幾種，\npadding、offset、stack 的 alignment & spacing、Spacer、frame(alignment:)\n我不太清楚各個做法的使用時機，不知道調間距位置時用哪一個比較好\n請製作生動有趣的動畫說明，風格採用復古像素遊戲 Pixel Art，要讓人十分驚豔"
       ],
       "website": "https://claude.ai/artifact/FqcqVxRH4fdq56bjeLmJKE?sk=O6R7ZxzC_bsA8_3xiE21eA"
+    },
+    {
+      "date": "2026-10-11",
+      "title": "用 SwiftUI 復刻第一代 iPod",
+      "platform": "SwiftUI",
+      "description": "從 iPhone Duo 模擬器操作 iPod",
+      "image": "用 SwiftUI 復刻第一代 iPod",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "使用 SwiftUI 復刻第一代 iPod 的樣子和操作，長得跟 iPod 一模一樣。歌曲使用專案裡的小小的夢想.mp3和把心留在冰島.mp3"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/SwiftUI-iPod"
     }
   ]
 }
