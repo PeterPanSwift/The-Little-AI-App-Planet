@@ -1533,6 +1533,25 @@
         "使用 SwiftUI 復刻第一代 iPod 的樣子和操作，長得跟 iPod 一模一樣。歌曲使用專案裡的小小的夢想.mp3和把心留在冰島.mp3"
       ],
       "GitHub": "https://github.com/PeterPanSwift/SwiftUI-iPod"
+    },
+    {
+      "date": "2026-10-12",
+      "title": "使用 Claude Motion 製作介紹 SwiftUI State  的動畫",
+      "platform": "AI",
+      "description": "用 GTO 鬼塚英吉壁破壊的故事介紹 SwiftUI State",
+      "image": "Claude Motion",
+      "notes": [
+        "搭配 GPT 繪製的圖片",
+        "Motion 動畫只能用程式合成聲音，沒辦法播放音檔。為了加入鎚子打牆壁的音檔，採用以下做法\n1. 先匯出 MP4 影片\n2. 上傳 MP4 影片和 mp3 音檔\n3. Claude 合成播放音檔的影片",
+        "Claude 合成的影片在對送裡傳送時有 30MB 的上限，因此影片會進行壓縮"
+      ],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "結合 GTO 鬼塚英吉拿著鐵鎚，打破學生父母房間之間的牆壁故事，搭配以下程式介紹 SwiftUI State。請製作令人感動的動畫",
+        "改成用 Three.js 製作酷炫的 3D 動畫，要做得超級棒"
+      ],
+      "website": "https://www.youtube.com/watch?v=aKJiCzdIUyM",
+      "GitHub": "https://gist.github.com/PeterPanSwift/794be4d3a84f26f943545df9ef2ae184"
     }
   ]
 }
