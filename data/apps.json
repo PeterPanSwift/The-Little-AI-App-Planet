@@ -1554,6 +1554,23 @@
       "GitHub": "https://gist.github.com/PeterPanSwift/794be4d3a84f26f943545df9ef2ae184"
     },
     {
+      "date": "2026-10-14",
+      "title": "請 Claude 依據分鏡腳本製作影片",
+      "platform": "AI",
+      "description": "使用 ChatGPT 6 生成小王子馴養狐狸的影片腳本和分鏡，然後用 Calude Opus 5.5 生成動畫影片",
+      "image": "請 Claude 依據分鏡腳本製作影片",
+      "notes": [
+        "用 Python（NumPy、OpenCV、Pillow、SciPy）把每一格畫面和每一段聲音「算」出來，最後交給 ffmpeg 編碼\nhttps://gist.github.com/PeterPanSwift/4be6b80d33e35ef196c7385600ee9610",
+        "配音用微軟 Edge 的語音合成，透過 edge-tts 套件取得台灣口音的三種聲音：旁白用曉臻，阿栗用曉雨並提高音調像小孩，狐狸用雲哲",
+        "配樂全部用數學合成"
+      ],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "生成水彩風格的可愛動畫影片，不要用 Claude motion\n《小王子與狐狸：馴養的意義》\n影片長度：90 秒 影片風格：溫暖療癒的童話水彩動畫 影片比例：16:9\n鏡頭 1：陌生的相遇\n時間：00:00 至 00:08 運鏡：遠景，緩慢推進\n畫面：金色麥田隨風起伏，小王子獨自走著，遠處的狐狸悄悄探出頭。\n旁白：「有一天，小王子在一片金色的麥田裡，遇見了一隻狐狸。」\n鏡頭 2：一個小小的邀請\nhttps://gist.github.com/PeterPanSwift/0bf1a766a24ab4839777fde439086177"
+      ],
+      "website": "https://www.youtube.com/watch?v=xn0M7xQxayw"
+    },
+    {
       "date": "2026-10-15",
       "title": "請 Gemini 將影片變成投影片",
       "platform": "AI",
