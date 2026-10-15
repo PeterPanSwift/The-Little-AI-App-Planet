@@ -1599,6 +1599,20 @@
         "解析影片，截圖影片裡的投影片畫面，將圖片組合成投影片，不要做任何修改\nhttps://www.youtube.com/watch?v=C1t0lij6e8U",
         "請將影片的投影片畫面截圖變成投影片。請先解析影片找出定格的秒數，然後寫一個 python 程式自動截圖並組合成投影片，不要做任何修改\nhttps://www.youtube.com/watch?v=C1t0lij6e8U"
       ]
+    },
+    {
+      "date": "2026-10-16",
+      "title": "鱷魚拔牙",
+      "platform": "SwiftUI",
+      "description": "使用 SwiftUI 開發鱷魚拔牙 iOS App",
+      "image": "鱷魚拔牙",
+      "notes": [],
+      "AI": "Codex, GPT 6.1 Sol, high",
+      "prompt": [
+        "製作鱷魚拔牙齒 App，畫面要做得很可愛，繪製需要的圖片加到 assets",
+        "牙齒被打掉應該也要搭配繪製的圖片比較好看"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/CrocodileDentist"
     }
   ]
 }
