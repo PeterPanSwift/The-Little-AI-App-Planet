@@ -1552,6 +1552,21 @@
       ],
       "website": "https://www.youtube.com/watch?v=aKJiCzdIUyM",
       "GitHub": "https://gist.github.com/PeterPanSwift/794be4d3a84f26f943545df9ef2ae184"
+    },
+    {
+      "date": "2026-10-15",
+      "title": "請 Gemini 將影片變成投影片",
+      "platform": "AI",
+      "description": "請 Gemini 解析 YouTube 影片，截圖影片裡的投影片畫面，將圖片組合成投影片",
+      "image": "請 Gemini 將影片變成投影片",
+      "notes": [
+        "一鍵自動截圖並組合成 .pptx 投影片的 Python 腳本（已內建本片所有投影片定格畫面的精準秒數），執行後即可原封不動擷取原畫質投影片並合成簡報。"
+      ],
+      "AI": "Gemini, 4 Argon, high",
+      "prompt": [
+        "解析影片，截圖影片裡的投影片畫面，將圖片組合成投影片，不要做任何修改\nhttps://www.youtube.com/watch?v=C1t0lij6e8U",
+        "請將影片的投影片畫面截圖變成投影片。請先解析影片找出定格的秒數，然後寫一個 python 程式自動截圖並組合成投影片，不要做任何修改\nhttps://www.youtube.com/watch?v=C1t0lij6e8U"
+      ]
     }
   ]
 }
