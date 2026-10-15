@@ -1557,7 +1557,7 @@
       "date": "2026-10-14",
       "title": "請 Claude 依據分鏡腳本製作影片",
       "platform": "AI",
-      "description": "使用 ChatGPT 6 生成小王子馴養狐狸的影片腳本和分鏡，然後用 Calude Opus 5.5 生成動畫影片",
+      "description": "使用 ChatGPT 6 生成小王子馴養狐狸的影片腳本和分鏡，然後用 Claude Opus 5.5 生成動畫影片",
       "image": "請 Claude 依據分鏡腳本製作影片",
       "notes": [
         "用 Python（NumPy、OpenCV、Pillow、SciPy）把每一格畫面和每一段聲音「算」出來，最後交給 ffmpeg 編碼\nhttps://gist.github.com/PeterPanSwift/4be6b80d33e35ef196c7385600ee9610",
