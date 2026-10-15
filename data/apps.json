@@ -1554,6 +1554,21 @@
       "GitHub": "https://gist.github.com/PeterPanSwift/794be4d3a84f26f943545df9ef2ae184"
     },
     {
+      "date": "2026-10-13",
+      "title": "製作可操作互動的 3D 動畫網頁",
+      "platform": "Webpage",
+      "description": "請 Claude 製作 3D 電弧爐剖面互動模型",
+      "image": "可操作互動的 3D 動畫網頁",
+      "notes": [
+        "請 AI 參考 3D 相機鏡頭模型的 prompt，生成新例子的 prompt\nhttps://skillry.dev/ai-videos/opus-5-5?video=aichrislee-408244"
+      ],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "請使用 Three.js，為我打造一個可互動的 3D 煉鋼電弧爐（EAF）模型\nhttps://gist.github.com/PeterPanSwift/c73ffeec7ee3c7c369dae0a74867bfd6"
+      ],
+      "website": "https://claude.ai/artifact/2EDedMVU3ij1iBwbaXVwRf?sk=iOy67NXxoh6GU3enukXEBA"
+    },
+    {
       "date": "2026-10-14",
       "title": "請 Claude 依據分鏡腳本製作影片",
       "platform": "AI",
