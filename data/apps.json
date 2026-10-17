@@ -1613,6 +1613,19 @@
         "牙齒被打掉應該也要搭配繪製的圖片比較好看"
       ],
       "GitHub": "https://github.com/PeterPanSwift/CrocodileDentist"
+    },
+    {
+      "date": "2026-10-17",
+      "title": "使用 Anatomy Skill 製作 iPhone Duo 動畫",
+      "platform": "AI",
+      "description": "使用 Anatomy Skill 製作 iPhone Duo 動畫",
+      "image": "使用 Anatomy Skill 製作 iPhone Duo 動畫",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "/anatomy 說明 iPhone Duo，彩色版"
+      ],
+      "website": "https://claude.ai/artifact/1Xqzv8KNQSGJFYgSTdwFHy?sk=1485MKolgTJe-BHE3gHIRQ"
     }
   ]
 }
