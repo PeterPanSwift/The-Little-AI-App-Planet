@@ -1087,7 +1087,9 @@
       "platform": "Website",
       "description": "請 AI 製作課程進度記錄的網站，部署到 Cloudflare Workers，透過 Zero Trust 的 One-time PIN 設定只有自己能存取網站",
       "image": "用 Cloudflare Zero Trust 的 One-time PIN 上鎖",
-      "notes": [],
+      "notes": [
+        "Cloudflare Zero Trust 免費方案最多登入 50 位使用者"
+      ],
       "AI": "Claude, Fable 5, high",
       "prompt": [
         "製作一個課程進度記錄的網頁\n1. 可記錄這星期教到哪，也可看到每星期的進度\n2. 每週上課的話，可指定上課是星期幾\n3. 有大學課程、一對一家教和企業內訓\n4. 將網站做漂亮一點\n5. 使用 wrangler 將網站部署到 Cloudflare workers，資料存到 D1"
@@ -1095,6 +1097,535 @@
       "website": "https://course-tracker.apppeterpan.workers.dev/",
       "GitHub": "https://github.com/PeterPanSwift/course-tracker",
       "medium": "https://medium.com/p/c2a900a1c699"
+    },
+    {
+      "date": "2026-09-01",
+      "title": "請 AI 生成美美的 README",
+      "platform": "AI",
+      "description": "專案上 GitHub 前，別忘了請 AI 生一份美美的 README",
+      "image": "請 AI 生成美美的 README",
+      "notes": [],
+      "AI": "Codex, 5.6 Sol",
+      "prompt": [
+        "在專案加上 README，需求如下\n1. App 的截圖和操作 gif\n2. 先寫英文版，再寫中文版，用錨點切換\n3. 加上 emoji & badge \n4. 漂亮"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/Snakes-and-Ladders",
+      "medium": "https://medium.com/p/3e1d704f503d"
+    },
+    {
+      "date": "2026-09-02",
+      "title": "從 DESIGN.md 建立 Claude Design 的 Design System",
+      "platform": "AI",
+      "description": "利用 DESIGN.md 建立 Claude Design 的 Design System，讓 Claude Design 依照指定的風格進行設計。",
+      "image": "建立 Claude Design 的 Design System",
+      "notes": [
+        "Awesome DESIGN.md(https://github.com/VoltAgent/awesome-design-md)"
+      ],
+      "AI": "Claude",
+      "medium": "https://medium.com/p/4edf68e92fbc"
+    },
+    {
+      "date": "2026-09-03",
+      "title": "動態歌詞影片生成器",
+      "platform": "Python",
+      "description": "搭配歌詞辨識音樂生成 SRT，然後結合音樂、SRT 和圖片生成漂亮的動態歌詞影片",
+      "image": "動態歌詞影片",
+      "notes": [
+        "用 Whisper 辨識人聲",
+        "python3 audio_to_srt.py song.mp3 lyrics.txt --image bg.png"
+      ],
+      "AI": "Claude, Fable 5.1, high",
+      "prompt": [
+        "寫 python 程式，辨識傳入的 mp3 檔，生成歌詞的 SRT",
+        "除了傳入音檔，也可以傳入歌詞的 txt，搭配歌詞生成 SRT",
+        "結合音樂、SRT 和圖片生成漂亮的動態歌詞影片",
+        "加上漂亮的動畫，比方音樂頻譜跟 Particles 粒子"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/lyric-video-generator"
+    },
+    {
+      "date": "2026-09-04",
+      "title": "投影片拆片機",
+      "platform": "Website",
+      "description": "將檔案太大的 PPT 或 PDF 均分成多個檔案",
+      "image": "投影片拆分工具",
+      "notes": [],
+      "AI": "Claude Design, Opus 5, high",
+      "prompt": [
+        "投影片折分工具，可以上傳 PPT 或 PDF，依據頁數均分，比方 30 頁的投影片變成三個檔，每個檔案 10 頁",
+        "使用者可設定要拆成幾個檔"
+      ],
+      "website": "https://peterpanswift.github.io/slide-splitter",
+      "GitHub": "https://github.com/PeterPanSwift/slide-splitter"
+    },
+    {
+      "date": "2026-09-05",
+      "title": "使用 AI 將一頁投影片變漂亮",
+      "platform": "AI",
+      "description": "將原本的投影片截圖，然後請 AI 重新設計，生成既吸睛又有趣的的投影片。",
+      "image": "使用 AI 將一頁投影片變漂亮",
+      "notes": [
+        "使用 ChatGPT(Codex) 或 Gemini 將整頁投影片變成圖片",
+        "使用 Claude Design 重新設計投影片再輸出圖片"
+      ],
+      "AI": "ChatGPT(Codex)、Gemini、Claude Design",
+      "prompt": [
+        "依據這張投影片的內容生成漂亮的投影片圖片，比例 4:3",
+        "依據這張投影片的內容生成漂亮的一頁投影片，比例 4:3"
+      ],
+      "medium": "https://medium.com/p/08e21b12cac7"
+    },
+    {
+      "date": "2026-09-06",
+      "title": "使用 SwiftUI 繪製圖片的 Kanken",
+      "platform": "SwiftUI",
+      "description": "請 AI 參考圖片，使用 SwiftUI 繪製 Kanken",
+      "image": "image",
+      "notes": [
+        "使用 SwiftUI Canvas、貝茲曲線與漸層繪圖"
+      ],
+      "AI": "Codex, 6 Astra, high",
+      "prompt": [
+        "用 SwiftUI 繪製圖片的 fox"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/Kanken"
+    },
+    {
+      "date": "2026-09-07",
+      "title": "Keynote Text Extractor",
+      "platform": "macOS",
+      "description": "逐頁讀取 Keynote (.key) 與 PowerPoint (.pptx)，將每頁的文字寫入文字檔。投影片的圖片則有三種處理方式，辨識圖片、跳過圖片和取出圖片，辨識圖片會透過 macOS 捷徑的 Apple 雲端 AI 辨識。",
+      "image": "Keynote Text Extractor",
+      "notes": [],
+      "AI": "Codex, 6 Astra, high",
+      "prompt": [
+        "寫一個 AppleScript，可以讀取 Keynote & PowerPoint，取出每一頁的文字，如果遇到圖片，則利用 shortcut \"提取圖片文字\" 取出圖片的文字(https://medium.com/p/1950da034033)",
+        "請設計成可選擇跳過圖片，如果跳過則不管圖片",
+        "文字如果是超連結，也要取出它的超連結",
+        "再加一個選項，”取出圖片\"，將圖片整理在資料夾，然後在 txt 描述圖檔名稱。若發現圖片是 tif，請將它改成 png"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/DeckExtractText"
+    },
+    {
+      "date": "2026-09-08",
+      "title": "用 SwiftUI 內建形狀繪製圖案",
+      "platform": "SwiftUI",
+      "description": "使用 SwiftUI 內建形狀繪圖，不要使用 custom shape",
+      "image": "用 SwiftUI 內建形狀繪製圖案",
+      "notes": [],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "用 SwiftUI 內建的形狀繪製可愛的狐狸，只能用內建形狀，不要用 custom shape"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/ShapeDemo"
+    },
+    {
+      "date": "2026-09-10",
+      "title": "在控制中心顯示 AI 用量(usage)",
+      "platform": "SwiftUI",
+      "description": "fn + c 一鍵打開控制中心，顯示 Codex、Claude、Antigravity 的每週和 5 小時用量",
+      "image": "在控制中心顯示 AI 用量",
+      "notes": [
+        "Antigravity 利用 agy-usage 抓取，連結是 https://github.com/orrisroot/agy-usage"
+      ],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "實作 macOS 27 的 ControlWidget，顯示 Codex、Claude、Antigravity 的每週和 5 小時用量\nCodex 利用 app-server，透過 JSON-RPC 呼叫 account/rateLimits/read，直接回傳 usedPercent、視窗長度與重置時間\nClaude 利用 claude -p \"/usage\" --output-format json --no-session-persistence 取得\nAntigravity 利用  agy-usage quota --json 抓取，它在 /Applications/agy-usage 下"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/AIUsage"
+    },
+    {
+      "date": "2026-09-13",
+      "title": "精準修圖的 Google Pics",
+      "platform": "AI",
+      "description": "示範 Google Pics 常用的修圖功能",
+      "image": "精準修圖的 Google Pics",
+      "notes": [],
+      "AI": "Gemini",
+      "website": "https://docs.google.com/images",
+      "medium": "https://medium.com/p/974c7cbdf45b"
+    },
+    {
+      "date": "2026-09-18",
+      "title": "使用 Claude Slides 製作投影片",
+      "platform": "AI",
+      "description": "熟悉使用 Claude Slides 製作投影片的相關技術",
+      "image": "使用 Claude Slides 製作投影片",
+      "notes": [],
+      "AI": "Claude, Sonnet 5, high"
+    },
+    {
+      "date": "2026-09-19",
+      "title": "Preview 截圖選擇 iPhone Duo 的外框樣式",
+      "platform": "Xcode",
+      "description": "Xcode preview 加框時選擇 iPhone Duo 的外框樣式",
+      "image": "Xcode preview 加框時選擇 iPhone Duo 的外框樣式",
+      "notes": [],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "再添加 3 張 iPhone Duo 的外框，變成有 3 張 iPhone Duo 的外框，當偵測到是 iPhone Duo 要加上  iPhone Duo  外框時，跳出選項給使用者選擇要加的外框"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/PreviewBezel"
+    },
+    {
+      "date": "2026-09-20",
+      "title": "鏞不止步的 MAYAW",
+      "platform": "SwiftUI",
+      "description": "用 SwiftUI 內建的 shape 繪製 MAYAW",
+      "image": "鏞不止步的 MAYAW",
+      "notes": [],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "用 SwiftUI 內建的 shape 繪製圖片的 MAYAW，不要用 path"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/MAYAW"
+    },
+    {
+      "date": "2026-09-21",
+      "title": "投影片的文字雲動畫",
+      "platform": "AI",
+      "description": "使用 Claude Slides 製作投影片的文字雲動畫",
+      "image": "投影片的文字雲動畫",
+      "notes": [],
+      "AI": "Claude, Opus 5, high",
+      "prompt": [
+        "用漂亮的文字雲呈現 SwiftUI Views library 裡各式各樣的 view，加上文字會動的效果"
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "title": "SwiftUI 內建形狀繪製的圖案加上動畫",
+      "platform": "SwiftUI",
+      "description": "加上動畫，讓繪製圖案的各個部位逐一長出",
+      "image": "SwiftUI 內建形狀繪製的圖案加上動畫",
+      "notes": [],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "加上各個部位逐一長出的動畫"
+      ],
+      "GitHub": "https://gist.github.com/PeterPanSwift/5d55bea58325b95039a28a15aeaeca18"
+    },
+    {
+      "date": "2026-09-23",
+      "title": "Grokbot 繪圖",
+      "platform": "SwiftUI",
+      "description": "請 AI 參考 Grokbot，使用  SwiftUI Shape 繪圖\nhttps://grokbot-icon-studio.serio-ai.chatgpt.site",
+      "image": "Grokbot 繪圖",
+      "notes": [
+        "使用重疊的橢圓遮罩把髮尾收尖(mask modifier)"
+      ],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "使用 SwiftUI 內建形狀繪製圖片，不要用 path"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/Grokbot"
+    },
+    {
+      "date": "2026-09-27",
+      "title": "小王子與狐狸：SwiftUI Modifier 馴養指南",
+      "platform": "AI",
+      "description": "請 Claude 發揮創意創作有聲影片",
+      "image": "image",
+      "notes": [
+        "字幕用台灣的 jf 粉圓字型",
+        "用微軟的台灣中文神經語音，旁白是曉臻，小王子用雲哲調高音調，狐狸用曉雨，嘴型會跟著聲音開合",
+        "配樂和音效： 都是程式自己寫出來的原創曲，用音樂盒、烏克麗麗和鐘琴，台詞出現時音樂會自動降低",
+        "流程分成 5 步\n劇本 → 配音與時間軸 → 動畫畫面 → 配樂、音效與混音 → 合成 MP4\nhttps://gist.github.com/PeterPanSwift/5a1c5c5fc48887049dc08e50c1de41c4\n1. 劇本\n在 script.py 裡寫好 13 個場景、52 句台詞\n2. 配音與時間軸\ntts.py 用 edge-tts 呼叫微軟的台灣中文語音，一句一句生成配音\n3. 動畫畫面\n畫面是在網頁的 Canvas 上畫的\n4. 輸出影格\n把每一格轉成 JPEG 後直接交給 ffmpeg 壓成 H.264 影片\n5. 配樂、音效與混音\naudio.py 全部用數學公式直接產生聲波"
+      ],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "請發揮你的創意，製作讓人驚豔的影片，介紹 SwiftUI 的 modifier，結合小王子馴養狐狸的故事，風格可愛有趣幽默，搭配好聽的台灣中文聲音和背景音樂"
+      ],
+      "website": "https://www.youtube.com/watch?v=EqdQGSmsMiM"
+    },
+    {
+      "date": "2026-09-28",
+      "title": "使用 Claude 製作有聲影片",
+      "platform": "AI",
+      "description": "請 Claude 依據提供的投影片生成有聲影片",
+      "image": "請 Claude 依據提供的投影片生成有聲影片",
+      "notes": [
+        "有中文配音和字幕",
+        "配音使用微軟的台灣中文女聲「曉臻」，講稿文字送到微軟的語音服務。",
+        "背景音樂用程式合成的輕柔和弦加鋼琴琶音，旁白說話時音樂會自動變小聲。",
+        "製作流程: \n1. 準備素材：crop.py（Python）\n2. 產生配音：tts.py（Python）\n3. 畫面動畫：video.html（HTML + CSS + JavaScript）\n4. 渲染成影片：render.py（Python + Playwright + ffmpeg）"
+      ],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "依據 pdf 的內容，生成生動的影片，搭配好聽的講解聲音，介紹使用 Claude 整理和製作文件"
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "title": "霓虹夕陽繪圖",
+      "platform": "SwiftUI",
+      "description": "使用 SwiftUI 內建形狀繪製圖片，不要用 path",
+      "image": "霓虹夕陽繪圖",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "這是 Apple 的範例，用 SwiftUI 內建形狀創作小男孩。\n請用 SwiftUI 內建形狀創作一個令人驚豔的圖案，不要用 path，比原本的小男孩範例好 100 倍"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/NeonSunset"
+    },
+    {
+      "date": "2026-09-30",
+      "title": "小王子的 44 次日落",
+      "platform": "SwiftUI",
+      "description": "將計數 App 變成小王子浪漫的 44 次日落",
+      "image": "小王子的 44 次日落",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "修改小王子看日落的計數 App，請將畫面設計成超漂亮，符合小王子看日落故事的感覺"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/B612SunsetCount"
+    },
+    {
+      "date": "2026-10-01",
+      "title": "Windows 也能 vibe coding iOS App - 使用 GitHub Actions 生成 App",
+      "platform": "AI",
+      "description": "從 Windows 製作 iOS App。請 AI 寫程式開發 App，然後使用 GitHub Actions 的 macOS runner 生成 iOS App，最後再上傳到 appetize，，透過它提供的雲端模擬器從瀏覽器操作 App",
+      "image": "Windows 也能 vibe coding iOS App",
+      "notes": [],
+      "AI": "Codex, GPT 6.1 Sol, high",
+      "prompt": [
+        "用 SwiftUI 開發一個簡單的打地鼠 App，用 GitHub Actions 生成 iOS App 跟上傳到 Appetize，得到  App 的分享網址。Appetize 的 token 是 xxx"
+      ],
+      "medium": "https://medium.com/p/ee1c8d65b72e"
+    },
+    {
+      "date": "2026-10-02",
+      "title": "模擬器截圖加上 iPhone Duo 的外框",
+      "platform": "Xcode",
+      "description": "模擬器截圖判斷是 iPhone Duo 時，請使用者選擇 iPhone Duo 的外框樣式",
+      "image": "模擬器截圖選擇 iPhone Duo 的外框樣式",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "添加 3 張 iPhone Duo 的外框，變成有 3 張 iPhone Duo 的外框，當偵測到是 iPhone Duo 要加上 iPhone Duo 外框時，跳出選項給使用者選擇要加的外框"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/simulator-bezel"
+    },
+    {
+      "date": "2026-10-03",
+      "title": "ASCII art 注解",
+      "platform": "SwiftUI",
+      "description": "用注解繪製可愛的 ASCII art，Kanken 北極狐",
+      "image": "ASCII art 注解",
+      "notes": [],
+      "AI": "Codex, GPT 6.1 Sol, high",
+      "prompt": [
+        "在程式的最下方加上 Ascii Art 注解，繪製圖片的北極狐圖案"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/AsciiCommentArt"
+    },
+    {
+      "date": "2026-10-04",
+      "title": "統一獅介紹頁面",
+      "platform": "SwiftUI",
+      "description": "使用 SwiftUI 製作一頁精美的統一獅介紹",
+      "image": "統一獅介紹頁面",
+      "notes": [],
+      "AI": "Codex, GPT 6.1 Sol, extra high",
+      "prompt": [
+        "製作介紹統一獅的一頁畫面，要做得很漂亮很棒\n- 功能需求\n  - 一定要使用的元件。\n    - VStack、HStack、ZStack、Text、Image，ScrollView。\n  - 圖片用到 asset 跟 SF Symbol。\n  - 使用多個 modifier。\n  - 使用 ScrollView，畫面可以上下捲動。\n  - 使用多個檔案定義 view 的型別。\n  - 使用 property 客製自訂的 view。"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/UniLions"
+    },
+    {
+      "date": "2026-10-05",
+      "title": "復刻 App Store 頁面",
+      "platform": "SwiftUI",
+      "description": "請 AI 參考 App Store 截圖製作一模一樣的畫面",
+      "image": "請 AI 參考 App Store 截圖製作一模一樣的畫面",
+      "notes": [],
+      "AI": "Codex, GPT 6.1 Sol, extra high",
+      "prompt": [
+        "參考圖片製作 App 畫面，要做得一模一樣\n- 功能需求\n  - 一定要使用的元件。\n    - VStack、HStack、ZStack、Text、Image，ScrollView。\n  - 圖片用到 asset 跟 SF Symbol。\n  - 使用多個 modifier。\n  - 使用 ScrollView，畫面可以上下捲動。\n  - 使用多個檔案定義 view 的型別。\n  - 使用 property 客製自訂的 view。"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/AppStore"
+    },
+    {
+      "date": "2026-10-06",
+      "title": "SingKeys: 把歌聲化為琴聲",
+      "platform": "Website",
+      "description": "辨識歌曲，將歌聲變成網頁上彈奏的琴聲",
+      "image": "SingKeys",
+      "notes": [
+        "分離出主唱人聲、追蹤音高，再把旋律變成落在琴鍵上的鋼琴音符",
+        "四種播放模式：鋼琴 · 原曲 · 人聲 · 合奏（原曲＋鋼琴）"
+      ],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "寫一個網頁，能辨識歌曲唱歌的音調，生成鋼琴彈奏，畫面上有琴鍵彈奏的動畫，可看到是彈了哪個鍵。\n歌曲參考提供的範例",
+        "加上顯示五線譜和簡譜的功能"
+      ],
+      "website": "https://singkeys-melody-studio.apppeterpan.chatgpt.site/",
+      "GitHub": "https://github.com/PeterPanSwift/SingKeys"
+    },
+    {
+      "date": "2026-10-07",
+      "title": "今天吃什麼",
+      "platform": "SwiftUI",
+      "description": "隨機決定今天吃什麼",
+      "image": "今天吃什麼",
+      "notes": [],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "製作一個今天吃什麼 App，要超級漂亮，令人眼睛一亮跟有創意\n功能需求如下\n- 從三種美食隨機\n- 點選隨機 button 後用圖文呈現答案\n- 至少顯示三種資訊\n- 定義資料的型別\n- 使用 AI 生成圖片加到 asset"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/TodayEat"
+    },
+    {
+      "date": "2026-10-08",
+      "title": "擲骰子",
+      "platform": "SwiftUI",
+      "description": "擲多顆骰子和顯示總合",
+      "image": "擲骰子",
+      "notes": [
+        "用程式繪製骰子"
+      ],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "製作骰子 App，要超級漂亮，令人眼睛一亮跟有創意\n功能需求如下\n- 有兩顆骰子\n- 點擊按鈕可改變骰子點數\n- 顯示總合"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/LuckyDice"
+    },
+    {
+      "date": "2026-10-09",
+      "title": "請 AI 解析 App 畫面",
+      "platform": "AI",
+      "description": "請 AI 解析 App 畫面，提供顏色、圖片、字體和位置大小資訊",
+      "image": "請 AI 解析 App 畫面.jpg",
+      "notes": [],
+      "AI": "Codex, GPT 6.1 Sol, high",
+      "prompt": [
+        "我要用 SwiftUI 製作圖片的畫面，請解析圖片提供我以下資料，並將需要的顏色和圖片加到 assets\n- RGB\n- icon 圖片。提供 SF Symbol 名字。如果沒有 SF Symbol，請繪製圖片給我",
+        "請提供字體資訊",
+        "請標示畫面上各區塊的位置大小"
+      ],
+      "website": "https://museum-swiftui-screen-spec.apppeterpan.chatgpt.site/",
+      "medium": "https://medium.com/p/5e3abc1b2066"
+    },
+    {
+      "date": "2026-10-10",
+      "title": "SwiftUI 調整間距和位置的像素遊戲",
+      "platform": "SwiftUI",
+      "description": "請 Claude 製作生動有趣的動畫說明 SwiftUI 如何調整元件的間距和位置，風格採用復古像素遊戲 Pixel Art",
+      "image": "SwiftUI 調整間距和位置的像素遊戲",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "SwiftUI 調整元件的間距和位置，常見的做法有以下幾種，\npadding、offset、stack 的 alignment & spacing、Spacer、frame(alignment:)\n我不太清楚各個做法的使用時機，不知道調間距位置時用哪一個比較好\n請製作生動有趣的動畫說明，風格採用復古像素遊戲 Pixel Art，要讓人十分驚豔"
+      ],
+      "website": "https://claude.ai/artifact/FqcqVxRH4fdq56bjeLmJKE?sk=O6R7ZxzC_bsA8_3xiE21eA"
+    },
+    {
+      "date": "2026-10-11",
+      "title": "用 SwiftUI 復刻第一代 iPod",
+      "platform": "SwiftUI",
+      "description": "從 iPhone Duo 模擬器操作 iPod",
+      "image": "用 SwiftUI 復刻第一代 iPod",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "使用 SwiftUI 復刻第一代 iPod 的樣子和操作，長得跟 iPod 一模一樣。歌曲使用專案裡的小小的夢想.mp3和把心留在冰島.mp3"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/SwiftUI-iPod"
+    },
+    {
+      "date": "2026-10-12",
+      "title": "使用 Claude Motion 製作介紹 SwiftUI State  的動畫",
+      "platform": "AI",
+      "description": "用 GTO 鬼塚英吉壁破壊的故事介紹 SwiftUI State",
+      "image": "Claude Motion",
+      "notes": [
+        "搭配 GPT 繪製的圖片",
+        "Motion 動畫只能用程式合成聲音，沒辦法播放音檔。為了加入鎚子打牆壁的音檔，採用以下做法\n1. 先匯出 MP4 影片\n2. 上傳 MP4 影片和 mp3 音檔\n3. Claude 合成播放音檔的影片",
+        "Claude 合成的影片在對送裡傳送時有 30MB 的上限，因此影片會進行壓縮"
+      ],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "結合 GTO 鬼塚英吉拿著鐵鎚，打破學生父母房間之間的牆壁故事，搭配以下程式介紹 SwiftUI State。請製作令人感動的動畫",
+        "改成用 Three.js 製作酷炫的 3D 動畫，要做得超級棒"
+      ],
+      "website": "https://www.youtube.com/watch?v=aKJiCzdIUyM",
+      "GitHub": "https://gist.github.com/PeterPanSwift/794be4d3a84f26f943545df9ef2ae184"
+    },
+    {
+      "date": "2026-10-13",
+      "title": "製作可操作互動的 3D 動畫網頁",
+      "platform": "Webpage",
+      "description": "請 Claude 製作 3D 電弧爐剖面互動模型",
+      "image": "可操作互動的 3D 動畫網頁",
+      "notes": [
+        "請 AI 參考 3D 相機鏡頭模型的 prompt，生成新例子的 prompt\nhttps://skillry.dev/ai-videos/opus-5-5?video=aichrislee-408244"
+      ],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "請使用 Three.js，為我打造一個可互動的 3D 煉鋼電弧爐（EAF）模型\nhttps://gist.github.com/PeterPanSwift/c73ffeec7ee3c7c369dae0a74867bfd6"
+      ],
+      "website": "https://claude.ai/artifact/2EDedMVU3ij1iBwbaXVwRf?sk=iOy67NXxoh6GU3enukXEBA"
+    },
+    {
+      "date": "2026-10-14",
+      "title": "請 Claude 依據分鏡腳本製作影片",
+      "platform": "AI",
+      "description": "使用 ChatGPT 6 生成小王子馴養狐狸的影片腳本和分鏡，然後用 Claude Opus 5.5 生成動畫影片",
+      "image": "請 Claude 依據分鏡腳本製作影片",
+      "notes": [
+        "用 Python（NumPy、OpenCV、Pillow、SciPy）把每一格畫面和每一段聲音「算」出來，最後交給 ffmpeg 編碼\nhttps://gist.github.com/PeterPanSwift/4be6b80d33e35ef196c7385600ee9610",
+        "配音用微軟 Edge 的語音合成，透過 edge-tts 套件取得台灣口音的三種聲音：旁白用曉臻，阿栗用曉雨並提高音調像小孩，狐狸用雲哲",
+        "配樂全部用數學合成"
+      ],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "生成水彩風格的可愛動畫影片，不要用 Claude motion\n《小王子與狐狸：馴養的意義》\n影片長度：90 秒 影片風格：溫暖療癒的童話水彩動畫 影片比例：16:9\n鏡頭 1：陌生的相遇\n時間：00:00 至 00:08 運鏡：遠景，緩慢推進\n畫面：金色麥田隨風起伏，小王子獨自走著，遠處的狐狸悄悄探出頭。\n旁白：「有一天，小王子在一片金色的麥田裡，遇見了一隻狐狸。」\n鏡頭 2：一個小小的邀請\nhttps://gist.github.com/PeterPanSwift/0bf1a766a24ab4839777fde439086177"
+      ],
+      "website": "https://www.youtube.com/watch?v=xn0M7xQxayw"
+    },
+    {
+      "date": "2026-10-15",
+      "title": "請 Gemini 將影片變成投影片",
+      "platform": "AI",
+      "description": "請 Gemini 解析 YouTube 影片，截圖影片裡的投影片畫面，將圖片組合成投影片",
+      "image": "請 Gemini 將影片變成投影片",
+      "notes": [
+        "一鍵自動截圖並組合成 .pptx 投影片的 Python 腳本（已內建本片所有投影片定格畫面的精準秒數），執行後即可原封不動擷取原畫質投影片並合成簡報。"
+      ],
+      "AI": "Gemini, 4 Argon, high",
+      "prompt": [
+        "解析影片，截圖影片裡的投影片畫面，將圖片組合成投影片，不要做任何修改\nhttps://www.youtube.com/watch?v=C1t0lij6e8U",
+        "請將影片的投影片畫面截圖變成投影片。請先解析影片找出定格的秒數，然後寫一個 python 程式自動截圖並組合成投影片，不要做任何修改\nhttps://www.youtube.com/watch?v=C1t0lij6e8U"
+      ]
+    },
+    {
+      "date": "2026-10-16",
+      "title": "鱷魚拔牙",
+      "platform": "SwiftUI",
+      "description": "使用 SwiftUI 開發鱷魚拔牙 iOS App",
+      "image": "鱷魚拔牙",
+      "notes": [],
+      "AI": "Codex, GPT 6.1 Sol, high",
+      "prompt": [
+        "製作鱷魚拔牙齒 App，畫面要做得很可愛，繪製需要的圖片加到 assets",
+        "牙齒被打掉應該也要搭配繪製的圖片比較好看"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/CrocodileDentist"
+    },
+    {
+      "date": "2026-10-17",
+      "title": "使用 Anatomy Skill 製作 iPhone Duo 動畫",
+      "platform": "AI",
+      "description": "使用 Anatomy Skill 製作 iPhone Duo 動畫",
+      "image": "使用 Anatomy Skill 製作 iPhone Duo 動畫",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "/anatomy 說明 iPhone Duo，彩色版"
+      ],
+      "website": "https://claude.ai/artifact/1Xqzv8KNQSGJFYgSTdwFHy?sk=1485MKolgTJe-BHE3gHIRQ"
     }
   ]
 }
