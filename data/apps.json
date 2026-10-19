@@ -1628,6 +1628,20 @@
       "website": "https://claude.ai/artifact/1Xqzv8KNQSGJFYgSTdwFHy?sk=1485MKolgTJe-BHE3gHIRQ"
     },
     {
+      "date": "2026-10-18",
+      "title": "請 Claude 將 blog 文章變成教學影片",
+      "platform": "AI",
+      "description": "請 Claude 將我的 blog 文章\"安裝 Claude 的電腦版 App(Windows)\"變成教學影片",
+      "image": "請 Claude 將 blog 文章變成教學影片",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "這是我的 blog 文章，介紹如何安裝 Claude 的電腦版 App(Windows)，請依據文章的內容和圖片製作生動的教學影片，搭配好聽的台灣中文配音，不要用 Claude motion\nhttps://medium.com/p/889276ff5338"
+      ],
+      "website": "https://www.youtube.com/watch?v=Y9Cyp3Q4QhM",
+      "medium": "https://medium.com/p/889276ff5338"
+    },
+    {
       "date": "2026-10-19",
       "title": "使用 Claude 修改影片",
       "platform": "AI",
