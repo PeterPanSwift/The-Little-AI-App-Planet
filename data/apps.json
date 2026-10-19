@@ -1626,6 +1626,20 @@
         "/anatomy 說明 iPhone Duo，彩色版"
       ],
       "website": "https://claude.ai/artifact/1Xqzv8KNQSGJFYgSTdwFHy?sk=1485MKolgTJe-BHE3gHIRQ"
+    },
+    {
+      "date": "2026-10-19",
+      "title": "使用 Claude 修改影片",
+      "platform": "AI",
+      "description": "修改 Apple 的教學影片 Design for iPhone Duo",
+      "image": "使用 Claude 修改影片",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "依據影片的內容重新製作影片，影片的內容和配音要維持不變，畫面改成可愛的水彩動畫，影片裡紅色衣服的人改成 fox，黑色衣服的人改成 penguin，不要用 Claude motion",
+        "改成台灣中文配音"
+      ],
+      "website": "https://www.youtube.com/watch?v=do3UqxfYc3I"
     }
   ]
 }
