@@ -1654,6 +1654,20 @@
         "改成台灣中文配音"
       ],
       "website": "https://www.youtube.com/watch?v=do3UqxfYc3I"
+    },
+    {
+      "date": "2026-10-20",
+      "title": "使用 Claude 製作同學的 App 作業講解影片",
+      "platform": "AI",
+      "description": "請 Claude 參考同學的星遇 App 作業文章，製作 App 講解影片",
+      "image": "使用 Claude 製作同學的 App 作業講解影片",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "這是同學的 blog 文章，請依據文章的內容和圖片製作生動的 App 講解影片，搭配好聽的台灣中文配音，不要用 Claude motion\nhttps://medium.com/p/1a56f952ceea"
+      ],
+      "website": "https://www.youtube.com/watch?v=wbOj-BAxcM4",
+      "medium": "https://medium.com/p/1a56f952ceea"
     }
   ]
 }
