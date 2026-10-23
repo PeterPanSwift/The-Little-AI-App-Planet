@@ -1668,6 +1668,23 @@
       ],
       "website": "https://www.youtube.com/watch?v=wbOj-BAxcM4",
       "medium": "https://medium.com/p/1a56f952ceea"
+    },
+    {
+      "date": "2026-10-24",
+      "title": "生成方便貼到 Claude Slides 的彩色程式",
+      "platform": "Website",
+      "description": "生成能在 Claude Slides 顯示的彩色程式(html 格式)",
+      "image": "生成方便貼到 Claude Slides 的彩色程式",
+      "notes": [
+        "彩色程式的樣式藏在 Base64 編碼的內容"
+      ],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "以下的 html 貼到 Claude Slides 會變成彩色有背景的程式，請製作一個網頁，讓我能貼上程式碼，生成這樣的 html，方便我貼到 Claude Slides"
+      ],
+      "website": "https://peterpanswift.github.io/claude-slides-code-paster",
+      "GitHub": "https://github.com/PeterPanSwift/claude-slides-code-paster",
+      "medium": "https://medium.com/p/039acd430084"
     }
   ]
 }
