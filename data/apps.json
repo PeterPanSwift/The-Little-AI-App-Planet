@@ -1685,6 +1685,22 @@
       "website": "https://peterpanswift.github.io/claude-slides-code-paster",
       "GitHub": "https://github.com/PeterPanSwift/claude-slides-code-paster",
       "medium": "https://medium.com/p/039acd430084"
+    },
+    {
+      "date": "2026-10-25",
+      "title": "自動記錄 LINE Pay 消費的記帳 App",
+      "platform": "SwiftUI",
+      "description": "當 iOS 收到 LINE 錢包通知時，捷徑透過 App Intents 將通知的內容和時間傳給 App，然後 App 再從中整理出 LINE Pay 消費的金額、商家和時間",
+      "image": "自動記錄 LINE Pay 消費的記帳 App",
+      "notes": [
+        "從 iOS 27 開始，iOS 可以在收到通知時觸發捷徑"
+      ],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "開發 LINE Pay 消費紀錄 App，當 iPhone 收到 LINE錢包通知時，捷徑透過 App Intents 將通知的內容(上圖的文字訊息)和收到通知的時間傳給 App，記錄消費的商家、金額和時間，使用者可事後手動輸入品項的名稱"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/B612LinePayLog",
+      "medium": "https://medium.com/p/d10f41b0d60c"
     }
   ]
 }
