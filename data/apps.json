@@ -1675,7 +1675,9 @@
       "platform": "AI",
       "description": "附上音檔和歌詞，請 Claude 設計 MV 的動畫",
       "image": "使用 Claude 設計動態歌詞 MV",
-      "notes": [],
+      "notes": [
+        "請 AI 處理鋸齒問題\n解法\n- 開啟 4 倍多重取樣反鋸齒： 所有 3D 物件的邊緣都會變平滑，包括相框、山、冰塊。\n- 相框外加一圈透明邊： 白色相紙的邊緣會在貼圖過濾時自然柔化，搖晃時也比較不會閃爍。"
+      ],
       "AI": "Claude, Opus 5.5, high",
       "prompt": [
         "製作超感人漂亮的 MV，使用 Three.js，以下是它的歌詞"
