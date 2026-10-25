@@ -1670,6 +1670,19 @@
       "medium": "https://medium.com/p/1a56f952ceea"
     },
     {
+      "date": "2026-10-23",
+      "title": "使用 Claude 設計動態歌詞 MV",
+      "platform": "AI",
+      "description": "附上音檔和歌詞，請 Claude 設計 MV 的動畫",
+      "image": "使用 Claude 設計動態歌詞 MV",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "製作超感人漂亮的 MV，使用 Three.js，以下是它的歌詞"
+      ],
+      "website": "https://claude.ai/artifact/Rv7WreieGLQxEjdToWZsJk?sk=vN0wl73wZ03TwUAk-dJQfg"
+    },
+    {
       "date": "2026-10-24",
       "title": "生成方便貼到 Claude Slides 的彩色程式",
       "platform": "Website",
