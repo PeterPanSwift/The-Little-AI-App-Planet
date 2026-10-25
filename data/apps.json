@@ -1732,6 +1732,22 @@
       ],
       "GitHub": "https://github.com/PeterPanSwift/B612LinePayLog",
       "medium": "https://medium.com/p/d10f41b0d60c"
+    },
+    {
+      "date": "2026-10-26",
+      "title": "透過 GitHub 的雲端 Runner，任何裝置都能請 AI 用 Flutter 開發 iOS & Android App",
+      "platform": "Flutter",
+      "description": "從手機的 Claude App 示範，請 AI 透過 GitHub 的 Runner 開發介紹萬聖節妖怪的 Flutter App，然後再請 AI 在 iOS & Android 模擬器進行 App 畫面的截圖和錄製 App 操作影片",
+      "image": "透過 GitHub 的雲端 Runner 開發 Flutter App",
+      "notes": [
+        "請 AI 將開發的過程做成 skill，加快 AI 開發 Flutter App 的速度"
+      ],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "請用 Flutter 開發介紹萬聖節妖怪 的 App，需求如下\n- 從網路找妖怪的圖片\n- 設定 App Icon\n- 使用 GitHub 的 runner，錄製 App 在 iPhone 18 Pro Max 和 Pixel 10 模擬器的操作影片。影片只需要 App 的操作，請刪除多餘的部分，再將影片壓縮傳給我\n- 截圖上架的圖片"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/HalloweenMonster",
+      "medium": "https://medium.com/p/e8bf9e7e4f20"
     }
   ]
 }
