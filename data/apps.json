@@ -1748,6 +1748,21 @@
       ],
       "GitHub": "https://github.com/PeterPanSwift/HalloweenMonster",
       "medium": "https://medium.com/p/e8bf9e7e4f20"
+    },
+    {
+      "date": "2026-10-28",
+      "title": "請 AI 將公開的 Google 表單變成漂亮網頁",
+      "platform": "Website",
+      "description": "透過 AI 將公開的 Google 表單變成賞心悅目的網頁",
+      "image": "請 AI 將公開的 Google 表單變成漂亮網頁",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "設計串接 Google 表單的 artifact 網頁，方便使用者輸入課後問卷，網頁設計成 B612 小王子水彩風格\nhttps://forms.gle/gvbYQVtGs594oBAN7",
+        "設計串接 Google 表單的網頁，方便使用者輸入課後問卷，網頁設計成 B612 小王子水彩風格，使用我電腦的 CLI 指令部署到 Cloudflare\nhttps://forms.gle/gvbYQVtGs594oBAN7"
+      ],
+      "website": "https://b612-survey.pages.dev/",
+      "medium": "https://medium.com/p/084b4a9e96cc"
     }
   ]
 }
