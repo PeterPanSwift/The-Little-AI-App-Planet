@@ -1766,10 +1766,10 @@
     },
     {
       "date": "2026-10-29",
-      "title": "我的課程大網",
+      "title": "我的課程大綱",
       "platform": "Website",
-      "description": "整理規劃每門課的課程大網和作業",
-      "image": "我的課程大網",
+      "description": "整理規劃每門課的課程大綱和作業",
+      "image": "我的課程大綱",
       "notes": [],
       "AI": "Claude, Opus 5.5, high",
       "prompt": [
