@@ -1769,7 +1769,7 @@
       "title": "我的課程大綱",
       "platform": "Website",
       "description": "整理規劃每門課的課程大綱和作業",
-      "image": "我的課程大綱",
+      "image": "image",
       "notes": [],
       "AI": "Claude, Opus 5.5, high",
       "prompt": [
