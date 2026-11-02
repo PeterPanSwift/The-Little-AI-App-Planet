@@ -1792,6 +1792,22 @@
         "製作一個有趣的音樂劇影片，介紹 vibe coding，不要用 motion，要有好聽的唱歌，風格是可愛的浪漫情歌，歌詞好笑一點，畫面水彩風"
       ],
       "website": "https://www.youtube.com/watch?v=LePaUbT1fFo"
+    },
+    {
+      "date": "2026-11-02",
+      "title": "匯入載具消費明細的記帳 App",
+      "platform": "Website",
+      "description": "使用者從電子發票整合服務平台下載載具記錄的消費明細(csv 檔)，然後再從 App 匯入 csv 完成記帳",
+      "image": "匯入載具消費明細的記帳 App",
+      "notes": [
+        "資料存在 Claude artifact 提供的資料庫，容量 100MB",
+        "採用不同的 Claude 帳號登入時將有各自獨立的儲存空間，不會看到別人私密的記帳"
+      ],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "開發一個可愛的記帳網頁，使用者可上傳從電子發票整合服務平台下載的消費明細 csv，自動輸入賣方名稱、發票金額、品名、發票日期、發票號碼"
+      ],
+      "medium": "https://medium.com/p/a73d032fd273"
     }
   ]
 }
