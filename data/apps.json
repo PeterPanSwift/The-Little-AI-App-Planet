@@ -1808,6 +1808,19 @@
         "開發一個可愛的記帳網頁，使用者可上傳從電子發票整合服務平台下載的消費明細 csv，自動輸入賣方名稱、發票金額、品名、發票日期、發票號碼"
       ],
       "medium": "https://medium.com/p/a73d032fd273"
+    },
+    {
+      "date": "2026-11-03",
+      "title": "小王子電子書 App",
+      "platform": "SwiftUI",
+      "description": "用 SwiftUI 製作介紹小王子故事的多頁面 App",
+      "image": "小王子電子書 App",
+      "notes": [],
+      "AI": "Codex, GPT 6 Astra, high",
+      "prompt": [
+        "用 SwiftUI 製作介紹小王子故事的 App，包含以下功能\n- 開發多頁面 App，新增檔案定義頁面。\n- 使用 TabView & Tab 製作點選 tab 切換的分頁。\n- 使用 NavigationStack & NavigationLink 切換頁面 & 傳資料到下一頁，navigation bar 上要顯示標題。\n- 資料存在 array 裡，array 成員的型別是 struct 定義的自訂型別，遵從 protocol Identifiable。\n- 使用 List 製作表格。\n- 利用 page 實現水平滑動的分頁。\n- 顯示網頁，使用 WebView。\n- 可愛水彩風格。"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/LittlePrince"
     }
   ]
 }
