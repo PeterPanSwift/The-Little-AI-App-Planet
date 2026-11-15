@@ -1821,6 +1821,22 @@
         "用 SwiftUI 製作介紹小王子故事的 App，包含以下功能\n- 開發多頁面 App，新增檔案定義頁面。\n- 使用 TabView & Tab 製作點選 tab 切換的分頁。\n- 使用 NavigationStack & NavigationLink 切換頁面 & 傳資料到下一頁，navigation bar 上要顯示標題。\n- 資料存在 array 裡，array 成員的型別是 struct 定義的自訂型別，遵從 protocol Identifiable。\n- 使用 List 製作表格。\n- 利用 page 實現水平滑動的分頁。\n- 顯示網頁，使用 WebView。\n- 可愛水彩風格。"
       ],
       "GitHub": "https://github.com/PeterPanSwift/LittlePrince"
+    },
+    {
+      "date": "2026-11-15",
+      "title": "Simon 四色記憶遊戲",
+      "platform": "SwiftUI",
+      "description": "模仿經典的 Simon 製作包含音效的記憶遊戲 App",
+      "image": "Simon 四色記憶遊戲",
+      "notes": [
+        "以非同步迴圈「播一個音、等一下、再播下一個」，使用  Task.sleep 實現等一下"
+      ],
+      "AI": "Claude, Fable 5.2, high",
+      "prompt": [
+        "製作 Simon 遊戲的 iOS App"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/SimonSays",
+      "medium": "https://medium.com/p/a1f85d7e2c94"
     }
   ]
 }
