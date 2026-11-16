@@ -1837,6 +1837,22 @@
       ],
       "GitHub": "https://github.com/PeterPanSwift/SimonSays",
       "medium": "https://medium.com/p/a1f85d7e2c94"
+    },
+    {
+      "date": "2026-11-16",
+      "title": "客製 Claude Code，利用 mod 自訂樣式、動畫和背景音樂",
+      "platform": "AI",
+      "description": "將 Claude Code 變成可愛的小王子風格",
+      "image": "客製 Claude Code",
+      "notes": [
+        "測試時發現 Claude App 的面板無法顯示圖片，因此改成請 Claude 以向量色塊繪製"
+      ],
+      "AI": "Claude, Fable 5.2, medium",
+      "prompt": [
+        "設計 Claude Code 的 mod，B612 星球的小王子風格，包含動畫，將我的 fox 圖片描成向量色塊放進去。開新對話時可用指令將此 mod 開啟或關閉",
+        "加上播放背景音樂的指令"
+      ],
+      "medium": "https://medium.com/p/fa84df780da7"
     }
   ]
 }
