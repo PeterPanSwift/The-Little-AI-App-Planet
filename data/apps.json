@@ -1853,6 +1853,18 @@
         "加上播放背景音樂的指令"
       ],
       "medium": "https://medium.com/p/fa84df780da7"
+    },
+    {
+      "date": "2026-11-19",
+      "title": "希區考克驚悚片",
+      "platform": "AI",
+      "description": "請 AI 製作希區考克式的驚悚片",
+      "image": "希區考克驚悚片",
+      "notes": [],
+      "AI": "Claude, Fable 5.2, high",
+      "prompt": [
+        "製作一部三分鐘的精彩電影，媲美希區考克驚魂記的驚悚片，不要用 motion，搭配英式配音"
+      ]
     }
   ]
 }
