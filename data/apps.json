@@ -1864,7 +1864,8 @@
       "AI": "Claude, Fable 5.2, high",
       "prompt": [
         "製作一部三分鐘的精彩電影，媲美希區考克驚魂記的驚悚片，不要用 motion，搭配英式配音"
-      ]
+      ],
+      "website": "https://www.youtube.com/watch?v=y2E4XTV0gco"
     }
   ]
 }
