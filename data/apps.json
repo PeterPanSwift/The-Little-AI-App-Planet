@@ -1855,6 +1855,19 @@
       "medium": "https://medium.com/p/fa84df780da7"
     },
     {
+      "date": "2026-11-18",
+      "title": "Python 擲骰子統計",
+      "platform": "AI",
+      "description": "請 AI 將圖片變成教學影片",
+      "image": "Python 擲骰子統計",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "將圖片的概念做成動畫影片說明，不要用 motion ，搭配好聽的台灣中文聲音"
+      ],
+      "website": "https://www.youtube.com/watch?v=pKpp3k79qBA"
+    },
+    {
       "date": "2026-11-19",
       "title": "希區考克驚悚片",
       "platform": "AI",
