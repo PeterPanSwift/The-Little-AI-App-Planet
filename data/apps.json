@@ -1885,7 +1885,7 @@
       "title": "將歌曲變成另一種語言",
       "platform": "Website",
       "description": "請 AI 將將歌曲變成另一種語言，用一樣的聲音唱出",
-      "image": "將歌曲變成另一種語言",
+      "image": "image",
       "notes": [],
       "AI": "Claude, Opus 5.5, high",
       "prompt": [
