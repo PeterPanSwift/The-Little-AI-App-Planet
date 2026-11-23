@@ -1879,6 +1879,19 @@
         "製作一部三分鐘的精彩電影，媲美希區考克驚魂記的驚悚片，不要用 motion，搭配英式配音"
       ],
       "website": "https://www.youtube.com/watch?v=y2E4XTV0gco"
+    },
+    {
+      "date": "2026-11-23",
+      "title": "將歌曲變成另一種語言",
+      "platform": "Website",
+      "description": "請 AI 將將歌曲變成另一種語言，用一樣的聲音唱出",
+      "image": "將歌曲變成另一種語言",
+      "notes": [],
+      "AI": "Claude, Opus 5.5, high",
+      "prompt": [
+        "請製作網頁，可以上傳 mp3 和歌詞，用一樣的聲音搭配另一種語言唱出歌曲"
+      ],
+      "GitHub": "https://github.com/PeterPanSwift/SingLingo"
     }
   ]
 }
